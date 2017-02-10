@@ -21,7 +21,12 @@ It is best to use the code with Eclipse. Instructions below assume you are using
 
 ## Import the code in Eclipse
 
-- Import all the java projects in nn-amr-dev and nn-ccg-parser.
+- Import all the java projects in nn-amr-dev. 
+
+  - To import projects, first open eclipse and change the workspace folder to the root folder of ./nccg. 
+  - Now go to File->Import->General->Existing Projects Into Workspace and select the nn-amd-dev folder in the root.
+  - You should see the amr project. Select it. You should now see amr in the project explorer. Ignore any errors for now.
+- Now import all the java projects in nn-ccg-dev.
 
 ## Build the model or use a saved model
 
