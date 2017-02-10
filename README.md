@@ -12,8 +12,7 @@ Uses the following code:
 
 # Pre Requisite
 
- - java 8.0.
- - 
+ - Java 8.0.
 
 # Instructions for using the code
 
@@ -34,11 +33,21 @@ It is best to use the code with Eclipse. Instructions below assume you are using
 
 - Neural Shift Reduce CCG Semantic parser (NCCG) builds on top of SPF (Semantic Parsing Framework). Please see SPF documentation
   to learn more.
-- There are three major components that create NCCG:
+- The NCC project is contained in the project ./parser.ccg.ff.shiftreduce. 
+- There are three major components that create NCCG.
 
-   - Parser: 
-   - Creating dataset;
-   - Learning:
+   - Parser: NCCG model is a feed-forward neural network that generates probability over actions given parsing configuration.
+     For technical details, please see Section 3 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf).
+     The model file is located in:
+         ./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser/NeuralDotProductShiftReduceParser.java
+         
+   - Creating dataset: NCCG parser is trained on configuration and gold action pairs that are generated using a CKY parser. 
+     For technical details, please see Section 4 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf).
+     This is described in the following package:
+         ./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.dataset
+         
+   - Learning: NCCG is trained using backpropagation. For technical details, please see Section 4 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf). This is described in the following file:
+         ./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.learner/NeuralFeedForwardDotProductLearner.java
 
 ## AMR Parsing using Neural Shift Reduce CCG Semantic parser (NCCG)
 
