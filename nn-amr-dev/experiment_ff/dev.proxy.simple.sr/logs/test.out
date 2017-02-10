@@ -1,0 +1,2 @@
+	metric=EXACT	recall=0.0	precision=0.0	f1=0.0	skippingRecall=0.0	skippingPrecision=0.0	skippingF1=0.0
+	metric=smatch	recall=0.0	precision=0.0	f1=0.0	skippingRecall=0.5545	skippingPrecision=0.5685	skippingF1=0.5614

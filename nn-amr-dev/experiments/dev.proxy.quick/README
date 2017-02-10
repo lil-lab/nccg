@@ -1,0 +1,12 @@
+Duevelopment proxy experiment for small sentences. Including training a model from scratch and testing it. This is a quick experiment for sanity checks. It prunes all sentences that are longer than 8 tokens or contain ';', '(', ')' (this avoid weird keywords).
+
+Stages:
+	init model (seed lexicon + weights)
+	log model
+	training (data set: amr-release-1.0-training-proxy.txt)
+	log model
+	testing (data set: amr-release-1.0-dev-proxy.txt)
+
+Experiments:
+	dev.proxy.exp -- single machine experiment.
+	dev.proxy.dist.exp -- distributed experiment.

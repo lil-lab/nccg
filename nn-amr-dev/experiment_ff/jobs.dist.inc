@@ -1,0 +1,16 @@
+# Jobs
+## Initialize
+type=tinydist.master id=tinydist manager=manager
+#type=init model=model init=initSeedLex,initSeedLexWeights,initWeights,initSeedXemeWeights id=init
+#type=listen id=listen model=model dep=init listeners=genlexComposite
+## Log initial model
+#type=save model=model file=%{outputDir}/amr.pre.sp id=save.pre dep=init,listen
+#type=log id=log.pre model=model logger=modelLogger dep=init,listen
+# Bootstrap model
+type=bootstrap.feed.forward.neural.model id=bootstrap.neural.model datasetCreator=data.neural.sparsefeature learner=learner neuralModelFolder=%{neuralModelFolder} model=model modelNewFeatures=modelNewFeatures dep=tinydist
+# Learning
+#type=train learner=miniBatchDist id=train dep=log.pre,save.pre,tinydist model=model
+## Log and test final model
+#type=log id=log.post model=model logger=modelLogger dep=train
+type=test id=test exec=exec tester=testerDist data=test stats=statsExact,statsSmatch dep=bootstrap.neural.model 
+#type=save model=model file=%{outputDir}/amr.sp id=save dep=train

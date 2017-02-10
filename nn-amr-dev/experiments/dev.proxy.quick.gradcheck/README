@@ -1,0 +1,7 @@
+Gradient check experiment. Requires a saved model and uses short simple sentences.
+
+Stages:
+	gradient check (data set: amr-release-1.0-training-proxy.txt -- filtered)
+
+Experiments:
+	dev.proxy.quick.gradcheck.exp -- single machine experiment.

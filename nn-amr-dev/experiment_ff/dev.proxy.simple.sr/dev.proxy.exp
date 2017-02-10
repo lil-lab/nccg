@@ -1,0 +1,11 @@
+outputDir=logs
+globalLog=logs/global.log
+include=../params_simple_sr.inc
+gizaProbs=../../resources/data/amr-release-1.0-training-proxy.lam.giza_probs
+modelFile=../amr-withoutaugment.sp
+
+# Resources
+include=dev.proxy.inc
+
+# Jobs
+include=../jobs_test_simple_sr.inc

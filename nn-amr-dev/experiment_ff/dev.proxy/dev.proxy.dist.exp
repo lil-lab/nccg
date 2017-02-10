@@ -1,0 +1,14 @@
+outputDir=logs4
+globalLog=logs4/global.log
+include=../params4.inc
+gizaProbs=../../resources/data/amr-release-1.0-training-proxy.lam.giza_probs
+modelFile=../amr.sp
+neuralModelFolder=epoch-3_1462657096487
+dataFile=./dataset.ser
+
+# Resources
+include=dev.proxy.inc
+include=../dist.inc
+
+# Jobs
+include=../jobs.dist.inc

@@ -1,0 +1,22 @@
+outputDir=logs
+globalLog=logs/global.log
+include=../params.inc
+gizaProbs=../../resources/data/amr-release-1.0-training-proxy.lam.giza_probs
+gBeam=200
+conditionedBeam=200
+
+# Resources
+## Base resources
+include=../resources.proxy.inc
+include=../model.load.inc
+type=chart.logger id=logger outputDir=%{chartLogs}
+## Data
+type=filter.quick id=quickFilter len=8 chars=;,(,)
+type=data.filter id=data data=proxy-train filter=quickFilter
+## Gradient function
+type=gradient.simple id=gradient hard=false conditionedBeam=%{conditionedBeam} secondStage=false partialUpdates=false unreachableUpdates=false
+## Gradient checker
+type=gradient.checker id=checker data=data parser=parser filter=filterFactory epsilon=0.000001 gradient=gradient logger=logger
+
+# Jobs
+type=gradcheck model=model checker=checker id=gradcheck

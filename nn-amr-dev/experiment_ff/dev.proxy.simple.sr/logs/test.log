@@ -1,0 +1,1611 @@
+[P-T2] [P-T2] ============ (Job test started)
+[P-T2] [P-T2] 1 : ==================
+[P-T2] [P-T2] The agreement was signed during a regular meeting of Chiefs of Defense Staff from the 26 NATO allies.
+RecognizedNamedEntity [rawTag=ORG, textConstant=Chiefs++of++Defense++Staff:txt, tokens=Chiefs of Defense Staff, typingConstants=[organization:<e,t>]]
+RecognizedNamedEntity [rawTag=ORG, textConstant=NATO:txt, tokens=NATO, typingConstants=[organization:<e,t>]]
+The: pos=DT :: lemmas=[the]
+agreement: pos=NN :: lemmas=[agreement, agree]
+was: pos=VBD :: lemmas=[was, wa]
+signed: pos=VBN :: lemmas=[sign, signed, signature, signing, signer]
+during: pos=IN :: lemmas=[during]
+a: pos=DT :: lemmas=[a]
+regular: pos=JJ :: lemmas=[regularity, regular]
+meeting: pos=NN :: lemmas=[meet, meeting, meeter]
+of: pos=IN :: lemmas=[of]
+Chiefs: pos=NNP :: lemmas=[chiefs, chief]
+of: pos=IN :: lemmas=[of]
+Defense: pos=NNP :: lemmas=[defense]
+Staff: pos=NNP :: lemmas=[staff]
+from: pos=IN :: lemmas=[from]
+the: pos=DT :: lemmas=[the]
+26: pos=CD :: lemmas=[26]
+NATO: pos=NNP :: lemmas=[nato]
+allies: pos=NNS :: lemmas=[alliance, allies, ally]
+.: pos=. :: lemmas=[.]
+(a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (sign-01:<e,t> $0)
+  (c_ARG1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (agree-01:<e,t> $1))))
+  (c_time:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t>
+      (meet-03:<e,t> $2)
+      (c_ARG0:<e,<e,t>> $2 
+        (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t>
+          (person:<e,t> $3)
+          (c_ARG0-of:<e,<e,t>> $3 
+            (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t>
+              (have-org-role-91:<e,t> $4)
+              (c_ARG1:<e,<e,t>> $4 
+                (a:<id,<<e,t>,e>> !6 (lambda $5:e (and:<t*,t>
+                  (country:<e,t> $5)
+                  (c_quant:<e,<i,t>> $5 26:i)
+                  (c_ARG0-of:<e,<e,t>> $5 
+                    (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t>
+                      (have-org-role-91:<e,t> $6)
+                      (c_ARG1:<e,<e,t>> $6 
+                        (a:<id,<<e,t>,e>> !8 (lambda $7:e (and:<t*,t>
+                          (military:<e,t> $7)
+                          (c_name:<e,<e,t>> $7 
+                            (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t>
+                              (name:<e,t> $8)
+                              (c_op:<e,<txt,t>> $8 NATO:txt)))))))))))))
+                  (c_ARG1-of:<e,<e,t>> $5 
+                    (a:<id,<<e,t>,e>> !10 (lambda $9:e (ally-01:<e,t> $9))))))))
+              (c_ARG2:<e,<e,t>> $4 
+                (a:<id,<<e,t>,e>> !11 (lambda $10:e (and:<t*,t>
+                  (chief:<e,t> $10)
+                  (c_mod:<e,<e,t>> $10 
+                    (a:<id,<<e,t>,e>> !12 (lambda $11:e (and:<t*,t>
+                      (staff:<e,t> $11)
+                      (c_mod:<e,<e,t>> $11 
+                        (a:<id,<<e,t>,e>> !13 (lambda $12:e (defense:<e,t> $12))))))))))))))))))))
+      (c_ARG1:<e,<e,t>> $2 
+        (ref:<id,e> !11))
+      (c_mod:<e,<e,t>> $2 
+        (a:<id,<<e,t>,e>> !14 (lambda $13:e (regular:<e,t> $13)))))))))))
+26 :- N/N
+26 NATO allies :- N, N[x]\(N[x]/N[x])
+Staff from the 26 NATO allies . :- N, N[x]\(N[x]/N[x])
+of Defense Staff :- N\N
+during a regular meeting of Chiefs of Defense Staff from the 26 NATO allies . :- S\NP\(S\NP)
+NATO :- N/N
+was signed during a regular meeting of Chiefs of Defense Staff from the 26 NATO allies . :- S\NP
+The :- NP/N
+meeting of Chiefs :- N, N[x]\(N[x]/N[x])
+Defense :- N/N
+Chiefs :- N, N[x]\(N[x]/N[x]), NP
+Chiefs of Defense Staff :- N, NP, N[x]\(N[x]/N[x])
+of :- N[x]\N[x]/NP, N\N/NP
+of Chiefs :- N[x]\N[x]
+regular :- N/N
+meeting of Chiefs of Defense Staff from the 26 NATO allies . :- N, N[x]\(N[x]/N[x])
+from :- N[x]\N[x]/NP, N\N/NP
+the 26 NATO allies . :- NP
+NATO allies :- N, N[x]\(N[x]/N[x])
+regular meeting of Chiefs of Defense Staff from the 26 NATO allies . :- N, N[x]\(N[x]/N[x])
+from the 26 NATO allies . :- N\N, N[x]\N[x]
+was signed :- S\NP
+regular meeting of Chiefs :- N, N[x]\(N[x]/N[x])
+a :- NP/N
+meeting :- N/(N[x]\N[x]), N/(N[x]\N[x])/(N[x]\N[x])
+agreement :- N, N[x]\(N[x]/N[x])
+signed during a regular meeting of Chiefs of Defense Staff from the 26 NATO allies . :- S\NP
+was :- S\NP/(S\NP)
+meeting of Chiefs of Defense Staff :- N/(N[x]\N[x])
+The agreement :- NP
+the 26 NATO allies :- NP
+of Chiefs of Defense Staff from the 26 NATO allies . :- N[x]\N[x]
+Chiefs of Defense Staff from the 26 NATO allies . :- N, NP, N[x]\(N[x]/N[x])
+. :- PUNCT
+Defense Staff from the 26 NATO allies . :- N, NP, N[x]\(N[x]/N[x])
+the :- NP/N
+signed :- S\NP
+The agreement was signed during a regular meeting of Chiefs of Defense Staff from the 26 NATO allies . :- S
+during :- S\NP\(S\NP)/NP
+a regular meeting of Chiefs of Defense Staff from the 26 NATO allies . :- NP
+of Chiefs of Defense Staff :- N[x]\N[x]
+of Defense Staff from the 26 NATO allies . :- N\N
+Staff :- N, N[x]\(N[x]/N[x])
+Defense Staff :- N, NP, N[x]\(N[x]/N[x])
+allies :- N, N[x]\(N[x]/N[x])
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925600835_false (No such file or directory)
+[P-T2] [P-T2] Logging time 1
+[P-T2] [P-T2] Total AMR parsing time: 6.0710sec (cky=99.85%, baseProcess=0.00%, fg=0.05%)
+[P-T2] [P-T2] CKY parsing time: 6.0620sec (99.85%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0030sec (0.05%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] Test execution time 6.07
+[P-T2] [P-T2] no results
+[P-T2] [P-T2] EXACT stats -- recording no parse
+[P-T2] [P-T2] [EXACT stats]  Record failure.
+[P-T2] [P-T2] smatch stats -- recording no parse [1]
+[P-T2] [P-T2] no parses
+[P-T2] [P-T2] Created a sloppy lexicon with 0 entries
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925604976_true (No such file or directory)
+[P-T2] [P-T2] Logging time 1
+[P-T2] [P-T2] Found no derivation. Stitching heuristically to produce parse trees
+[P-T2] [P-T2] Stitch6: Best Tree on Stack: Considering 672 states
+[P-T2] [P-T2] Minimum number of tree 17, found 114 states with these many trees 
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Unexpected return type from closing to AMR: 26:i -> 26:i
+[P-T2] [P-T2] Total AMR parsing time: 5.8400sec (cky=70.70%, baseProcess=4.04%, fg=24.04%)
+[P-T2] [P-T2] CKY parsing time: 4.1290sec (70.70%)
+[P-T2] [P-T2] Processed 100 base parses, created 100 pairs: 0.2360sec (4.04%)
+[P-T2] [P-T2] Second stage inference time (100 pairs): 1.4040sec (24.04%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] SLOPPY execution time 5.840000
+[P-T2] [P-T2] EXACT stats -- recording wrong parse with skipping: (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t> (and:<e,t> $0) (c_op1:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !2 (lambda $1:e (agree-01:<e,t> $1)))) (c_op2:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !3 (lambda $2:e (sign-01:<e,t> $2)))) (c_op3:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !4 (lambda $3:e (during:<e,t> $3)))) (c_op4:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !5 (lambda $4:e (regular:<e,t> $4)))) (c_op5:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !6 (lambda $5:e (meet-03:<e,t> $5)))) (c_op6:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t> (have-org-role-91:<e,t> $6) (c_ARG2:<e,<e,t>> $6 (a:<id,<<e,t>,e>> !8 (lambda $7:e (chief:<e,t> $7)))))))) (c_op7:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !9 (lambda $8:e (defense:<e,t> $8)))) (c_op8:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !10 (lambda $9:e (staff:<e,t> $9)))) (c_op9:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !11 (lambda $10:e (and:<t*,t> (military:<e,t> $10) (c_name:<e,<e,t>> $10 (a:<id,<<e,t>,e>> !12 (lambda $11:e (and:<t*,t> (name:<e,t> $11) (c_op:<e,<txt,t>> $11 NATO:txt))))))))) (c_op10:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !13 (lambda $12:e (ally:<e,t> $12)))))))
+[P-T2] [P-T2] [EXACT stats]  Record sloppy incorrect.
+[P-T2] [P-T2] SMATCH command: python /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/../../utils/smatch/smatch.py -r 20 --pr -f /tmp/smatch1-5269568489656656454-candidate.txt /tmp/smatch1-499701592850569603-gold.txt
+[P-T2] [P-T2] SMATCH runtime: 0.0670
+[P-T2] [P-T2] SMATCH result: p=0.48, r=0.42, f1=0.45
+[P-T2] [P-T2] smatch stats -- recording sloppy parse [1]: p=0.48, r=0.42, f1=0.45
+[P-T2] [P-T2] WRONG: [score=-26.99, v=-23.79, i=-26.99] (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (agree-01:<e,t> $1))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !3 (lambda $2:e (sign-01:<e,t> $2))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $3:e (during:<e,t> $3))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !5 (lambda $4:e (regular:<e,t> $4))))
+  (c_op5:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !6 (lambda $1 (meet-03:<e,t> $1))))
+  (c_op6:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !7 (lambda $5:e (and:<t*,t>
+      (have-org-role-91:<e,t> $5)
+      (c_ARG2:<e,<e,t>> $5 
+        (a:<id,<<e,t>,e>> !8 (lambda $6:e (chief:<e,t> $6))))))))
+  (c_op7:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !9 (lambda $1 (defense:<e,t> $1))))
+  (c_op8:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !10 (lambda $1 (staff:<e,t> $1))))
+  (c_op9:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !11 (lambda $7:e (and:<t*,t>
+      (military:<e,t> $7)
+      (c_name:<e,<e,t>> $7 
+        (a:<id,<<e,t>,e>> !12 (lambda $8:e (and:<t*,t>
+          (name:<e,t> $8)
+          (c_op:<e,<txt,t>> $8 NATO:txt)))))))))
+  (c_op10:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !13 (lambda $9:e (ally:<e,t> $9)))))))
+[17-18 :: bare_pl :: , N[pl] : (lambda $0:e (ally:<e,t> $0))]{{} -> 0.0}
+[17-18 :: >punct :: , N[pl] : (lambda $0:e (ally:<e,t> $0)), PUNCT]{{} -> 0.0}
+[18-18 :: lex :: . :- PUNCT{SEED}]{{} -> -2.0412822455578135}
+[17-17 :: lex :: allies :- N[pl] : (lambda $0:e (ally:<e,t> $0)){genlex-align}]{{} -> -1.2635225516636934}
+[16-16 :: lex :: NATO :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (military:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 NATO:txt)))))))){genlex-align}]{{} -> -0.4859295847628533}
+[15-15 :: lex :: 26 :- I : 26:i{dyn-numeral}]{{} -> -0.21760636686669432}
+[14-14 :: lex :: the :- NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.9660557814563351}
+[13-13 :: lex :: from :- S\S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -1.7636648609606675}
+[12-12 :: lex :: Staff :- N[sg] : (lambda $0:e (staff:<e,t> $0)){genlex-align}]{{} -> -0.17999955542427992}
+[11-11 :: lex :: Defense :- N[sg] : (lambda $0:e (defense:<e,t> $0)){genlex-align}]{{} -> -1.040480470988873}
+[10-10 :: lex :: of :- S\S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -3.549818689408089}
+[9-9 :: lex :: Chiefs :- N[sg] : (lambda $0:e (and:<t*,t> (have-org-role-91:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (chief:<e,t> $1)))))){genlex-align}]{{} -> -1.7311087748726477}
+[8-8 :: lex :: of :- S\S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -3.612443978694211}
+[7-7 :: lex :: meeting :- N[nb] : (lambda $0:e (meet-03:<e,t> $0)){genlex-align}]{{} -> -1.0799090336697814}
+[6-6 :: lex :: regular :- N[x]/N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (regular:<e,t> $2))))))){SEED}]{{} -> -0.21715240127489288}
+[5-5 :: lex :: a :- NP[sg]/N[sg] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.5820192793637682}
+[4-4 :: lex :: during :- S : (lambda $0:e (during:<e,t> $0)){genlex-align}]{{} -> -2.9324085858958875}
+[2-3 :: >apply :: , S\NP/(S\NP) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))), S\NP : (lambda $0:e (lambda $1:e (and:<t*,t> (sign-01:<e,t> $1) (c_ARG1:<e,<e,t>> $1 $0))))]{{} -> -1.58990178862729}
+[3-3 :: lex :: signed :- S\NP : (lambda $0:e (lambda $1:e (and:<t*,t> (sign-01:<e,t> $1) (c_ARG1:<e,<e,t>> $1 $0)))){genlex-align}]{{} -> -2.992953478830408}
+[2-2 :: lex :: was :- S\NP/(S\NP) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -0.891945942237713}
+[1-1 :: lex :: agreement :- N[nb] : (lambda $0:e (agree-01:<e,t> $0)){genlex-align}]{{} -> -1.1364609577227167}
+[0-0 :: lex :: The :- NP[sg]/N[nb] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.5276770757080416}
+{FACLEX#c_REL#c_ARG2#Chiefs=0.0(1.000),FACLEX#c_REL#c_name#NATO=0.597(1.000),RELPREF#and#c_op1=1.124(1.000),RELPREF#and#c_op1#agree-01=-0.454(1.000),RELPREF#and#c_op10=0.0(1.000),RELPREF#and#c_op10#ally=0.0(1.000),RELPREF#and#c_op2=1.329(1.000),RELPREF#and#c_op2#sign-01=-0.226(1.000),RELPREF#and#c_op3=-2.133(1.000),RELPREF#and#c_op3#during=0.0(1.000),RELPREF#and#c_op4=-0.962(1.000),RELPREF#and#c_op4#regular=0.0(1.000),RELPREF#and#c_op5=-0.123(1.000),RELPREF#and#c_op5#meet-03=0.0(1.000),RELPREF#and#c_op6=-0.833(1.000),RELPREF#and#c_op6#have-org-role-91=0.0(1.000),RELPREF#and#c_op7=-0.929(1.000),RELPREF#and#c_op7#defense=0.0(1.000),RELPREF#and#c_op8=-0.004(1.000),RELPREF#and#c_op8#staff=0.0(1.000),RELPREF#and#c_op9=-0.458(1.000),RELPREF#and#c_op9#military=0.0(1.000),RELPREF#c_ARG2#chief=0.221(1.000),RELPREF#c_name#name=1.578(1.000),RELPREF#c_op#txt=0.736(1.000),RELPREF#c_op1#agree-01=-0.379(1.000),RELPREF#c_op10#ally=0.0(1.000),RELPREF#c_op2#sign-01=-0.226(1.000),RELPREF#c_op3#during=0.0(1.000),RELPREF#c_op4#regular=0.0(1.000),RELPREF#c_op5#meet-03=0.0(1.000),RELPREF#c_op6#have-org-role-91=0.0(1.000),RELPREF#c_op7#defense=0.0(1.000),RELPREF#c_op8#staff=0.0(1.000),RELPREF#c_op9#military=0.0(1.000),RELPREF#have-org-role-91#c_ARG2=1.062(1.000),RELPREF#have-org-role-91#c_ARG2#chief=0.650(1.000),RELPREF#military#c_name=0.088(1.000),RELPREF#military#c_name#name=0.325(1.000),RELPREF#name#c_op=1.716(1.000),RELPREF#name#c_op#txt=1.716(1.000),UNARY#c_REL~~Chiefs#c_ARG2=0.0(1.000),UNARY#c_REL~~NATO#c_name=0.597(1.000)}
+[P-T2] [P-T2] Had correct result: false
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925608789_false (No such file or directory)
+[P-T2] [P-T2] Logging time 1
+[P-T2] [P-T2] Total AMR parsing time: 2.0000sec (cky=99.95%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 1.9990sec (99.95%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] No correct executions
+[P-T2] [P-T2] 2 : ==================
+[P-T2] [P-T2] Most observers expect Dmitry Medvedev to continue the policies of Vladimir Putin, such as an assertive posture on the international scene and vow to strengthen the military.
+RecognizedNamedEntity [rawTag=PER, textConstant=Dmitry++Medvedev:txt, tokens=Dmitry Medvedev, typingConstants=[person:<e,t>]]
+RecognizedNamedEntity [rawTag=PER, textConstant=Vladimir++Putin:txt, tokens=Vladimir Putin, typingConstants=[person:<e,t>]]
+Most: pos=JJS :: lemmas=[most]
+observers: pos=NNS :: lemmas=[observer, observe, observers]
+expect: pos=VBP :: lemmas=[expect, expectancy, expectation, expectant]
+Dmitry: pos=NNP :: lemmas=[dmitry]
+Medvedev: pos=NNP :: lemmas=[medvedev]
+to: pos=TO :: lemmas=[to]
+continue: pos=VB :: lemmas=[continuation, continue, continuance]
+the: pos=DT :: lemmas=[the]
+policies: pos=NNS :: lemmas=[policies, policy]
+of: pos=IN :: lemmas=[of]
+Vladimir: pos=NNP :: lemmas=[vladimir]
+Putin: pos=NNP :: lemmas=[putin]
+,: pos=, :: lemmas=[,]
+such: pos=JJ :: lemmas=[such]
+as: pos=IN :: lemmas=[as]
+an: pos=DT :: lemmas=[an]
+assertive: pos=JJ :: lemmas=[assert, assertive, assertiveness]
+posture: pos=NN :: lemmas=[posture, postural]
+on: pos=IN :: lemmas=[on]
+the: pos=DT :: lemmas=[the]
+international: pos=JJ :: lemmas=[internationality, international]
+scene: pos=NN :: lemmas=[scenic, scene]
+and: pos=CC :: lemmas=[and]
+vow: pos=NN :: lemmas=[vower, vow]
+to: pos=TO :: lemmas=[to]
+strengthen: pos=VB :: lemmas=[strengthen, strengthening, strengthener]
+the: pos=DT :: lemmas=[the]
+military: pos=NN :: lemmas=[militaristic, military, militarize, militarise]
+.: pos=. :: lemmas=[.]
+(a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (expect-01:<e,t> $0)
+  (c_ARG0:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t>
+      (person:<e,t> $1)
+      (c_ARG0-of:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !3 (lambda $2:e (observe-01:<e,t> $2))))
+      (c_mod:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !4 (lambda $3:e (most:<e,t> $3))))))))
+  (c_ARG1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t>
+      (and:<e,t> $4)
+      (c_op1:<e,<e,t>> $4 
+        (a:<id,<<e,t>,e>> !6 (lambda $5:e (and:<t*,t>
+          (continue-01:<e,t> $5)
+          (c_ARG0:<e,<e,t>> $5 
+            (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t>
+              (person:<e,t> $6)
+              (c_name:<e,<e,t>> $6 
+                (a:<id,<<e,t>,e>> !8 (lambda $7:e (and:<t*,t>
+                  (name:<e,t> $7)
+                  (c_op:<e,<txt,t>> $7 Dmitry++Medvedev:txt)))))))))
+          (c_ARG1:<e,<e,t>> $5 
+            (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t>
+              (policy:<e,t> $8)
+              (c_poss:<e,<e,t>> $8 
+                (a:<id,<<e,t>,e>> !10 (lambda $9:e (and:<t*,t>
+                  (person:<e,t> $9)
+                  (c_name:<e,<e,t>> $9 
+                    (a:<id,<<e,t>,e>> !11 (lambda $10:e (and:<t*,t>
+                      (name:<e,t> $10)
+                      (c_op:<e,<txt,t>> $10 Vladimir++Putin:txt)))))))))
+              (c_example-of:<e,<e,t>> $8 
+                (a:<id,<<e,t>,e>> !12 (lambda $11:e (and:<t*,t>
+                  (posture:<e,t> $11)
+                  (c_mod:<e,<e,t>> $11 
+                    (a:<id,<<e,t>,e>> !13 (lambda $12:e (assertive:<e,t> $12))))
+                  (c_location:<e,<e,t>> $11 
+                    (a:<id,<<e,t>,e>> !14 (lambda $13:e (and:<t*,t>
+                      (scene:<e,t> $13)
+                      (c_mod:<e,<e,t>> $13 
+                        (a:<id,<<e,t>,e>> !15 (lambda $14:e (international:<e,t> $14))))))))))))))))))))
+      (c_op2:<e,<e,t>> $4 
+        (a:<id,<<e,t>,e>> !16 (lambda $15:e (and:<t*,t>
+          (vow-01:<e,t> $15)
+          (c_ARG0:<e,<e,t>> $15 
+            (ref:<id,e> !7))
+          (c_ARG1:<e,<e,t>> $15 
+            (a:<id,<<e,t>,e>> !17 (lambda $16:e (and:<t*,t>
+              (strengthen-01:<e,t> $16)
+              (c_ARG0:<e,<e,t>> $16 
+                (ref:<id,e> !7))
+              (c_ARG1:<e,<e,t>> $16 
+                (a:<id,<<e,t>,e>> !18 (lambda $17:e (military:<e,t> $17)))))))))))))))))))
+the military . :- S\NP\(S\NP/NP), NP
+policies of Vladimir Putin , :- N, N[x]\(N[x]/N[x])
+Vladimir Putin , such as an assertive posture on the international scene :- NP
+vow to strengthen the military . :- S\NP
+of Vladimir Putin , such as an assertive posture :- N[x]\N[x]
+Putin :- N, N[x]\(N[x]/N[x])
+vow to strengthen :- S\NP/NP
+and :- C
+of :- N[x]\N[x]/NP
+Most observers expect Dmitry Medvedev to continue the policies of Vladimir Putin , such as an assertive posture on the international scene and vow to strengthen the military . :- S
+policies :- N/(N[x]\N[x])
+policies of Vladimir Putin , such as an assertive posture on the international scene :- N, N[x]\(N[x]/N[x])
+policies of Vladimir Putin , such as an assertive posture :- N, N[x]\(N[x]/N[x])
+and vow to strengthen the military . :- S\NP\(S\NP)
+on :- N\N/NP
+vow :- S\NP/(S\NP)
+strengthen the military . :- S\NP
+international scene :- N, N[x]\(N[x]/N[x])
+Dmitry :- N/N
+continue the policies of Vladimir Putin , such as an assertive posture on the international scene :- S\NP
+an assertive posture :- NP
+the policies of Vladimir Putin , such as an assertive posture on the international scene :- NP
+posture :- N, N[x]\(N[x]/N[x])
+of Vladimir Putin , :- N[x]\N[x]
+to strengthen the military . :- S\NP
+the :- NP/N
+as an assertive posture on the international scene :- NP\NP
+such :- NP\NP/(NP\NP)
+Dmitry Medvedev :- N, NP, N[x]\(N[x]/N[x])
+observers :- N, N[x]\(N[x]/N[x])
+to :- S\NP/(S\NP)
+assertive posture on the international scene :- N, N[x]\(N[x]/N[x])
+Vladimir Putin , such as an assertive posture :- NP
+expect :- S\NP/(S\NP)/NP
+the international scene :- NP
+to continue the policies of Vladimir Putin , such as an assertive posture on the international scene and vow to strengthen the military . :- S\NP
+Most :- N/N
+expect Dmitry Medvedev to continue the policies of Vladimir Putin , such as an assertive posture on the international scene and vow to strengthen the military . :- S\NP
+assertive :- N/N
+the policies of Vladimir Putin , :- NP
+Vladimir Putin , :- NP
+scene :- N, N[x]\(N[x]/N[x])
+assertive posture :- N, N[x]\(N[x]/N[x])
+the military :- NP
+continue :- S\NP/NP
+Vladimir Putin :- N, NP, N[x]\(N[x]/N[x])
+strengthen :- S\NP/NP
+to strengthen :- S\NP/NP
+such as an assertive posture on the international scene :- NP\NP
+military :- N, N[x]\(N[x]/N[x])
+expect Dmitry Medvedev :- S\NP/(S\NP)
+international :- N/N
+an assertive posture on the international scene :- NP
+such as an assertive posture :- NP\NP
+, :- PUNCT
+an :- NP/N
+. :- PUNCT
+Most observers :- N, NP, N[x]\(N[x]/N[x])
+as :- NP\NP/NP
+as an assertive posture :- NP\NP
+Medvedev :- N, N[x]\(N[x]/N[x])
+continue the policies of Vladimir Putin , such as an assertive posture on the international scene and vow to strengthen the military . :- S\NP
+Vladimir :- N/N
+of Vladimir Putin , such as an assertive posture on the international scene :- N[x]\N[x]
+on the international scene :- N\N
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925610938_false (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Total AMR parsing time: 2.1460sec (cky=100.00%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 2.1460sec (100.00%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] Test execution time 2.15
+[P-T2] [P-T2] no results
+[P-T2] [P-T2] EXACT stats -- recording no parse
+[P-T2] [P-T2] [EXACT stats]  Record failure.
+[P-T2] [P-T2] smatch stats -- recording no parse [2]
+[P-T2] [P-T2] no parses
+[P-T2] [P-T2] Created a sloppy lexicon with 0 entries
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925614858_true (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Found no derivation. Stitching heuristically to produce parse trees
+[P-T2] [P-T2] Stitch6: Best Tree on Stack: Considering 1349 states
+[P-T2] [P-T2] Minimum number of tree 15, found 6 states with these many trees 
+[P-T2] [P-T2] Result of closing to AMR is invalid: conj:e -> conj:e
+[P-T2] [P-T2] Result of closing to AMR is invalid: conj:e -> conj:e
+[P-T2] [P-T2] Result of closing to AMR is invalid: conj:e -> conj:e
+[P-T2] [P-T2] Total AMR parsing time: 3.8150sec (cky=97.09%, baseProcess=0.42%, fg=2.41%)
+[P-T2] [P-T2] CKY parsing time: 3.7040sec (97.09%)
+[P-T2] [P-T2] Processed 6 base parses, created 6 pairs: 0.0160sec (0.42%)
+[P-T2] [P-T2] Second stage inference time (6 pairs): 0.0920sec (2.41%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] Generated multiple max-scoring derivations (logging details in comparison to first one)
+[P-T2] [P-T2] Sloppy inference
+[P-T2] [P-T2] Max-scoring derivations [2]:
+[P-T2] [P-T2] [score=-36.48, v=-24.75, i=-36.48] (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (most:<e,t> $1))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !3 (lambda $2:e (observe-01:<e,t> $2))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $2 (expect-01:<e,t> $2))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !5 (lambda $3:e (and:<t*,t>
+      (person:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !6 (lambda $4:e (and:<t*,t>
+          (name:<e,t> $4)
+          (c_op:<e,<txt,t>> $4 Dmitry++Medvedev:txt)))))))))
+  (c_op5:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !7 (lambda $5:e (continue-01:<e,t> $5))))
+  (c_op6:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !8 (lambda $2 (policy:<e,t> $2))))
+  (c_op7:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !9 (lambda $3 (and:<t*,t>
+      (person:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !10 (lambda $4 (and:<t*,t>
+          (name:<e,t> $4)
+          (c_op:<e,<txt,t>> $4 Vladimir++Putin:txt)))))))))
+  (c_op8:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !11 (lambda $6:e (international:<e,t> $6))))
+  (c_op9:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !12 (lambda $2 (vow-01:<e,t> $2))))
+  (c_op10:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !13 (lambda $7:e (and:<t*,t>
+      (strengthen-01:<e,t> $7)
+      (c_ARG0:<e,<e,t>> $7 
+        (ref:<id,e> !5))
+      (c_ARG1:<e,<e,t>> $7 
+        (a:<id,<<e,t>,e>> !14 (lambda $6 (military:<e,t> $6)))))))))))
+[P-T2] [P-T2] Features: {FACLEX#c_REL#c_name#Dmitry-Medvedev=0.0(1.000),FACLEX#c_REL#c_name#Vladimir-Putin=0.444(1.000),RELPREF#and#c_op1=1.124(1.000),RELPREF#and#c_op1#most=0.0(1.000),RELPREF#and#c_op10=0.0(1.000),RELPREF#and#c_op10#strengthen-01=0.0(1.000),RELPREF#and#c_op2=1.329(1.000),RELPREF#and#c_op2#observe-01=0.0(1.000),RELPREF#and#c_op3=-2.133(1.000),RELPREF#and#c_op3#expect-01=0.0(1.000),RELPREF#and#c_op4=-0.962(1.000),RELPREF#and#c_op4#person=-0.474(1.000),RELPREF#and#c_op5=-0.123(1.000),RELPREF#and#c_op5#continue-01=0.0(1.000),RELPREF#and#c_op6=-0.833(1.000),RELPREF#and#c_op6#policy=0.0(1.000),RELPREF#and#c_op7=-0.929(1.000),RELPREF#and#c_op7#person=0.631(1.000),RELPREF#and#c_op8=-0.004(1.000),RELPREF#and#c_op8#international=0.0(1.000),RELPREF#and#c_op9=-0.458(1.000),RELPREF#and#c_op9#vow-01=0.0(1.000),RELPREF#c_ARG0#person=0.962(1.000),RELPREF#c_ARG1#military=0.166(1.000),RELPREF#c_name#name=1.578(2.000),RELPREF#c_op#txt=0.736(2.000),RELPREF#c_op1#most=-0.793(1.000),RELPREF#c_op10#strengthen-01=0.0(1.000),RELPREF#c_op2#observe-01=0.0(1.000),RELPREF#c_op3#expect-01=0.0(1.000),RELPREF#c_op4#person=-0.474(1.000),RELPREF#c_op5#continue-01=0.0(1.000),RELPREF#c_op6#policy=0.0(1.000),RELPREF#c_op7#person=0.631(1.000),RELPREF#c_op8#international=0.0(1.000),RELPREF#c_op9#vow-01=0.0(1.000),RELPREF#name#c_op=1.716(2.000),RELPREF#name#c_op#txt=1.716(2.000),RELPREF#person#c_name=0.473(2.000),RELPREF#person#c_name#name=0.694(2.000),RELPREF#strengthen-01#c_ARG0=-0.534(1.000),RELPREF#strengthen-01#c_ARG0#person=0.068(1.000),RELPREF#strengthen-01#c_ARG1=-0.238(1.000),RELPREF#strengthen-01#c_ARG1#military=0.0(1.000),UNARY#c_REL~~Dmitry-Medvedev#c_name=0.0(1.000),UNARY#c_REL~~Vladimir-Putin#c_name=0.444(1.000)}
+[P-T2] [P-T2] --------------------------------------
+[P-T2] [P-T2] [score=-36.48, v=-24.75, i=-36.48] (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (most:<e,t> $1))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !3 (lambda $2:e (observe-01:<e,t> $2))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $2 (expect-01:<e,t> $2))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !5 (lambda $3:e (and:<t*,t>
+      (person:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !6 (lambda $4:e (and:<t*,t>
+          (name:<e,t> $4)
+          (c_op:<e,<txt,t>> $4 Dmitry++Medvedev:txt)))))))))
+  (c_op5:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !7 (lambda $5:e (continue-01:<e,t> $5))))
+  (c_op6:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !8 (lambda $2 (policy:<e,t> $2))))
+  (c_op7:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !9 (lambda $3 (and:<t*,t>
+      (person:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !10 (lambda $4 (and:<t*,t>
+          (name:<e,t> $4)
+          (c_op:<e,<txt,t>> $4 Vladimir++Putin:txt)))))))))
+  (c_op8:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !11 (lambda $6:e (international:<e,t> $6))))
+  (c_op9:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !12 (lambda $2 (vow-01:<e,t> $2))))
+  (c_op10:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !13 (lambda $7:e (and:<t*,t>
+      (strengthen-01:<e,t> $7)
+      (c_ARG0:<e,<e,t>> $7 
+        (ref:<id,e> !9))
+      (c_ARG1:<e,<e,t>> $7 
+        (a:<id,<<e,t>,e>> !14 (lambda $6 (military:<e,t> $6)))))))))))
+[P-T2] [P-T2] Features: {FACLEX#c_REL#c_name#Dmitry-Medvedev=0.0(1.000),FACLEX#c_REL#c_name#Vladimir-Putin=0.444(1.000),RELPREF#and#c_op1=1.124(1.000),RELPREF#and#c_op1#most=0.0(1.000),RELPREF#and#c_op10=0.0(1.000),RELPREF#and#c_op10#strengthen-01=0.0(1.000),RELPREF#and#c_op2=1.329(1.000),RELPREF#and#c_op2#observe-01=0.0(1.000),RELPREF#and#c_op3=-2.133(1.000),RELPREF#and#c_op3#expect-01=0.0(1.000),RELPREF#and#c_op4=-0.962(1.000),RELPREF#and#c_op4#person=-0.474(1.000),RELPREF#and#c_op5=-0.123(1.000),RELPREF#and#c_op5#continue-01=0.0(1.000),RELPREF#and#c_op6=-0.833(1.000),RELPREF#and#c_op6#policy=0.0(1.000),RELPREF#and#c_op7=-0.929(1.000),RELPREF#and#c_op7#person=0.631(1.000),RELPREF#and#c_op8=-0.004(1.000),RELPREF#and#c_op8#international=0.0(1.000),RELPREF#and#c_op9=-0.458(1.000),RELPREF#and#c_op9#vow-01=0.0(1.000),RELPREF#c_ARG0#person=0.962(1.000),RELPREF#c_ARG1#military=0.166(1.000),RELPREF#c_name#name=1.578(2.000),RELPREF#c_op#txt=0.736(2.000),RELPREF#c_op1#most=-0.793(1.000),RELPREF#c_op10#strengthen-01=0.0(1.000),RELPREF#c_op2#observe-01=0.0(1.000),RELPREF#c_op3#expect-01=0.0(1.000),RELPREF#c_op4#person=-0.474(1.000),RELPREF#c_op5#continue-01=0.0(1.000),RELPREF#c_op6#policy=0.0(1.000),RELPREF#c_op7#person=0.631(1.000),RELPREF#c_op8#international=0.0(1.000),RELPREF#c_op9#vow-01=0.0(1.000),RELPREF#name#c_op=1.716(2.000),RELPREF#name#c_op#txt=1.716(2.000),RELPREF#person#c_name=0.473(2.000),RELPREF#person#c_name#name=0.694(2.000),RELPREF#strengthen-01#c_ARG0=-0.534(1.000),RELPREF#strengthen-01#c_ARG0#person=0.068(1.000),RELPREF#strengthen-01#c_ARG1=-0.238(1.000),RELPREF#strengthen-01#c_ARG1#military=0.0(1.000),UNARY#c_REL~~Dmitry-Medvedev#c_name=0.0(1.000),UNARY#c_REL~~Vladimir-Putin#c_name=0.444(1.000)}
+[P-T2] [P-T2] Delta with first: {}
+[P-T2] [P-T2] --------------------------------------
+[P-T2] [P-T2] Logged 2 derivations
+[P-T2] [P-T2] --------------------------------------
+[P-T2] [P-T2] --------------------------------------
+[P-T2] [P-T2] SLOPPY execution time 3.815000
+[P-T2] [P-T2] Multiple max-scoring derivation (2) --> breaking ties by selecting the first one
+[P-T2] [P-T2] EXACT stats -- recording wrong parse with skipping: (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t> (and:<e,t> $0) (c_op1:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !2 (lambda $1:e (most:<e,t> $1)))) (c_op2:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !3 (lambda $2:e (observe-01:<e,t> $2)))) (c_op3:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !4 (lambda $3:e (expect-01:<e,t> $3)))) (c_op4:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t> (person:<e,t> $4) (c_name:<e,<e,t>> $4 (a:<id,<<e,t>,e>> !6 (lambda $5:e (and:<t*,t> (name:<e,t> $5) (c_op:<e,<txt,t>> $5 Dmitry++Medvedev:txt))))))))) (c_op5:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !7 (lambda $6:e (continue-01:<e,t> $6)))) (c_op6:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !8 (lambda $7:e (policy:<e,t> $7)))) (c_op7:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t> (person:<e,t> $8) (c_name:<e,<e,t>> $8 (a:<id,<<e,t>,e>> !10 (lambda $9:e (and:<t*,t> (name:<e,t> $9) (c_op:<e,<txt,t>> $9 Vladimir++Putin:txt))))))))) (c_op8:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !11 (lambda $10:e (international:<e,t> $10)))) (c_op9:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !12 (lambda $11:e (vow-01:<e,t> $11)))) (c_op10:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !13 (lambda $12:e (and:<t*,t> (strengthen-01:<e,t> $12) (c_ARG0:<e,<e,t>> $12 (ref:<id,e> !5)) (c_ARG1:<e,<e,t>> $12 (a:<id,<<e,t>,e>> !14 (lambda $13:e (military:<e,t> $13)))))))))))
+[P-T2] [P-T2] [EXACT stats]  Record sloppy incorrect.
+[P-T2] [P-T2] SMATCH command: python /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/../../utils/smatch/smatch.py -r 20 --pr -f /tmp/smatch2-2601549002366790120-candidate.txt /tmp/smatch2-5524591759327121712-gold.txt
+[P-T2] [P-T2] SMATCH runtime: 0.0790
+[P-T2] [P-T2] SMATCH result: p=0.67, r=0.52, f1=0.59
+[P-T2] [P-T2] smatch stats -- recording sloppy parse [2]: p=0.67, r=0.52, f1=0.59
+[P-T2] [P-T2] WRONG: [score=-36.48, v=-24.75, i=-36.48] (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (most:<e,t> $1))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !3 (lambda $2:e (observe-01:<e,t> $2))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $2 (expect-01:<e,t> $2))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !5 (lambda $3:e (and:<t*,t>
+      (person:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !6 (lambda $4:e (and:<t*,t>
+          (name:<e,t> $4)
+          (c_op:<e,<txt,t>> $4 Dmitry++Medvedev:txt)))))))))
+  (c_op5:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !7 (lambda $5:e (continue-01:<e,t> $5))))
+  (c_op6:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !8 (lambda $2 (policy:<e,t> $2))))
+  (c_op7:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !9 (lambda $3 (and:<t*,t>
+      (person:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !10 (lambda $4 (and:<t*,t>
+          (name:<e,t> $4)
+          (c_op:<e,<txt,t>> $4 Vladimir++Putin:txt)))))))))
+  (c_op8:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !11 (lambda $6:e (international:<e,t> $6))))
+  (c_op9:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !12 (lambda $2 (vow-01:<e,t> $2))))
+  (c_op10:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !13 (lambda $7:e (and:<t*,t>
+      (strengthen-01:<e,t> $7)
+      (c_ARG0:<e,<e,t>> $7 
+        (ref:<id,e> !5))
+      (c_ARG1:<e,<e,t>> $7 
+        (a:<id,<<e,t>,e>> !14 (lambda $6 (military:<e,t> $6)))))))))))
+[24-28 :: <comp2 :: , S\NP[x]/(S\NP[x]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))), S[x]\S[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL-of:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (strengthen-01:<e,t> $2) (c_ARG0:<e,<e,t>> $2 (ref:<id,e> na:id)) (c_ARG1:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (military:<e,t> $3)))))))))))]{{} -> 0.0}
+[25-28 :: s_ap_rel_of :: , S : (lambda $0:e (and:<t*,t> (strengthen-01:<e,t> $0) (c_ARG0:<e,<e,t>> $0 (ref:<id,e> na:id)) (c_ARG1:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (military:<e,t> $1))))))]{{} -> -1.479028874362048}
+[25-28 :: >apply :: , S/NP : (lambda $0:e (lambda $1:e (and:<t*,t> (strengthen-01:<e,t> $1) (c_ARG0:<e,<e,t>> $1 (ref:<id,e> na:id)) (c_ARG1:<e,<e,t>> $1 $0)))), NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (military:<e,t> $0)))]{{} -> -0.053341487764849815}
+[26-28 :: >apply :: , NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))), N[sg] : (lambda $0:e (military:<e,t> $0))]{{} -> -0.07731865375611924}
+[27-28 :: >punct :: , N[sg] : (lambda $0:e (military:<e,t> $0)), PUNCT]{{} -> 0.0}
+[28-28 :: lex :: . :- PUNCT{SEED}]{{} -> -2.051727662614287}
+[27-27 :: lex :: military :- N[sg] : (lambda $0:e (military:<e,t> $0)){SEED}]{{} -> -0.2774896295541396}
+[26-26 :: lex :: the :- NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.9660557814563351}
+[25-25 :: lex :: strengthen :- S/NP : (lambda $0:e (lambda $1:e (and:<t*,t> (strengthen-01:<e,t> $1) (c_ARG0:<e,<e,t>> $1 (ref:<id,e> na:id)) (c_ARG1:<e,<e,t>> $1 $0)))){genlex-align}]{{} -> -3.466663672990767}
+[24-24 :: lex :: to :- S\NP[x]/(S\NP[x]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -1.4210170466170968}
+[23-23 :: lex :: vow :- N[nb] : (lambda $0:e (vow-01:<e,t> $0)){genlex-align}]{{} -> -1.1006594098393627}
+[22-22 :: lex :: and :- C : conj:e{SEED}]{{} -> -2.84842442271397}
+[21-21 :: lex :: scene :- EMPTY{skipping}]{{} -> 0.0}
+[12-20 :: >comp2 :: , NP[pl]/NP : (lambda $0:e $0), NP[sg]\N[x]/N[sg] : (lambda $0:<e,t> (lambda $1:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> ($1 $2) (c_REL~~such-as^^A1R1:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e ($0 $3)))) (c_REL-of:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $4:e (international:<e,t> $4)))))))))]{{} -> -4.5398899216870535E-5}
+[13-20 :: <comp2 :: , N[x]\N[x]/N[sg] : (lambda $0:<e,t> (lambda $1:<e,t> (lambda $2:e (and:<t*,t> ($1 $2) (c_REL~~such-as^^A1R1:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e ($0 $3)))))))), NP[sg]\N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> ($0 $1) (c_REL-of:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (international:<e,t> $2))))))))]{{} -> -4.5398899216870535E-5}
+[17-20 :: <skip :: , EMPTY, NP[sg]\N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> ($0 $1) (c_REL-of:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (international:<e,t> $2))))))))]{{} -> -4.5398899216870535E-5}
+[18-20 :: >xcomp1 :: , NP[sg]/NP : (lambda $0:e $0), NP[x]\N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> ($0 $1) (c_REL-of:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (international:<e,t> $2))))))))]{{} -> -1.2761717278486628E-4}
+[19-20 :: >xcomp1 :: , NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))), N[x]\N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL-of:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (international:<e,t> $2)))))))]{{} -> -1.2761717278486628E-4}
+[20-20 :: s_pp_rel_of :: , S : (lambda $0:e (international:<e,t> $0))]{{} -> -0.7258989098206545}
+[20-20 :: lex :: international :- S : (lambda $0:e (international:<e,t> $0)){SEED}]{{} -> -2.1322695227095667}
+[19-19 :: lex :: the :- NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -1.0795187841724698}
+[18-18 :: lex :: on :- NP[sg]/NP : (lambda $0:e $0){recsplit}]{{} -> -1.4100447737262671}
+[17-17 :: lex :: posture :- EMPTY{skipping}]{{} -> 0.0}
+[13-16 :: >skip :: , N[x]\N[x]/N[sg] : (lambda $0:<e,t> (lambda $1:<e,t> (lambda $2:e (and:<t*,t> ($1 $2) (c_REL~~such-as^^A1R1:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e ($0 $3)))))))), EMPTY]{{} -> -4.5398899216870535E-5}
+[16-16 :: lex :: assertive :- EMPTY{skipping}]{{} -> 0.0}
+[13-15 :: >comp1 :: , N[x]\N[x]/NP : (lambda $0:e (lambda $1:<e,t> (lambda $2:e (and:<t*,t> ($1 $2) (c_REL~~such-as^^A1R1:<e,<e,t>> $2 $0))))), NP[sg]/N[sg] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1))))]{{} -> -4.5398899216870535E-5}
+[15-15 :: lex :: an :- NP[sg]/N[sg] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.2718965716446984}
+[13-14 :: lex :: such as :- N[x]\N[x]/NP : (lambda $0:e (lambda $1:<e,t> (lambda $2:e (and:<t*,t> ($1 $2) (c_REL:<e,<e,t>> $2 $0))))){SEED}]{{} -> -0.08692793831835566}
+[12-12 :: lex :: , :- NP[pl]/NP : (lambda $0:e $0){genlex}]{{} -> -0.9084681841060781}
+[10-11 :: lex :: Vladimir Putin :- N[sg] : (lambda $0:e (and:<t*,t> (person:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Vladimir++Putin:txt))))))){genlex-align}]{{} -> -0.10487515112341406}
+[9-9 :: lex :: of :- S\S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -3.614766474644357}
+[8-8 :: lex :: policies :- N[pl] : (lambda $0:e (policy:<e,t> $0)){genlex-align}]{{} -> -0.190326286190599}
+[7-7 :: lex :: the :- NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -1.0795187841724698}
+[6-6 :: lex :: continue :- S\NP : (lambda $0:e (lambda $1:e (and:<t*,t> (continue-01:<e,t> $1) (c_ARG1:<e,<e,t>> $1 $0)))){genlex-align}]{{} -> -2.137156586722595}
+[5-5 :: lex :: to :- S\NP[x]/(S\NP[x]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -1.4183062871492895}
+[3-4 :: lex :: Dmitry Medvedev :- N[sg] : (lambda $0:e (and:<t*,t> (person:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Dmitry++Medvedev:txt))))))){genlex-align}]{{} -> -0.7316993502495803}
+[2-2 :: lex :: expect :- N[nb] : (lambda $0:e (expect-01:<e,t> $0)){genlex-align}]{{} -> -3.1551951342698086}
+[1-1 :: lex :: observers :- N[pl] : (lambda $0:e (observe-01:<e,t> $0)){genlex-align}]{{} -> -1.6275373204221362}
+[0-0 :: lex :: Most :- N[x]/N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (most:<e,t> $2))))))){SEED}]{{} -> -2.002960399439744}
+{FACLEX#c_REL#c_name#Dmitry-Medvedev=0.0(1.000),FACLEX#c_REL#c_name#Vladimir-Putin=0.444(1.000),RELPREF#and#c_op1=1.124(1.000),RELPREF#and#c_op1#most=0.0(1.000),RELPREF#and#c_op10=0.0(1.000),RELPREF#and#c_op10#strengthen-01=0.0(1.000),RELPREF#and#c_op2=1.329(1.000),RELPREF#and#c_op2#observe-01=0.0(1.000),RELPREF#and#c_op3=-2.133(1.000),RELPREF#and#c_op3#expect-01=0.0(1.000),RELPREF#and#c_op4=-0.962(1.000),RELPREF#and#c_op4#person=-0.474(1.000),RELPREF#and#c_op5=-0.123(1.000),RELPREF#and#c_op5#continue-01=0.0(1.000),RELPREF#and#c_op6=-0.833(1.000),RELPREF#and#c_op6#policy=0.0(1.000),RELPREF#and#c_op7=-0.929(1.000),RELPREF#and#c_op7#person=0.631(1.000),RELPREF#and#c_op8=-0.004(1.000),RELPREF#and#c_op8#international=0.0(1.000),RELPREF#and#c_op9=-0.458(1.000),RELPREF#and#c_op9#vow-01=0.0(1.000),RELPREF#c_ARG0#person=0.962(1.000),RELPREF#c_ARG1#military=0.166(1.000),RELPREF#c_name#name=1.578(2.000),RELPREF#c_op#txt=0.736(2.000),RELPREF#c_op1#most=-0.793(1.000),RELPREF#c_op10#strengthen-01=0.0(1.000),RELPREF#c_op2#observe-01=0.0(1.000),RELPREF#c_op3#expect-01=0.0(1.000),RELPREF#c_op4#person=-0.474(1.000),RELPREF#c_op5#continue-01=0.0(1.000),RELPREF#c_op6#policy=0.0(1.000),RELPREF#c_op7#person=0.631(1.000),RELPREF#c_op8#international=0.0(1.000),RELPREF#c_op9#vow-01=0.0(1.000),RELPREF#name#c_op=1.716(2.000),RELPREF#name#c_op#txt=1.716(2.000),RELPREF#person#c_name=0.473(2.000),RELPREF#person#c_name#name=0.694(2.000),RELPREF#strengthen-01#c_ARG0=-0.534(1.000),RELPREF#strengthen-01#c_ARG0#person=0.068(1.000),RELPREF#strengthen-01#c_ARG1=-0.238(1.000),RELPREF#strengthen-01#c_ARG1#military=0.0(1.000),UNARY#c_REL~~Dmitry-Medvedev#c_name=0.0(1.000),UNARY#c_REL~~Vladimir-Putin#c_name=0.444(1.000)}
+[P-T2] [P-T2] Had correct result: false
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925615749_false (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Total AMR parsing time: 0.6810sec (cky=99.85%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 0.6800sec (99.85%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] No correct executions
+[P-T2] [P-T2] 3 : ==================
+[P-T2] [P-T2] Israel (IL); Syrian Arab Republic (SY); Iran (IR); United States (US)
+RecognizedNamedEntity [rawTag=LOC, textConstant=Israel:txt, tokens=Israel, typingConstants=[country:<e,t>]]
+RecognizedNamedEntity [rawTag=ORG, textConstant=Syrian++Arab++Republic:txt, tokens=Syrian Arab Republic, typingConstants=[organization:<e,t>]]
+RecognizedNamedEntity [rawTag=PER, textConstant=United++States:txt, tokens=United States, typingConstants=[person:<e,t>]]
+RecognizedNamedEntity [rawTag=PER, textConstant=Iran:txt, tokens=Iran, typingConstants=[person:<e,t>]]
+RecognizedNamedEntity [rawTag=LOC, textConstant=US:txt, tokens=US, typingConstants=[country:<e,t>]]
+Israel: pos=NNP :: lemmas=[israel]
+-LRB-: pos=-LRB- :: lemmas=[-lrb-]
+IL: pos=NN :: lemmas=[il]
+-RRB-: pos=-RRB- :: lemmas=[-rrb-]
+;: pos=: :: lemmas=[;]
+Syrian: pos=JJ :: lemmas=[syrian, syria]
+Arab: pos=JJ :: lemmas=[arab]
+Republic: pos=NN :: lemmas=[republic]
+-LRB-: pos=-LRB- :: lemmas=[-lrb-]
+SY: pos=NN :: lemmas=[sy]
+-RRB-: pos=-RRB- :: lemmas=[-rrb-]
+;: pos=: :: lemmas=[;]
+Iran: pos=NNP :: lemmas=[iranian, iran]
+-LRB-: pos=-LRB- :: lemmas=[-lrb-]
+IR: pos=NNP :: lemmas=[ir]
+-RRB-: pos=-RRB- :: lemmas=[-rrb-]
+;: pos=: :: lemmas=[;]
+United: pos=NNP :: lemmas=[uniting, union, unite, united]
+States: pos=NNPS :: lemmas=[statement, state, states]
+-LRB-: pos=-LRB- :: lemmas=[-lrb-]
+US: pos=NNP :: lemmas=[us]
+-RRB-: pos=-RRB- :: lemmas=[-rrb-]
+(a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t>
+      (country:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Israel:txt)))))))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t>
+      (country:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t>
+          (name:<e,t> $4)
+          (c_op:<e,<txt,t>> $4 Syrian++Arab++Republic:txt)))))))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !6 (lambda $5:e (and:<t*,t>
+      (country:<e,t> $5)
+      (c_name:<e,<e,t>> $5 
+        (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t>
+          (name:<e,t> $6)
+          (c_op:<e,<txt,t>> $6 Iran:txt)))))))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !8 (lambda $7:e (and:<t*,t>
+      (country:<e,t> $7)
+      (c_name:<e,<e,t>> $7 
+        (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t>
+          (name:<e,t> $8)
+          (c_op:<e,<txt,t>> $8 United++States:txt))))))))))))
+; United States -LRB- US -RRB- :- NP\NP
+Israel -LRB- IL -RRB- :- N, NP, N[x]\(N[x]/N[x])
+-LRB- :- N\N/NP
+Israel :- N, N[x]\(N[x]/N[x])
+-LRB- IR -RRB- :- N\N
+Syrian Arab Republic -LRB- SY -RRB- ; Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- N, NP, N[x]\(N[x]/N[x])
+SY -RRB- ; Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- NP
+United States :- N, N[x]\(N[x]/N[x])
+Republic :- N, N[x]\(N[x]/N[x])
+United :- N/N
+; Syrian Arab Republic -LRB- SY -RRB- ; Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- NP\NP
+-LRB- SY -RRB- ; Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- N\N
+Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- N, NP, N[x]\(N[x]/N[x])
+IR -RRB- :- N, NP, N[x]\(N[x]/N[x])
+States :- N, N[x]\(N[x]/N[x])
+IL -RRB- :- N, NP, N[x]\(N[x]/N[x])
+Arab Republic :- N, N[x]\(N[x]/N[x])
+Iran :- N, N[x]\(N[x]/N[x])
+Republic -LRB- SY -RRB- ; Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- N, N[x]\(N[x]/N[x])
+Arab Republic -LRB- SY -RRB- ; Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- N, N[x]\(N[x]/N[x])
+Iran -LRB- IR :- N, N[x]\(N[x]/N[x])
+-LRB- IL -RRB- :- N\N
+US :- N, N[x]\(N[x]/N[x]), NP
+IL :- N/N
+IR -RRB- ; United States -LRB- US -RRB- :- NP
+-LRB- SY -RRB- :- N\N
+SY :- N, N[x]\(N[x]/N[x])
+Iran -LRB- IR -RRB- :- N, NP, N[x]\(N[x]/N[x])
+-LRB- IR -RRB- ; United States -LRB- US -RRB- :- N\N
+IR :- N, N[x]\(N[x]/N[x]), NP
+Syrian :- N/N
+United States -LRB- US -RRB- :- N, NP, N[x]\(N[x]/N[x])
+States -LRB- US :- N, N[x]\(N[x]/N[x])
+United States -LRB- US :- N, N[x]\(N[x]/N[x])
+Israel -LRB- IL -RRB- ; Syrian Arab Republic -LRB- SY -RRB- ; Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- NP
+Arab :- N/N
+SY -RRB- :- N, NP, N[x]\(N[x]/N[x])
+Arab Republic -LRB- SY -RRB- :- N, N[x]\(N[x]/N[x])
+; Iran -LRB- IR -RRB- ; United States -LRB- US -RRB- :- NP\NP
+-LRB- IR :- N\N
+-RRB- :- N\N, N, N[x]\(N[x]/N[x])
+Syrian Arab Republic -LRB- SY -RRB- :- N, NP, N[x]\(N[x]/N[x])
+; :- PUNCT
+-LRB- US -RRB- :- N\N
+US -RRB- :- N, NP, N[x]\(N[x]/N[x])
+Syrian Arab Republic :- N, N[x]\(N[x]/N[x])
+-LRB- US :- N\N
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925615867_false (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Total AMR parsing time: 0.1160sec (cky=100.00%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 0.1160sec (100.00%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] Test execution time 0.12
+[P-T2] [P-T2] no results
+[P-T2] [P-T2] EXACT stats -- recording no parse
+[P-T2] [P-T2] [EXACT stats]  Record failure.
+[P-T2] [P-T2] smatch stats -- recording no parse [3]
+[P-T2] [P-T2] no parses
+[P-T2] [P-T2] Identified 394 related entries via case and form modifications for the word: Republic
+[P-T2] [P-T2] Identified 197 related entries via case and form modifications for the word: United
+[P-T2] [P-T2] Created a sloppy lexicon with 591 entries
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925617101_true (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Found no derivation. Stitching heuristically to produce parse trees
+[P-T2] [P-T2] Stitch6: Best Tree on Stack: Considering 1352 states
+[P-T2] [P-T2] Minimum number of tree 8, found 88 states with these many trees 
+[P-T2] [P-T2] Result of closing to AMR is invalid: (conj:<e,e> (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~United-States--LRB--US--RRB-:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 United++States:txt))))))))) -> (conj:<e,e> (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~United-States--LRB--US--RRB-:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 United++States:txt)))))))))
+[P-T2] [P-T2] Result of closing to AMR is invalid: (conj:<e,e> (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~United-States--LRB--US--RRB-:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 United++States:txt))))))))) -> (conj:<e,e> (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~United-States--LRB--US--RRB-:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 United++States:txt)))))))))
+[P-T2] [P-T2] Total AMR parsing time: 2.9060sec (cky=41.67%, baseProcess=6.23%, fg=51.75%)
+[P-T2] [P-T2] CKY parsing time: 1.2110sec (41.67%)
+[P-T2] [P-T2] Processed 88 base parses, created 88 pairs: 0.1810sec (6.23%)
+[P-T2] [P-T2] Second stage inference time (88 pairs): 1.5040sec (51.75%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] SLOPPY execution time 2.906000
+[P-T2] [P-T2] EXACT stats -- recording wrong parse with skipping: (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t> (and:<e,t> $0) (c_op1:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t> (country:<e,t> $1) (c_name:<e,<e,t>> $1 (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t> (name:<e,t> $2) (c_op:<e,<txt,t>> $2 Israel:txt))))))))) (c_op2:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t> (country:<e,t> $3) (c_name:<e,<e,t>> $3 (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t> (name:<e,t> $4) (c_op:<e,<txt,t>> $4 Syrian++Arab++Republic:txt))))))))) (c_op3:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !6 (lambda $5:e (and:<t*,t> (country:<e,t> $5) (c_name:<e,<e,t>> $5 (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t> (name:<e,t> $6) (c_op:<e,<txt,t>> $6 Iran:txt))))))))) (c_op4:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !8 (lambda $7:e (and:<t*,t> (country:<e,t> $7) (c_name:<e,<e,t>> $7 (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t> (name:<e,t> $8) (c_op:<e,<txt,t>> $8 United++States:txt))))))))) (c_op5:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !10 (lambda $9:e (and:<t*,t> (country:<e,t> $9) (c_name:<e,<e,t>> $9 (a:<id,<<e,t>,e>> !11 (lambda $10:e (and:<t*,t> (name:<e,t> $10) (c_op:<e,<txt,t>> $10 US:txt))))))))))))
+[P-T2] [P-T2] [EXACT stats]  Record sloppy incorrect.
+[P-T2] [P-T2] SMATCH command: python /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/../../utils/smatch/smatch.py -r 20 --pr -f /tmp/smatch3-2193460170253041780-candidate.txt /tmp/smatch3-4618180667351865653-gold.txt
+[P-T2] [P-T2] SMATCH runtime: 0.0630
+[P-T2] [P-T2] SMATCH result: p=0.83, r=1.00, f1=0.91
+[P-T2] [P-T2] smatch stats -- recording sloppy parse [3]: p=0.83, r=1.00, f1=0.91
+[P-T2] [P-T2] WRONG: [score=-5.75, v=45.65, i=-5.75] (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t>
+      (country:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Israel:txt)))))))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t>
+      (country:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !5 (lambda $2 (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Syrian++Arab++Republic:txt)))))))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !6 (lambda $4:e (and:<t*,t>
+      (country:<e,t> $4)
+      (c_name:<e,<e,t>> $4 
+        (a:<id,<<e,t>,e>> !7 (lambda $5:e (and:<t*,t>
+          (name:<e,t> $5)
+          (c_op:<e,<txt,t>> $5 Iran:txt)))))))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !8 (lambda $3 (and:<t*,t>
+      (country:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !9 (lambda $2 (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 United++States:txt)))))))))
+  (c_op5:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !10 (lambda $6:e (and:<t*,t>
+      (country:<e,t> $6)
+      (c_name:<e,<e,t>> $6 
+        (a:<id,<<e,t>,e>> !11 (lambda $5 (and:<t*,t>
+          (name:<e,t> $5)
+          (c_op:<e,<txt,t>> $5 US:txt))))))))))))
+[19-21 :: >skip :: , NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~US:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 US:txt)))))))), EMPTY]{{} -> 0.0}
+[21-21 :: lex :: -RRB- :- EMPTY{skipping}]{{} -> 0.0}
+[19-20 :: <skip :: , EMPTY, NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~US:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 US:txt))))))))]{{} -> -0.15971354332028642}
+[20-20 :: lex :: US :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 US:txt)))))))){genlex-align}]{{} -> -1.1655678940254495}
+[19-19 :: lex :: -LRB- :- EMPTY{skipping}]{{} -> 0.0}
+[17-18 :: bare_pl :: , N[pl] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~United-States:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 United++States:txt)))))))]{{} -> -3.48239207828005E-4}
+[17-18 :: lex :: United States :- N[pl] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 United++States:txt))))))){genlex-align}]{{} -> -0.15864905455021372}
+[16-16 :: lex :: ; :- KEY\N : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.3981391156274503}
+[15-15 :: lex :: -RRB- :- EMPTY{skipping}]{{} -> 0.0}
+[10-14 :: >skip :: , NP[sg]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (country:<e,t> $2) (c_REL~~Iran:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (and:<t*,t> (name:<e,t> $3) (c_op:<e,<txt,t>> $3 Iran:txt))))))))))))), EMPTY]{{} -> -4.5398899216870535E-5}
+[14-14 :: lex :: IR :- EMPTY{skipping}]{{} -> 0.0}
+[10-13 :: >skip :: , NP[sg]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (country:<e,t> $2) (c_REL~~Iran:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (and:<t*,t> (name:<e,t> $3) (c_op:<e,<txt,t>> $3 Iran:txt))))))))))))), EMPTY]{{} -> -4.5398899216870535E-5}
+[13-13 :: lex :: -LRB- :- EMPTY{skipping}]{{} -> 0.0}
+[10-12 :: <skip :: , EMPTY, NP[sg]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (country:<e,t> $2) (c_REL~~Iran:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (and:<t*,t> (name:<e,t> $3) (c_op:<e,<txt,t>> $3 Iran:txt)))))))))))))]{{} -> -4.5398899216870535E-5}
+[11-12 :: >comp1 :: , NP[sg]/N[sg] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))), N[x]/N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (country:<e,t> $2) (c_REL~~Iran:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (and:<t*,t> (name:<e,t> $3) (c_op:<e,<txt,t>> $3 Iran:txt))))))))))))]{{} -> -4.5398899216870535E-5}
+[12-12 :: np_adj_rel :: , NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Iran:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Iran:txt))))))))]{{} -> -0.5660790060103489}
+[12-12 :: lex :: Iran :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Iran:txt)))))))){SEED}]{{} -> -0.6914237485310828}
+[11-11 :: lex :: ; :- NP[sg]/N[sg] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){genlex}]{{} -> -2.4722598619080642}
+[10-10 :: lex :: -RRB- :- EMPTY{skipping}]{{} -> 0.0}
+[5-9 :: >skip :: , NP[pl] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Syrian-Arab-Republic:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Syrian++Arab++Republic:txt)))))))), EMPTY]{{} -> -4.5398899216870535E-5}
+[9-9 :: lex :: SY :- EMPTY{skipping}]{{} -> 0.0}
+[5-8 :: >skip :: , NP[pl] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Syrian-Arab-Republic:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Syrian++Arab++Republic:txt)))))))), EMPTY]{{} -> -4.5398899216870535E-5}
+[8-8 :: lex :: -LRB- :- EMPTY{skipping}]{{} -> 0.0}
+[5-7 :: bare_pl :: , N[pl] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Syrian-Arab-Republic:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Syrian++Arab++Republic:txt)))))))]{{} -> -3.48239207828005E-4}
+[5-7 :: lex :: Syrian Arab Republic :- N[pl] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Syrian++Arab++Republic:txt))))))){genlex-align}]{{} -> -0.5798553002299385}
+[4-4 :: lex :: ; :- KEY\N : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.3939125640899537}
+[0-3 :: lex :: Israel -LRB- IL -RRB- :- N[sg] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Israel:txt))))))){genlex-txt}]{{} -> -0.8699582660346268}
+{FACLEX#c_REL#c_name#Iran=0.446(1.000),FACLEX#c_REL#c_name#Israel--LRB--IL--RRB-=0.302(1.000),FACLEX#c_REL#c_name#Syrian-Arab-Republic=0.0(1.000),FACLEX#c_REL#c_name#US=0.520(1.000),FACLEX#c_REL#c_name#United-States=0.586(1.000),RELPREF#and#c_op1=1.124(1.000),RELPREF#and#c_op1#country=1.150(1.000),RELPREF#and#c_op2=1.329(1.000),RELPREF#and#c_op2#country=1.389(1.000),RELPREF#and#c_op3=-2.133(1.000),RELPREF#and#c_op3#country=1.343(1.000),RELPREF#and#c_op4=-0.962(1.000),RELPREF#and#c_op4#country=0.246(1.000),RELPREF#and#c_op5=-0.123(1.000),RELPREF#and#c_op5#country=0.743(1.000),RELPREF#c_name#name=1.578(5.000),RELPREF#c_op#txt=0.736(5.000),RELPREF#c_op1#country=0.913(1.000),RELPREF#c_op2#country=1.338(1.000),RELPREF#c_op3#country=1.268(1.000),RELPREF#c_op4#country=0.137(1.000),RELPREF#c_op5#country=0.743(1.000),RELPREF#country#c_name=1.090(5.000),RELPREF#country#c_name#name=1.345(5.000),RELPREF#name#c_op=1.716(5.000),RELPREF#name#c_op#txt=1.716(5.000),UNARY#c_REL~~Iran#c_name=0.446(1.000),UNARY#c_REL~~Israel--LRB--IL--RRB-#c_name=0.302(1.000),UNARY#c_REL~~Syrian-Arab-Republic#c_name=0.0(1.000),UNARY#c_REL~~US#c_name=0.520(1.000),UNARY#c_REL~~United-States#c_name=0.586(1.000)}
+[P-T2] [P-T2] Had correct result: true
+[P-T2] [P-T2] [score=-7.75, v=33.57, i=-7.75] (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t>
+      (country:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Israel:txt)))))))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t>
+      (country:<e,t> $3)
+      (c_name:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !5 (lambda $2 (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Syrian++Arab++Republic:txt)))))))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !6 (lambda $1 (and:<t*,t>
+      (country:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !7 (lambda $2 (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Iran:txt)))))))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !8 (lambda $4:e (and:<t*,t>
+      (country:<e,t> $4)
+      (c_name:<e,<e,t>> $4 
+        (a:<id,<<e,t>,e>> !9 (lambda $5:e (and:<t*,t>
+          (name:<e,t> $5)
+          (c_op:<e,<txt,t>> $5 United++States:txt))))))))))))
+[17-21 :: np_adj_rel :: , NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~United-States--LRB--US--RRB-:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 United++States:txt))))))))]{{} -> -0.8385385647856949}
+[17-21 :: lex :: United States -LRB- US -RRB- :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 United++States:txt)))))))){genlex-txt}]{{} -> -3.7247087904304603}
+[16-16 :: lex :: ; :- KEY\N : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.3939125640899537}
+[12-15 :: lex :: Iran -LRB- IR -RRB- :- N[sg] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Iran:txt))))))){genlex-txt}]{{} -> -1.381093715942857}
+[11-11 :: lex :: ; :- KEY\N : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.3981391156274503}
+[10-10 :: lex :: -RRB- :- EMPTY{skipping}]{{} -> 0.0}
+[5-9 :: >skip :: , NP[pl] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Syrian-Arab-Republic:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Syrian++Arab++Republic:txt)))))))), EMPTY]{{} -> -4.5398899216870535E-5}
+[9-9 :: lex :: SY :- EMPTY{skipping}]{{} -> 0.0}
+[5-8 :: >skip :: , NP[pl] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Syrian-Arab-Republic:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Syrian++Arab++Republic:txt)))))))), EMPTY]{{} -> -4.5398899216870535E-5}
+[8-8 :: lex :: -LRB- :- EMPTY{skipping}]{{} -> 0.0}
+[5-7 :: bare_pl :: , N[pl] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Syrian-Arab-Republic:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Syrian++Arab++Republic:txt)))))))]{{} -> -3.48239207828005E-4}
+[5-7 :: lex :: Syrian Arab Republic :- N[pl] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Syrian++Arab++Republic:txt))))))){genlex-align}]{{} -> -0.5798553002299385}
+[4-4 :: lex :: ; :- KEY\N : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.3939125640899537}
+[0-3 :: lex :: Israel -LRB- IL -RRB- :- N[sg] : (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Israel:txt))))))){genlex-txt}]{{} -> -0.8699582660346268}
+{FACLEX#c_REL#c_name#Iran--LRB--IR--RRB-=0.427(1.000),FACLEX#c_REL#c_name#Israel--LRB--IL--RRB-=0.302(1.000),FACLEX#c_REL#c_name#Syrian-Arab-Republic=0.0(1.000),FACLEX#c_REL#c_name#United-States--LRB--US--RRB-=0.416(1.000),RELPREF#and#c_op1=1.124(1.000),RELPREF#and#c_op1#country=1.150(1.000),RELPREF#and#c_op2=1.329(1.000),RELPREF#and#c_op2#country=1.389(1.000),RELPREF#and#c_op3=-2.133(1.000),RELPREF#and#c_op3#country=1.343(1.000),RELPREF#and#c_op4=-0.962(1.000),RELPREF#and#c_op4#country=0.246(1.000),RELPREF#c_name#name=1.578(4.000),RELPREF#c_op#txt=0.736(4.000),RELPREF#c_op1#country=0.913(1.000),RELPREF#c_op2#country=1.338(1.000),RELPREF#c_op3#country=1.268(1.000),RELPREF#c_op4#country=0.137(1.000),RELPREF#country#c_name=1.090(4.000),RELPREF#country#c_name#name=1.345(4.000),RELPREF#name#c_op=1.716(4.000),RELPREF#name#c_op#txt=1.716(4.000),UNARY#c_REL~~Iran--LRB--IR--RRB-#c_name=0.427(1.000),UNARY#c_REL~~Israel--LRB--IL--RRB-#c_name=0.302(1.000),UNARY#c_REL~~Syrian-Arab-Republic#c_name=0.0(1.000),UNARY#c_REL~~United-States--LRB--US--RRB-#c_name=0.416(1.000)}
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925618908_false (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Total AMR parsing time: 0.0360sec (cky=100.00%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 0.0360sec (100.00%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] No correct executions
+[P-T2] [P-T2] 4 : ==================
+[P-T2] [P-T2] Russian prosecutors have sent the case against ANAR Godzhayev to court after charging Godzhayev with attempting to smuggle tantalum powder to Iran.
+RecognizedNamedEntity [rawTag=ORG, textConstant=ANAR++Godzhayev:txt, tokens=ANAR Godzhayev, typingConstants=[organization:<e,t>]]
+RecognizedNamedEntity [rawTag=LOC, textConstant=Iran:txt, tokens=Iran, typingConstants=[country:<e,t>]]
+RecognizedNamedEntity [rawTag=ORG, textConstant=Godzhayev:txt, tokens=Godzhayev, typingConstants=[organization:<e,t>]]
+RecognizedNamedEntity [rawTag=MISC, textConstant=Russian:txt, tokens=Russian, typingConstants=[thing:<e,t>]]
+Russian: pos=JJ :: lemmas=[russian, russia]
+prosecutors: pos=NNS :: lemmas=[prosecute, prosecutor, prosecutors]
+have: pos=VBP :: lemmas=[have]
+sent: pos=VBN :: lemmas=[sendee, sending, sender, send, sent]
+the: pos=DT :: lemmas=[the]
+case: pos=NN :: lemmas=[casing, case]
+against: pos=IN :: lemmas=[against]
+ANAR: pos=NNP :: lemmas=[anar]
+Godzhayev: pos=NNP :: lemmas=[godzhayev]
+to: pos=TO :: lemmas=[to]
+court: pos=NN :: lemmas=[court, courting, courtly]
+after: pos=IN :: lemmas=[after]
+charging: pos=VBG :: lemmas=[charging, charge, charger]
+Godzhayev: pos=NNP :: lemmas=[godzhayev]
+with: pos=IN :: lemmas=[with]
+attempting: pos=VBG :: lemmas=[attempting, attempt, attempter]
+to: pos=TO :: lemmas=[to]
+smuggle: pos=VB :: lemmas=[smuggle, smuggling, smuggler]
+tantalum: pos=NN :: lemmas=[tantalum]
+powder: pos=NN :: lemmas=[powderize, powder, powderer, powdery]
+to: pos=TO :: lemmas=[to]
+Iran: pos=NNP :: lemmas=[iranian, iran]
+.: pos=. :: lemmas=[.]
+(a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (send-01:<e,t> $0)
+  (c_ARG0:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t>
+      (person:<e,t> $1)
+      (c_ARG0-of:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t>
+          (have-org-role-91:<e,t> $2)
+          (c_ARG1:<e,<e,t>> $2 
+            (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t>
+              (country:<e,t> $3)
+              (c_name:<e,<e,t>> $3 
+                (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t>
+                  (name:<e,t> $4)
+                  (c_op:<e,<txt,t>> $4 Russia:txt)))))))))
+          (c_ARG3:<e,<e,t>> $2 
+            (a:<id,<<e,t>,e>> !6 (lambda $5:e (prosecute-01:<e,t> $5))))))))))))
+  (c_ARG1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t>
+      (case:<e,t> $6)
+      (c_prep-against:<e,<e,t>> $6 
+        (a:<id,<<e,t>,e>> !8 (lambda $7:e (and:<t*,t>
+          (person:<e,t> $7)
+          (c_name:<e,<e,t>> $7 
+            (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t>
+              (name:<e,t> $8)
+              (c_op:<e,<txt,t>> $8 Anar++Godzhayev:txt)))))))))))))
+  (c_ARG2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !10 (lambda $9:e (court:<e,t> $9))))
+  (c_time:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !11 (lambda $10:e (and:<t*,t>
+      (after:<e,t> $10)
+      (c_mod:<e,<e,t>> $10 
+        (a:<id,<<e,t>,e>> !12 (lambda $11:e (and:<t*,t>
+          (charge-05:<e,t> $11)
+          (c_ARG0:<e,<e,t>> $11 
+            (a:<id,<<e,t>,e>> !13 (lambda $12:e (and:<t*,t>
+              (person:<e,t> $12)
+              (c_ARG0-of:<e,<e,t>> $12 
+                (a:<id,<<e,t>,e>> !14 (lambda $13:e (prosecute-01:<e,t> $13))))))))
+          (c_ARG1:<e,<e,t>> $11 
+            (ref:<id,e> !8))
+          (c_ARG2:<e,<e,t>> $11 
+            (a:<id,<<e,t>,e>> !15 (lambda $14:e (and:<t*,t>
+              (attempt-01:<e,t> $14)
+              (c_ARG0:<e,<e,t>> $14 
+                (ref:<id,e> !8))
+              (c_ARG1:<e,<e,t>> $14 
+                (a:<id,<<e,t>,e>> !16 (lambda $15:e (and:<t*,t>
+                  (smuggle-01:<e,t> $15)
+                  (c_ARG0:<e,<e,t>> $15 
+                    (ref:<id,e> !8))
+                  (c_ARG1:<e,<e,t>> $15 
+                    (a:<id,<<e,t>,e>> !17 (lambda $16:e (and:<t*,t>
+                      (powder:<e,t> $16)
+                      (c_mod:<e,<e,t>> $16 
+                        (a:<id,<<e,t>,e>> !18 (lambda $17:e (tantalum:<e,t> $17))))))))
+                  (c_ARG3:<e,<e,t>> $15 
+                    (a:<id,<<e,t>,e>> !19 (lambda $18:e (and:<t*,t>
+                      (country:<e,t> $18)
+                      (c_name:<e,<e,t>> $18 
+                        (a:<id,<<e,t>,e>> !20 (lambda $19:e (and:<t*,t>
+                          (name:<e,t> $19)
+                          (c_op:<e,<txt,t>> $19 Iran:txt))))))))))))))))))))))))))))
+case :- N/(N[x]\N[x])
+attempting to smuggle tantalum powder to Iran . :- S\NP
+Russian :- N/N
+to Iran . :- N\N
+ANAR :- N/N
+have sent the case against ANAR Godzhayev to court after charging Godzhayev with attempting to smuggle tantalum powder to Iran . :- S\NP
+attempting to smuggle :- S\NP/NP
+against ANAR Godzhayev :- N[x]\N[x]
+powder :- N, N[x]\(N[x]/N[x])
+sent the case against ANAR Godzhayev :- S\NP/(N[x]\N[x])
+to smuggle tantalum powder to Iran . :- S\NP
+have sent the case against ANAR Godzhayev :- S\NP/(N[x]\N[x])
+Godzhayev :- N, N[x]\(N[x]/N[x]), NP
+tantalum powder :- N, N[x]\(N[x]/N[x])
+have :- S\NP/(S\NP)
+charging Godzhayev with attempting to smuggle tantalum powder to Iran . :- S\NP
+Iran :- N, NP, N[x]\(N[x]/N[x])
+Russian prosecutors have sent the case against ANAR Godzhayev to court after charging Godzhayev with attempting to smuggle tantalum powder to Iran . :- S
+with attempting to smuggle tantalum powder to Iran . :- N[x]\N[x]
+sent the case against ANAR Godzhayev to court after charging Godzhayev with attempting to smuggle tantalum powder to Iran . :- S\NP
+after :- S\NP\(S\NP)/(S\NP)
+Iran . :- NP
+sent :- S\NP/(N[x]\N[x])/NP
+Russian prosecutors :- N, NP, N[x]\(N[x]/N[x])
+have sent the case against ANAR Godzhayev to court :- S\NP
+the case against ANAR Godzhayev :- NP
+attempting :- S\NP/(S\NP)
+prosecutors :- N, N[x]\(N[x]/N[x])
+case against ANAR Godzhayev :- N, N[x]\(N[x]/N[x])
+after charging Godzhayev with attempting to smuggle tantalum powder to Iran . :- S\NP\(S\NP)
+. :- PUNCT
+the :- NP/N
+ANAR Godzhayev :- N, NP, N[x]\(N[x]/N[x])
+court :- N, NP, N[x]\(N[x]/N[x])
+sent the case against ANAR Godzhayev to court :- S\NP
+with :- N[x]\N[x]/(S\NP)
+charging Godzhayev :- S\NP/(N[x]\N[x])
+charging :- S\NP/(N[x]\N[x])/NP
+to smuggle :- S\NP/NP
+against :- N[x]\N[x]/NP
+to court :- S\NP\(S\NP/(N[x]\N[x])), N[x]\N[x]
+to :- N[x]\N[x]/NP, S\NP/(S\NP), N\N/NP
+tantalum powder to Iran . :- N, NP, N[x]\(N[x]/N[x]), S\NP\(S\NP/NP)
+tantalum :- N/N
+smuggle tantalum powder to Iran . :- S\NP
+smuggle :- S\NP/NP
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925620759_false (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Total AMR parsing time: 1.8480sec (cky=100.00%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 1.8480sec (100.00%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] Test execution time 1.85
+[P-T2] [P-T2] no results
+[P-T2] [P-T2] EXACT stats -- recording no parse
+[P-T2] [P-T2] [EXACT stats]  Record failure.
+[P-T2] [P-T2] smatch stats -- recording no parse [4]
+[P-T2] [P-T2] no parses
+[P-T2] [P-T2] Identified 1909 related entries via case and form modifications for the word: charging
+[P-T2] [P-T2] Created a sloppy lexicon with 1909 entries
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925625721_true (No such file or directory)
+[P-T2] [P-T2] Logging time 1
+[P-T2] [P-T2] Found no derivation. Stitching heuristically to produce parse trees
+[P-T2] [P-T2] Stitch6: Best Tree on Stack: Considering 771 states
+[P-T2] [P-T2] Minimum number of tree 13, found 12 states with these many trees 
+[P-T2] [P-T2] Total AMR parsing time: 5.4040sec (cky=91.52%, baseProcess=0.72%, fg=7.68%)
+[P-T2] [P-T2] CKY parsing time: 4.9460sec (91.52%)
+[P-T2] [P-T2] Processed 12 base parses, created 12 pairs: 0.0390sec (0.72%)
+[P-T2] [P-T2] Second stage inference time (12 pairs): 0.4150sec (7.68%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] SLOPPY execution time 5.404000
+[P-T2] [P-T2] EXACT stats -- recording wrong parse with skipping: (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t> (and:<e,t> $0) (c_op1:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t> (country:<e,t> $1) (c_name:<e,<e,t>> $1 (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t> (name:<e,t> $2) (c_op:<e,<txt,t>> $2 Russia:txt))))))))) (c_op2:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t> (person:<e,t> $3) (c_ARG0-of:<e,<e,t>> $3 (a:<id,<<e,t>,e>> !5 (lambda $4:e (prosecute-01:<e,t> $4)))))))) (c_op3:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !6 (lambda $5:e (send-01:<e,t> $5)))) (c_op4:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t> (case:<e,t> $6) (c_ARG0-of:<e,<e,t>> $6 (a:<id,<<e,t>,e>> !8 (lambda $7:e (against:<e,t> $7)))))))) (c_op5:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t> (organization:<e,t> $8) (c_name:<e,<e,t>> $8 (a:<id,<<e,t>,e>> !10 (lambda $9:e (and:<t*,t> (name:<e,t> $9) (c_op:<e,<txt,t>> $9 ANAR++Godzhayev:txt))))))))) (c_op6:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !11 (lambda $10:e (and:<t*,t> (court:<e,t> $10) (c_ARG0-of:<e,<e,t>> $10 (a:<id,<<e,t>,e>> !12 (lambda $11:e (and:<t*,t> (after:<e,t> $11) (c_op1:<e,<e,t>> $11 (a:<id,<<e,t>,e>> !13 (lambda $12:e (charge-05:<e,t> $12)))))))))))) (c_op7:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !14 (lambda $13:e (and:<t*,t> (organization:<e,t> $13) (c_name:<e,<e,t>> $13 (a:<id,<<e,t>,e>> !15 (lambda $14:e (and:<t*,t> (name:<e,t> $14) (c_op:<e,<txt,t>> $14 Godzhayev:txt))))))))) (c_op8:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !16 (lambda $15:e (attempt-01:<e,t> $15)))) (c_op9:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !17 (lambda $16:e (smuggle-01:<e,t> $16)))) (c_op10:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !18 (lambda $17:e (and:<t*,t> (powder-01:<e,t> $17) (c_ARG2:<e,<e,t>> $17 (a:<id,<<e,t>,e>> !19 (lambda $18:e (and:<t*,t> (country:<e,t> $18) (c_name:<e,<e,t>> $18 (a:<id,<<e,t>,e>> !20 (lambda $19:e (and:<t*,t> (name:<e,t> $19) (c_op:<e,<txt,t>> $19 Iran:txt))))))))))))))))
+[P-T2] [P-T2] [EXACT stats]  Record sloppy incorrect.
+[P-T2] [P-T2] SMATCH command: python /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/../../utils/smatch/smatch.py -r 20 --pr -f /tmp/smatch4-4056531022249894127-candidate.txt /tmp/smatch4-7521872254327025732-gold.txt
+[P-T2] [P-T2] SMATCH runtime: 0.2240
+[P-T2] [P-T2] SMATCH result: p=0.49, r=0.47, f1=0.48
+[P-T2] [P-T2] smatch stats -- recording sloppy parse [4]: p=0.49, r=0.47, f1=0.48
+[P-T2] [P-T2] WRONG: [score=-45.77, v=-6.54, i=-45.77] (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t>
+      (country:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Russia:txt)))))))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t>
+      (person:<e,t> $3)
+      (c_ARG0-of:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !5 (lambda $4:e (prosecute-01:<e,t> $4))))))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !6 (lambda $5:e (send-01:<e,t> $5))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t>
+      (case:<e,t> $6)
+      (c_ARG0-of:<e,<e,t>> $6 
+        (a:<id,<<e,t>,e>> !8 (lambda $7:e (against:<e,t> $7))))))))
+  (c_op5:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t>
+      (organization:<e,t> $8)
+      (c_name:<e,<e,t>> $8 
+        (a:<id,<<e,t>,e>> !10 (lambda $9:e (and:<t*,t>
+          (name:<e,t> $9)
+          (c_op:<e,<txt,t>> $9 ANAR++Godzhayev:txt)))))))))
+  (c_op6:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !11 (lambda $10:e (and:<t*,t>
+      (court:<e,t> $10)
+      (c_ARG0-of:<e,<e,t>> $10 
+        (a:<id,<<e,t>,e>> !12 (lambda $7 (and:<t*,t>
+          (after:<e,t> $7)
+          (c_op1:<e,<e,t>> $7 
+            (a:<id,<<e,t>,e>> !13 (lambda $11:e (charge-05:<e,t> $11))))))))))))
+  (c_op7:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !14 (lambda $8 (and:<t*,t>
+      (organization:<e,t> $8)
+      (c_name:<e,<e,t>> $8 
+        (a:<id,<<e,t>,e>> !15 (lambda $9 (and:<t*,t>
+          (name:<e,t> $9)
+          (c_op:<e,<txt,t>> $9 Godzhayev:txt)))))))))
+  (c_op8:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !16 (lambda $12:e (attempt-01:<e,t> $12))))
+  (c_op9:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !17 (lambda $13:e (smuggle-01:<e,t> $13))))
+  (c_op10:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !18 (lambda $14:e (and:<t*,t>
+      (powder-01:<e,t> $14)
+      (c_ARG2:<e,<e,t>> $14 
+        (a:<id,<<e,t>,e>> !19 (lambda $15:e (and:<t*,t>
+          (country:<e,t> $15)
+          (c_name:<e,<e,t>> $15 
+            (a:<id,<<e,t>,e>> !20 (lambda $16:e (and:<t*,t>
+              (name:<e,t> $16)
+              (c_op:<e,<txt,t>> $16 Iran:txt))))))))))))))))
+[18-22 :: <skip :: , EMPTY, N[nb] : (lambda $0:e (and:<t*,t> (powder-01:<e,t> $0) (c_REL~~to^^A1R1:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (country:<e,t> $1) (c_REL~~Iran:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (name:<e,t> $2) (c_op:<e,<txt,t>> $2 Iran:txt)))))))))))]{{} -> -0.24583049732319448}
+[19-22 :: <apply :: , N[nb] : (lambda $0:e (powder-01:<e,t> $0)), N[x]\N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL~~to^^A1R1:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (country:<e,t> $2) (c_REL~~Iran:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (and:<t*,t> (name:<e,t> $3) (c_op:<e,<txt,t>> $3 Iran:txt))))))))))))]{{} -> 0.0}
+[20-22 :: >apply :: , N[x]\N[x]/NP : (lambda $0:e (lambda $1:<e,t> (lambda $2:e (and:<t*,t> ($1 $2) (c_REL~~to^^A1R1:<e,<e,t>> $2 $0))))), NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Iran:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Iran:txt))))))))]{{} -> -0.1768034650173325}
+[21-22 :: >punct :: , NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL~~Iran:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Iran:txt)))))))), PUNCT]{{} -> 0.0}
+[22-22 :: lex :: . :- PUNCT{SEED}]{{} -> -2.05489327412448}
+[21-21 :: lex :: Iran :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Iran:txt)))))))){SEED}]{{} -> -0.33233136567844124}
+[20-20 :: lex :: to :- N[x]\N[x]/NP : (lambda $0:e (lambda $1:<e,t> (lambda $2:e (and:<t*,t> ($1 $2) (c_REL:<e,<e,t>> $2 $0))))){genlex}]{{} -> -2.5858123646695335}
+[19-19 :: lex :: powder :- N[nb] : (lambda $0:e (powder-01:<e,t> $0)){genlex-align}]{{} -> -0.9724641278021151}
+[18-18 :: lex :: tantalum :- EMPTY{skipping}]{{} -> 0.0}
+[16-17 :: >apply :: , S\NP[x]/(S\NP[x]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))), S\NP : (lambda $0:e (lambda $1:e (and:<t*,t> (smuggle-01:<e,t> $1) (c_REL~~smuggle^^A1L1:<e,<e,t>> $1 $0))))]{{} -> -4.5398899216870535E-5}
+[17-17 :: lex :: smuggle :- S\NP : (lambda $0:e (lambda $1:e (and:<t*,t> (smuggle-01:<e,t> $1) (c_REL:<e,<e,t>> $1 $0)))){genlex-align}]{{} -> -2.873802972642652}
+[16-16 :: lex :: to :- S\NP[x]/(S\NP[x]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -1.417778071348737}
+[15-15 :: lex :: attempting :- S\NP : (lambda $0:e (lambda $1:e (and:<t*,t> (attempt-01:<e,t> $1) (c_ARG0:<e,<e,t>> $1 $0)))){genlex-align}]{{} -> -2.8724276562394024}
+[14-14 :: lex :: with :- S\S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -1.1629961620724634}
+[13-13 :: lex :: Godzhayev :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (organization:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Godzhayev:txt)))))))){dyn-ner-ORG-organization:<e,t>-NP[sg]}]{{} -> -0.5124426923417937}
+[10-12 :: bare_noun :: , N[nb] : (lambda $0:e (and:<t*,t> (court:<e,t> $0) (c_REL-of:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (after:<e,t> $1) (c_op1:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (charge-05:<e,t> $2))))))))))]{{} -> -1.6904059177675712}
+[10-12 :: <apply :: , N[nb] : (lambda $0:e (court:<e,t> $0)), N[x]\N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL-of:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (after:<e,t> $2) (c_op1:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (charge-05:<e,t> $3)))))))))))]{{} -> -0.1574101480294274}
+[11-12 :: s_pp_rel_of :: , S : (lambda $0:e (and:<t*,t> (after:<e,t> $0) (c_op1:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (charge-05:<e,t> $1))))))]{{} -> -1.6194331911035338}
+[11-12 :: >apply :: , S/S : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> (after:<e,t> $1) (c_op1:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e ($0 $2))))))), S : (lambda $0:e (charge-05:<e,t> $0))]{{} -> -0.11586597163007051}
+[12-12 :: lex :: charge :- S : (lambda $0:e (charge-05:<e,t> $0)){genlex-align}]{{} -> -4.688152741078348}
+[11-11 :: lex :: after :- S/S : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> (after:<e,t> $1) (c_op1:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e ($0 $2))))))){SEED}]{{} -> -3.2376902518036856}
+[10-10 :: lex :: court :- N[nb] : (lambda $0:e (court:<e,t> $0)){genlex-align}]{{} -> -0.5661635498155939}
+[9-9 :: lex :: to :- S\NP[x]/(S\NP[x]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -1.4180966123462388}
+[7-8 :: lex :: ANAR Godzhayev :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (organization:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 ANAR++Godzhayev:txt)))))))){dyn-ner-ORG-organization:<e,t>-NP[sg]}]{{} -> -0.5124426923417937}
+[4-6 :: >comp1 :: , NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))), N[x]/N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_ARG1:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (case:<e,t> $2) (c_REL-of:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (against:<e,t> $3)))))))))))]{{} -> -0.1322488222573122}
+[5-6 :: nb_adj_arg1 :: , N[nb] : (lambda $0:e (and:<t*,t> (case:<e,t> $0) (c_REL-of:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (against:<e,t> $1))))))]{{} -> -1.5237215438545113}
+[5-6 :: <apply :: , N[nb] : (lambda $0:e (case:<e,t> $0)), N[x]\N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL-of:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (against:<e,t> $2)))))))]{{} -> -0.197029604002999}
+[6-6 :: s_pp_rel_of :: , S : (lambda $0:e (against:<e,t> $0))]{{} -> -1.212669576351554}
+[6-6 :: lex :: against :- S : (lambda $0:e (against:<e,t> $0)){genlex-align}]{{} -> -2.937808333332952}
+[5-5 :: lex :: case :- N[nb] : (lambda $0:e (case:<e,t> $0)){genlex-align}]{{} -> -0.8626518596645218}
+[4-4 :: lex :: the :- NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -1.0063808557680547}
+[3-3 :: lex :: sent :- S : (lambda $0:e (send-01:<e,t> $0)){genlex-align}]{{} -> -2.3460301942555257}
+[2-2 :: lex :: have :- S\NP[pl]/(S\NP[pl]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -1.9183205172229156}
+[1-1 :: lex :: prosecutors :- N[pl] : (lambda $0:e (and:<t*,t> (person:<e,t> $0) (c_REL-of:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (prosecute-01:<e,t> $1)))))){genlex-align}]{{} -> -0.7479664822862788}
+[0-0 :: lex :: Russian :- N[x]/N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (and:<t*,t> (country:<e,t> $2) (c_REL:<e,<e,t>> $2 (a:<id,<<e,t>,e>> na:id (lambda $3:e (and:<t*,t> (name:<e,t> $3) (c_op:<e,<txt,t>> $3 Russia:txt)))))))))))){genlex-align}]{{} -> -1.0381173074453889}
+{FACLEX#c_REL#c_ARG2#A1R1=-0.310(1.000),FACLEX#c_REL#c_ARG2#to=-0.282(1.000),FACLEX#c_REL#c_ARG2#to#A1R1=-0.323(1.000),FACLEX#c_REL#c_name#ANAR-Godzhayev=0.0(1.000),FACLEX#c_REL#c_name#Godzhayev=0.0(1.000),FACLEX#c_REL#c_name#Iran=0.446(1.000),FACLEX#c_REL#c_name#Russian=0.515(1.000),FACLEX#c_REL-of#c_ARG0-of#prosecutors=0.604(1.000),RELPREF#after#c_ARG0=-0.624(1.000),RELPREF#after#c_ARG0#court=0.0(1.000),RELPREF#after#c_op1=0.687(1.000),RELPREF#after#c_op1#charge-05=0.364(1.000),RELPREF#against#c_ARG0=-0.235(1.000),RELPREF#against#c_ARG0#case=0.0(1.000),RELPREF#and#c_op1=1.124(1.000),RELPREF#and#c_op1#country=1.150(1.000),RELPREF#and#c_op10=0.0(1.000),RELPREF#and#c_op10#powder-01=0.0(1.000),RELPREF#and#c_op2=1.329(1.000),RELPREF#and#c_op2#person=0.646(1.000),RELPREF#and#c_op3=-2.133(1.000),RELPREF#and#c_op3#send-01=0.0(1.000),RELPREF#and#c_op4=-0.962(1.000),RELPREF#and#c_op4#case=0.0(1.000),RELPREF#and#c_op5=-0.123(1.000),RELPREF#and#c_op5#organization=-0.557(1.000),RELPREF#and#c_op6=-0.833(1.000),RELPREF#and#c_op6#court=0.0(1.000),RELPREF#and#c_op7=-0.929(1.000),RELPREF#and#c_op7#organization=0.0(1.000),RELPREF#and#c_op8=-0.004(1.000),RELPREF#and#c_op8#attempt-01=0.0(1.000),RELPREF#and#c_op9=-0.458(1.000),RELPREF#and#c_op9#smuggle-01=0.0(1.000),RELPREF#c_ARG0#case=0.258(1.000),RELPREF#c_ARG0#court=0.412(1.000),RELPREF#c_ARG0#person=0.962(1.000),RELPREF#c_ARG2#country=0.404(1.000),RELPREF#c_name#name=1.578(4.000),RELPREF#c_op#txt=0.736(4.000),RELPREF#c_op1#charge-05=-0.694(1.000),RELPREF#c_op1#country=0.913(1.000),RELPREF#c_op10#powder-01=0.0(1.000),RELPREF#c_op2#person=0.603(1.000),RELPREF#c_op3#send-01=0.0(1.000),RELPREF#c_op4#case=0.0(1.000),RELPREF#c_op5#organization=-0.557(1.000),RELPREF#c_op6#court=0.0(1.000),RELPREF#c_op7#organization=0.0(1.000),RELPREF#c_op8#attempt-01=0.0(1.000),RELPREF#c_op9#smuggle-01=0.0(1.000),RELPREF#country#c_name=1.090(2.000),RELPREF#country#c_name#name=1.345(2.000),RELPREF#name#c_op=1.716(4.000),RELPREF#name#c_op#txt=1.716(4.000),RELPREF#organization#c_name=0.932(2.000),RELPREF#organization#c_name#name=1.701(2.000),RELPREF#powder-01#c_ARG2=-0.237(1.000),RELPREF#powder-01#c_ARG2#country=0.0(1.000),RELPREF#prosecute-01#c_ARG0=0.764(1.000),RELPREF#prosecute-01#c_ARG0#person=0.344(1.000),UNARY#c_REL-of#c_ARG0-of=-0.008(2.000),UNARY#c_REL-of~~prosecutors#c_ARG0-of=0.604(1.000),UNARY#c_REL~~ANAR-Godzhayev#c_name=0.0(1.000),UNARY#c_REL~~Godzhayev#c_name=0.0(1.000),UNARY#c_REL~~Iran#c_name=0.446(1.000),UNARY#c_REL~~Russian#c_name=0.515(1.000),UNARY#c_REL~~to^^A1R1#c_ARG2=-0.323(1.000)}
+[P-T2] [P-T2] Had correct result: false
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925626717_false (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Total AMR parsing time: 0.3050sec (cky=100.00%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 0.3050sec (100.00%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] No correct executions
+[P-T2] [P-T2] 5 : ==================
+[P-T2] [P-T2] Oguz stated to reporters in Kabul that evidence of higher quality Afghan heroin indicates that the people running the labs are getting assistance from chemists who have come from outside the country as foreign consultants.
+RecognizedNamedEntity [rawTag=MISC, textConstant=Afghan:txt, tokens=Afghan, typingConstants=[thing:<e,t>]]
+RecognizedNamedEntity [rawTag=LOC, textConstant=Kabul:txt, tokens=Kabul, typingConstants=[country:<e,t>]]
+Oguz: pos=NNP :: lemmas=[oguz]
+stated: pos=VBD :: lemmas=[statement, stated, state]
+to: pos=TO :: lemmas=[to]
+reporters: pos=NNS :: lemmas=[report, reporters, reporter]
+in: pos=IN :: lemmas=[in]
+Kabul: pos=NNP :: lemmas=[kabul]
+that: pos=IN :: lemmas=[that]
+evidence: pos=NN :: lemmas=[evidential, evident, evidence, evidentiary]
+of: pos=IN :: lemmas=[of]
+higher: pos=JJR :: lemmas=[highness, high, higher]
+quality: pos=NN :: lemmas=[qualify, quality]
+Afghan: pos=NNP :: lemmas=[afghan, afghanistan]
+heroin: pos=NN :: lemmas=[heroin]
+indicates: pos=VBZ :: lemmas=[indicator, indicate, indicative, indication, indicates, indicant]
+that: pos=IN :: lemmas=[that]
+the: pos=DT :: lemmas=[the]
+people: pos=NNS :: lemmas=[people]
+running: pos=VBG :: lemmas=[running, runner, run]
+the: pos=DT :: lemmas=[the]
+labs: pos=NNS :: lemmas=[labs, lab]
+are: pos=VBP :: lemmas=[are]
+getting: pos=VBG :: lemmas=[getting, get]
+assistance: pos=NN :: lemmas=[assistance, assist]
+from: pos=IN :: lemmas=[from]
+chemists: pos=NNS :: lemmas=[chemistry, chemists, chemist]
+who: pos=WP :: lemmas=[who]
+have: pos=VBP :: lemmas=[have]
+come: pos=VBN :: lemmas=[comer, come, coming]
+from: pos=IN :: lemmas=[from]
+outside: pos=IN :: lemmas=[outside]
+the: pos=DT :: lemmas=[the]
+country: pos=NN :: lemmas=[country]
+as: pos=IN :: lemmas=[as]
+foreign: pos=JJ :: lemmas=[foreignness, foreign]
+consultants: pos=NNS :: lemmas=[consult, consultancy, consultant, consultants]
+.: pos=. :: lemmas=[.]
+(a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (state-01:<e,t> $0)
+  (c_ARG0:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t>
+      (person:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Oguz:txt)))))))))
+  (c_ARG1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $3:e (and:<t*,t>
+      (indicate-01:<e,t> $3)
+      (c_ARG0:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t>
+          (thing:<e,t> $4)
+          (c_ARG0-of:<e,<e,t>> $4 
+            (a:<id,<<e,t>,e>> !6 (lambda $5:e (and:<t*,t>
+              (evidence-01:<e,t> $5)
+              (c_ARG1:<e,<e,t>> $5 
+                (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t>
+                  (heroin:<e,t> $6)
+                  (c_mod:<e,<e,t>> $6 
+                    (a:<id,<<e,t>,e>> !8 (lambda $7:e (and:<t*,t>
+                      (country:<e,t> $7)
+                      (c_name:<e,<e,t>> $7 
+                        (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t>
+                          (name:<e,t> $8)
+                          (c_op:<e,<txt,t>> $8 Afghanistan:txt)))))))))
+                  (c_mod:<e,<e,t>> $6 
+                    (a:<id,<<e,t>,e>> !10 (lambda $9:e (and:<t*,t>
+                      (quality:<e,t> $9)
+                      (c_mod:<e,<e,t>> $9 
+                        (a:<id,<<e,t>,e>> !11 (lambda $10:e (and:<t*,t>
+                          (high:<e,t> $10)
+                          (c_degree:<e,<e,t>> $10 
+                            (a:<id,<<e,t>,e>> !12 (lambda $11:e (more:<e,t> $11))))))))))))))))))))))))
+      (c_ARG1:<e,<e,t>> $3 
+        (a:<id,<<e,t>,e>> !13 (lambda $12:e (and:<t*,t>
+          (assist-01:<e,t> $12)
+          (c_ARG0:<e,<e,t>> $12 
+            (a:<id,<<e,t>,e>> !14 (lambda $13:e (and:<t*,t>
+              (chemist:<e,t> $13)
+              (c_ARG1-of:<e,<e,t>> $13 
+                (a:<id,<<e,t>,e>> !15 (lambda $14:e (and:<t*,t>
+                  (come-01:<e,t> $14)
+                  (c_ARG3:<e,<e,t>> $14 
+                    (a:<id,<<e,t>,e>> !16 (lambda $15:e (and:<t*,t>
+                      (outside:<e,t> $15)
+                      (c_op1:<e,<e,t>> $15 
+                        (a:<id,<<e,t>,e>> !17 (lambda $16:e (country:<e,t> $16))))))))
+                  (c_prep-as:<e,<e,t>> $14 
+                    (a:<id,<<e,t>,e>> !18 (lambda $17:e (and:<t*,t>
+                      (person:<e,t> $17)
+                      (c_mod:<e,<e,t>> $17 
+                        (a:<id,<<e,t>,e>> !19 (lambda $18:e (foreign:<e,t> $18))))
+                      (c_ARG0-of:<e,<e,t>> $17 
+                        (a:<id,<<e,t>,e>> !20 (lambda $19:e (consult-01:<e,t> $19))))))))))))))))
+          (c_ARG1:<e,<e,t>> $12 
+            (a:<id,<<e,t>,e>> !21 (lambda $20:e (and:<t*,t>
+              (person:<e,t> $20)
+              (c_ARG0-of:<e,<e,t>> $20 
+                (a:<id,<<e,t>,e>> !22 (lambda $21:e (and:<t*,t>
+                  (run-01:<e,t> $21)
+                  (c_ARG1:<e,<e,t>> $21 
+                    (a:<id,<<e,t>,e>> !23 (lambda $22:e (lab:<e,t> $22))))))))))))))))))))
+  (c_ARG2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !24 (lambda $23:e (and:<t*,t>
+      (person:<e,t> $23)
+      (c_ARG0-of:<e,<e,t>> $23 
+        (a:<id,<<e,t>,e>> !25 (lambda $24:e (report-01:<e,t> $24))))
+      (c_location:<e,<e,t>> $23 
+        (a:<id,<<e,t>,e>> !26 (lambda $25:e (and:<t*,t>
+          (city:<e,t> $25)
+          (c_name:<e,<e,t>> $25 
+            (a:<id,<<e,t>,e>> !27 (lambda $26:e (and:<t*,t>
+              (name:<e,t> $26)
+              (c_op:<e,<txt,t>> $26 Kabul:txt))))))))))))))))
+reporters :- N, NP, N[x]\(N[x]/N[x])
+assistance :- N, NP, N[x]\(N[x]/N[x])
+to reporters :- N[x]\N[x]
+foreign :- N/N
+running :- S\NP/NP
+of higher quality Afghan heroin :- N[x]\N[x]
+are :- S\NP/(S\NP)
+chemists :- N, N[x]\(N[x]/N[x])
+of :- N[x]\N[x]/NP
+getting :- S\NP/(N[x]\N[x])/NP
+have :- S\NP/(S\NP)
+indicates :- S\NP/S
+come from outside :- S\NP/NP
+that the people running the labs are getting assistance from chemists who have come from outside the country as foreign consultants . :- S
+from chemists who have come from outside the country as foreign consultants . :- N[x]\N[x]
+foreign consultants :- N, NP, N[x]\(N[x]/N[x])
+the people running the labs :- NP
+come from outside the country :- S\NP
+are getting assistance from chemists who have come from outside the country as foreign consultants . :- S\NP
+the :- NP/N
+people :- N, N[x]\(N[x]/N[x])
+the people running the labs are getting assistance from chemists who have come from outside the country as foreign consultants . :- S
+stated to reporters in Kabul that evidence of higher quality Afghan heroin indicates that the people running the labs are getting assistance from chemists who have come from outside the country as foreign consultants . :- S\NP
+people running the labs :- N, N[x]\(N[x]/N[x])
+to :- N[x]\N[x]/NP
+getting assistance :- S\NP/(N[x]\N[x])
+outside the country :- N[x]\N[x]
+who have come from outside the country as foreign consultants . :- N\N
+country :- N, N[x]\(N[x]/N[x])
+chemists who have come from outside the country as foreign consultants . :- N, NP, N[x]\(N[x]/N[x]), S\NP\(S\NP/NP)
+come from outside the country as foreign consultants . :- S\NP
+evidence :- N/(N[x]\N[x])
+foreign consultants . :- NP
+higher quality Afghan heroin :- N, NP, N[x]\(N[x]/N[x])
+getting assistance from :- S\NP/NP
+stated to reporters :- S\NP/S
+have come from outside the country :- S\NP
+in Kabul :- S\NP\(S\NP)
+Kabul :- N, NP, N[x]\(N[x]/N[x])
+Afghan heroin :- N, N[x]\(N[x]/N[x])
+as foreign consultants . :- S\NP\(S\NP)
+that :- S/S
+evidence of higher quality Afghan heroin :- N, NP, N[x]\(N[x]/N[x])
+from :- N[x]\N[x]/NP, N[x]\N[x]/(N[x]\N[x])
+running the labs :- N\N, S\NP
+evidence of higher quality Afghan heroin indicates that the people running the labs are getting assistance from chemists who have come from outside the country as foreign consultants . :- S
+heroin :- N, N[x]\(N[x]/N[x])
+in :- S\NP\(S\NP)/NP
+quality Afghan heroin :- N, N[x]\(N[x]/N[x])
+the country :- S\NP\(S\NP/NP), NP
+Afghan :- N/N
+from outside the country :- S\NP\(S\NP/(N[x]\N[x])), N[x]\N[x]
+have come :- S\NP/(N[x]\N[x])
+come :- S\NP/(N[x]\N[x])
+. :- PUNCT
+quality :- N/N
+Oguz stated to reporters in Kabul that evidence of higher quality Afghan heroin indicates that the people running the labs are getting assistance from chemists who have come from outside the country as foreign consultants . :- S
+outside :- N[x]\N[x]/NP
+as :- S\NP\(S\NP)/NP
+getting assistance from chemists who have come from outside the country as foreign consultants . :- S\NP
+labs :- N, N[x]\(N[x]/N[x])
+indicates that the people running the labs are getting assistance from chemists who have come from outside the country as foreign consultants . :- S\NP
+consultants :- N, N[x]\(N[x]/N[x])
+that evidence of higher quality Afghan heroin indicates that the people running the labs are getting assistance from chemists who have come from outside the country as foreign consultants . :- S
+stated :- S\NP/S/(N[x]\N[x])
+stated to reporters in Kabul :- S\NP/S
+higher :- N/N
+the labs :- NP
+who :- N\N/(S\NP)
+have come from outside the country as foreign consultants . :- S\NP
+from outside :- N[x]\N[x]/NP
+Oguz :- N, NP, N[x]\(N[x]/N[x])
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925629275_false (No such file or directory)
+[P-T2] [P-T2] Logging time 1
+[P-T2] [P-T2] Total AMR parsing time: 2.5570sec (cky=99.96%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 2.5560sec (99.96%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] Test execution time 2.56
+[P-T2] [P-T2] no results
+[P-T2] [P-T2] EXACT stats -- recording no parse
+[P-T2] [P-T2] [EXACT stats]  Record failure.
+[P-T2] [P-T2] smatch stats -- recording no parse [5]
+[P-T2] [P-T2] no parses
+[P-T2] [P-T2] Identified 197 related entries via case and form modifications for the word: chemists
+[P-T2] [P-T2] Identified 106 related entries via case and form modifications for the word: consultants
+[P-T2] [P-T2] Created a sloppy lexicon with 303 entries
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925633856_true (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Found no derivation. Stitching heuristically to produce parse trees
+[P-T2] [P-T2] Stitch6: Best Tree on Stack: Considering 702 states
+[P-T2] [P-T2] Minimum number of tree 32, found 145 states with these many trees 
+[P-T2] [P-T2] Result of closing to AMR is invalid: (ref:<id,e> na:id) -> (ref:<id,e> na:id)
+[P-T2] [P-T2] Total AMR parsing time: 9.3580sec (cky=48.89%, baseProcess=4.32%, fg=46.38%)
+[P-T2] [P-T2] CKY parsing time: 4.5750sec (48.89%)
+[P-T2] [P-T2] Processed 100 base parses, created 100 pairs: 0.4040sec (4.32%)
+[P-T2] [P-T2] Second stage inference time (100 pairs): 4.3400sec (46.38%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] SLOPPY execution time 9.358000
+[P-T2] [P-T2] EXACT stats -- recording wrong parse with skipping: (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t> (and:<e,t> $0) (c_op1:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t> (person:<e,t> $1) (c_name:<e,<e,t>> $1 (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t> (name:<e,t> $2) (c_op:<e,<txt,t>> $2 Oguz:txt))))))))) (c_op2:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !4 (lambda $3:e (state-01:<e,t> $3)))) (c_op3:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t> (person:<e,t> $4) (c_ARG0-of:<e,<e,t>> $4 (a:<id,<<e,t>,e>> !6 (lambda $5:e (report-01:<e,t> $5)))))))) (c_op4:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !7 (lambda $6:e (and:<t*,t> (city:<e,t> $6) (c_name:<e,<e,t>> $6 (a:<id,<<e,t>,e>> !8 (lambda $7:e (and:<t*,t> (name:<e,t> $7) (c_op:<e,<txt,t>> $7 Kabul:txt))))))))) (c_op5:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !9 (lambda $8:e (and:<t*,t> (UNK:<e,t> $8) (c_polarity:<e,<e,t>> $8 -:e))))) (c_op6:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !10 (lambda $9:e (evidence-01:<e,t> $9)))) (c_op7:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !11 (lambda $10:e (high:<e,t> $10)))) (c_op8:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !12 (lambda $11:e (quality:<e,t> $11)))) (c_op9:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !13 (lambda $12:e (and:<t*,t> (country:<e,t> $12) (c_name:<e,<e,t>> $12 (a:<id,<<e,t>,e>> !14 (lambda $13:e (and:<t*,t> (name:<e,t> $13) (c_op:<e,<txt,t>> $13 Afghanistan:txt))))))))) (c_op10:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !15 (lambda $14:e (heroin:<e,t> $14)))) (c_op11:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !16 (lambda $15:e (indicate-01:<e,t> $15)))) (c_op12:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !17 (lambda $16:e (and:<t*,t> (UNK:<e,t> $16) (c_polarity:<e,<e,t>> $16 -:e))))) (c_op13:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !18 (lambda $17:e (person:<e,t> $17)))) (c_op14:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !19 (lambda $18:e (run-08:<e,t> $18)))) (c_op15:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !20 (lambda $19:e (lab:<e,t> $19)))) (c_op16:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !21 (lambda $20:e (get-04:<e,t> $20)))) (c_op17:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !22 (lambda $21:e (assist-01:<e,t> $21)))) (c_op18:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !23 (lambda $22:e (chemist:<e,t> $22)))) (c_op19:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !24 (lambda $23:e (come-01:<e,t> $23)))) (c_op20:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !25 (lambda $24:e (and:<t*,t> (outside:<e,t> $24) (c_op1:<e,<e,t>> $24 (ref:<id,e> !13)))))) (c_op21:<e,<e,t>> $0 (a:<id,<<e,t>,e>> !26 (lambda $25:e (and:<t*,t> (consult-01:<e,t> $25) (c_ARG2:<e,<e,t>> $25 (a:<id,<<e,t>,e>> !27 (lambda $26:e (person:<e,t> $26)))) (c_mod:<e,<e,t>> $25 (a:<id,<<e,t>,e>> !28 (lambda $27:e (foreign:<e,t> $27)))))))))))
+[P-T2] [P-T2] [EXACT stats]  Record sloppy incorrect.
+[P-T2] [P-T2] SMATCH command: python /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/../../utils/smatch/smatch.py -r 20 --pr -f /tmp/smatch5-5076345074957120899-candidate.txt /tmp/smatch5-9142017252454369172-gold.txt
+[P-T2] [P-T2] SMATCH runtime: 0.3070
+[P-T2] [P-T2] SMATCH result: p=0.48, r=0.53, f1=0.50
+[P-T2] [P-T2] smatch stats -- recording sloppy parse [5]: p=0.48, r=0.53, f1=0.50
+[P-T2] [P-T2] WRONG: [score=-50.68, v=-38.01, i=-50.68] (a:<id,<<e,t>,e>> !1 (lambda $0:e (and:<t*,t>
+  (and:<e,t> $0)
+  (c_op1:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !2 (lambda $1:e (and:<t*,t>
+      (person:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !3 (lambda $2:e (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Oguz:txt)))))))))
+  (c_op2:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !4 (lambda $3:e (state-01:<e,t> $3))))
+  (c_op3:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !5 (lambda $4:e (and:<t*,t>
+      (person:<e,t> $4)
+      (c_ARG0-of:<e,<e,t>> $4 
+        (a:<id,<<e,t>,e>> !6 (lambda $5:e (report-01:<e,t> $5))))))))
+  (c_op4:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !7 (lambda $1 (and:<t*,t>
+      (city:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !8 (lambda $2 (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Kabul:txt)))))))))
+  (c_op5:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !9 (lambda $6:e (and:<t*,t>
+      (UNK:<e,t> $6)
+      (c_polarity:<e,<e,t>> $6 -:e)))))
+  (c_op6:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !10 (lambda $7:e (evidence-01:<e,t> $7))))
+  (c_op7:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !11 (lambda $8:e (high:<e,t> $8))))
+  (c_op8:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !12 (lambda $7 (quality:<e,t> $7))))
+  (c_op9:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !13 (lambda $1 (and:<t*,t>
+      (country:<e,t> $1)
+      (c_name:<e,<e,t>> $1 
+        (a:<id,<<e,t>,e>> !14 (lambda $2 (and:<t*,t>
+          (name:<e,t> $2)
+          (c_op:<e,<txt,t>> $2 Afghanistan:txt)))))))))
+  (c_op10:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !15 (lambda $7 (heroin:<e,t> $7))))
+  (c_op11:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !16 (lambda $7 (indicate-01:<e,t> $7))))
+  (c_op12:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !17 (lambda $6 (and:<t*,t>
+      (UNK:<e,t> $6)
+      (c_polarity:<e,<e,t>> $6 -:e)))))
+  (c_op13:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !18 (lambda $7 (person:<e,t> $7))))
+  (c_op14:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !19 (lambda $7 (run-08:<e,t> $7))))
+  (c_op15:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !20 (lambda $7 (lab:<e,t> $7))))
+  (c_op16:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !21 (lambda $7 (get-04:<e,t> $7))))
+  (c_op17:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !22 (lambda $7 (assist-01:<e,t> $7))))
+  (c_op18:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !23 (lambda $7 (chemist:<e,t> $7))))
+  (c_op19:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !24 (lambda $9:e (come-01:<e,t> $9))))
+  (c_op20:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !25 (lambda $10:e (and:<t*,t>
+      (outside:<e,t> $10)
+      (c_op1:<e,<e,t>> $10 
+        (ref:<id,e> !13))))))
+  (c_op21:<e,<e,t>> $0 
+    (a:<id,<<e,t>,e>> !26 (lambda $11:e (and:<t*,t>
+      (consult-01:<e,t> $11)
+      (c_ARG2:<e,<e,t>> $11 
+        (a:<id,<<e,t>,e>> !27 (lambda $12:e (person:<e,t> $12))))
+      (c_mod:<e,<e,t>> $11 
+        (a:<id,<<e,t>,e>> !28 (lambda $13:e (foreign:<e,t> $13)))))))))))
+[33-35 :: bare_pl :: , N[pl] : (lambda $0:e (and:<t*,t> (consult-01:<e,t> $0) (c_REL~~consultant:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (person:<e,t> $1)))) (c_REL~~foreign:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $2:e (foreign:<e,t> $2))))))]{{} -> 0.0}
+[33-35 :: >apply :: , N[x]/N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL~~foreign:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (foreign:<e,t> $2))))))), N[pl] : (lambda $0:e (and:<t*,t> (consult-01:<e,t> $0) (c_REL~~consultant:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (person:<e,t> $1))))))]{{} -> -0.21025529526391273}
+[34-35 :: >punct :: , N[pl] : (lambda $0:e (and:<t*,t> (consult-01:<e,t> $0) (c_REL~~consultant:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (person:<e,t> $1)))))), PUNCT]{{} -> 0.0}
+[35-35 :: lex :: . :- PUNCT{SEED}]{{} -> -2.0535390702237213}
+[34-34 :: lex :: consultant :- N[pl] : (lambda $0:e (and:<t*,t> (consult-01:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (person:<e,t> $1)))))){genlex-align}]{{} -> -2.0833267234525796}
+[33-33 :: lex :: foreign :- N[x]/N[x] : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 (a:<id,<<e,t>,e>> na:id (lambda $2:e (foreign:<e,t> $2))))))){genlex-align}]{{} -> -1.0425082386437712}
+[32-32 :: lex :: as :- S/S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -2.71880941720041}
+[29-31 :: >apply :: , NP[x]/NP[x] : (lambda $0:e (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (outside:<e,t> $1) (c_op1:<e,<e,t>> $1 $0))))), NP[sg] : (ref:<id,e> na:id)]{{} -> -1.611532618030318}
+[30-31 :: lex :: the country :- NP[sg] : (ref:<id,e> na:id){SEED}]{{} -> -0.0463486080014297}
+[29-29 :: lex :: outside :- NP[x]/NP[x] : (lambda $0:e (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (outside:<e,t> $1) (c_op1:<e,<e,t>> $1 $0))))){SEED}]{{} -> -3.2314070290302896}
+[28-28 :: lex :: from :- S/(S\NP) : (lambda $0:<e,<e,t>> (lambda $1:e ($0 (ref:<id,e> na:id) $1))){genlex}]{{} -> -1.8559927861908259}
+[27-27 :: lex :: come :- S : (lambda $0:e (come-01:<e,t> $0)){genlex-align}]{{} -> -3.356271464568744}
+[26-26 :: lex :: have :- S\NP[pl]/(S\NP[pl]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -1.9095613848798312}
+[25-25 :: lex :: who :- N[x]/N[x] : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -0.5864881912818101}
+[24-24 :: lex :: chemist :- N[pl] : (lambda $0:e (chemist:<e,t> $0)){genlex-align}]{{} -> -1.052570175762906}
+[23-23 :: lex :: from :- S\S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -1.7789453577350454}
+[22-22 :: lex :: assistance :- N[nb] : (lambda $0:e (assist-01:<e,t> $0)){genlex-align}]{{} -> -0.3054563572549691}
+[21-21 :: lex :: getting :- N[nb] : (lambda $0:e (get-04:<e,t> $0)){genlex-align}]{{} -> -3.66322091080198}
+[20-20 :: lex :: are :- S\NP/(S\NP) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -0.8929391212763247}
+[19-19 :: lex :: labs :- N[pl] : (lambda $0:e (lab:<e,t> $0)){genlex-align}]{{} -> -0.9140795785724833}
+[18-18 :: lex :: the :- NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -1.001070468077466}
+[17-17 :: lex :: running :- N[nb] : (lambda $0:e (run-08:<e,t> $0)){genlex-align}]{{} -> -3.5905909344745903}
+[16-16 :: lex :: people :- N[pl] : (lambda $0:e (person:<e,t> $0)){genlex}]{{} -> -0.23742453561218202}
+[15-15 :: lex :: the :- NP[x]/N[x] : (lambda $0:<e,t> (a:<id,<<e,t>,e>> na:id (lambda $1:e ($0 $1)))){SEED}]{{} -> -0.9660557814563351}
+[14-14 :: lex :: that :- S/S : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 -:e)))){genlex}]{{} -> -0.9241873943164007}
+[13-13 :: lex :: indicates :- N[pl] : (lambda $0:e (indicate-01:<e,t> $0)){genlex-align}]{{} -> -2.580967399104735}
+[12-12 :: lex :: heroin :- N[nb] : (lambda $0:e (heroin:<e,t> $0)){genlex-align}]{{} -> -0.264098004486085}
+[11-11 :: lex :: Afghan :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (country:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Afghanistan:txt)))))))){genlex-align}]{{} -> -0.18492845128282243}
+[10-10 :: lex :: quality :- N[nb] : (lambda $0:e (quality:<e,t> $0)){genlex-align}]{{} -> -0.504945474819416}
+[9-9 :: lex :: higher :- S\NP : (lambda $0:e (lambda $1:e (and:<t*,t> (high:<e,t> $1) (c_REL:<e,<e,t>> $1 $0)))){genlex-align}]{{} -> -0.9049008432877383}
+[8-8 :: lex :: of :- S\S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -3.557299571738077}
+[7-7 :: lex :: evidence :- N[nb] : (lambda $0:e (evidence-01:<e,t> $0)){genlex-align}]{{} -> -0.9364829441914004}
+[6-6 :: lex :: that :- S/S : (lambda $0:<e,t> (lambda $1:e (and:<t*,t> ($0 $1) (c_REL:<e,<e,t>> $1 -:e)))){genlex}]{{} -> -0.9148628533895748}
+[5-5 :: lex :: Kabul :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (city:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Kabul:txt)))))))){genlex-align}]{{} -> -0.8265398836826368}
+[4-4 :: lex :: in :- S\S : (lambda $0:<e,t> (lambda $1:e ($0 $1))){genlex}]{{} -> -1.1903662542114968}
+[3-3 :: lex :: reporters :- N[pl] : (lambda $0:e (and:<t*,t> (person:<e,t> $0) (c_REL-of:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (report-01:<e,t> $1)))))){genlex-align}]{{} -> -0.2747310223209354}
+[2-2 :: lex :: to :- S\NP[x]/(S\NP[x]) : (lambda $0:<e,<e,t>> (lambda $1:e (lambda $2:e ($0 $1 $2)))){SEED}]{{} -> -1.4311233290193384}
+[1-1 :: lex :: stated :- S\NP : (lambda $0:e (lambda $1:e (and:<t*,t> (state-01:<e,t> $1) (c_ARG0:<e,<e,t>> $1 $0)))){SEED}]{{} -> -0.7560899483493837}
+[0-0 :: lex :: Oguz :- NP[sg] : (a:<id,<<e,t>,e>> na:id (lambda $0:e (and:<t*,t> (person:<e,t> $0) (c_REL:<e,<e,t>> $0 (a:<id,<<e,t>,e>> na:id (lambda $1:e (and:<t*,t> (name:<e,t> $1) (c_op:<e,<txt,t>> $1 Oguz:txt)))))))){genlex-align}]{{} -> -0.1396608610306438}
+{FACLEX#c_REL#c_ARG2#consultant=0.0(1.000),FACLEX#c_REL#c_mod#foreign=0.323(1.000),FACLEX#c_REL#c_name#Afghan=0.489(1.000),FACLEX#c_REL#c_name#Kabul=0.388(1.000),FACLEX#c_REL#c_name#Oguz=0.293(1.000),FACLEX#c_REL#c_polarity#that=-4.271(2.000),FACLEX#c_REL-of#c_ARG0-of#reporters=0.777(1.000),RELPREF#UNK#c_polarity=0.0(2.000),RELPREF#UNK#c_polarity#e=0.0(2.000),RELPREF#and#c_op1=1.124(1.000),RELPREF#and#c_op1#person=1.047(1.000),RELPREF#and#c_op10=0.0(1.000),RELPREF#and#c_op10#heroin=0.0(1.000),RELPREF#and#c_op11=-0.420(1.000),RELPREF#and#c_op11#indicate-01=0.0(1.000),RELPREF#and#c_op12=-0.299(1.000),RELPREF#and#c_op12#UNK=0.0(1.000),RELPREF#and#c_op13=0.0(1.000),RELPREF#and#c_op13#person=0.0(1.000),RELPREF#and#c_op14=0.0(1.000),RELPREF#and#c_op14#run-08=0.0(1.000),RELPREF#and#c_op15=0.0(1.000),RELPREF#and#c_op15#lab=0.0(1.000),RELPREF#and#c_op16=0.0(1.000),RELPREF#and#c_op16#get-04=0.0(1.000),RELPREF#and#c_op17=0.0(1.000),RELPREF#and#c_op17#assist-01=0.0(1.000),RELPREF#and#c_op18=0.0(1.000),RELPREF#and#c_op18#chemist=0.0(1.000),RELPREF#and#c_op19=0.0(1.000),RELPREF#and#c_op19#come-01=0.0(1.000),RELPREF#and#c_op2=1.329(1.000),RELPREF#and#c_op2#state-01=0.108(1.000),RELPREF#and#c_op20=0.0(1.000),RELPREF#and#c_op20#outside=0.0(1.000),RELPREF#and#c_op21=0.0(1.000),RELPREF#and#c_op21#consult-01=0.0(1.000),RELPREF#and#c_op3=-2.133(1.000),RELPREF#and#c_op3#person=-0.703(1.000),RELPREF#and#c_op4=-0.962(1.000),RELPREF#and#c_op4#city=0.0(1.000),RELPREF#and#c_op5=-0.123(1.000),RELPREF#and#c_op5#UNK=0.0(1.000),RELPREF#and#c_op6=-0.833(1.000),RELPREF#and#c_op6#evidence-01=0.0(1.000),RELPREF#and#c_op7=-0.929(1.000),RELPREF#and#c_op7#high=0.0(1.000),RELPREF#and#c_op8=-0.004(1.000),RELPREF#and#c_op8#quality=0.0(1.000),RELPREF#and#c_op9=-0.458(1.000),RELPREF#and#c_op9#country=-0.249(1.000),RELPREF#c_ARG0#person=0.962(1.000),RELPREF#c_ARG2#person=0.528(1.000),RELPREF#c_mod#foreign=0.651(1.000),RELPREF#c_name#name=1.578(3.000),RELPREF#c_op#txt=0.736(3.000),RELPREF#c_op1#country=0.913(1.000),RELPREF#c_op1#person=0.437(1.000),RELPREF#c_op10#heroin=0.0(1.000),RELPREF#c_op11#indicate-01=0.0(1.000),RELPREF#c_op12#UNK=0.0(1.000),RELPREF#c_op13#person=0.0(1.000),RELPREF#c_op14#run-08=0.0(1.000),RELPREF#c_op15#lab=0.0(1.000),RELPREF#c_op16#get-04=0.0(1.000),RELPREF#c_op17#assist-01=0.0(1.000),RELPREF#c_op18#chemist=0.0(1.000),RELPREF#c_op19#come-01=0.0(1.000),RELPREF#c_op2#state-01=0.100(1.000),RELPREF#c_op20#outside=0.0(1.000),RELPREF#c_op21#consult-01=0.0(1.000),RELPREF#c_op3#person=-0.703(1.000),RELPREF#c_op4#city=0.0(1.000),RELPREF#c_op5#UNK=0.0(1.000),RELPREF#c_op6#evidence-01=0.0(1.000),RELPREF#c_op7#high=0.0(1.000),RELPREF#c_op8#quality=0.0(1.000),RELPREF#c_op9#country=-0.249(1.000),RELPREF#c_polarity#e=1.025(2.000),RELPREF#city#c_name=0.277(1.000),RELPREF#city#c_name#name=0.755(1.000),RELPREF#consult-01#c_ARG2=0.421(1.000),RELPREF#consult-01#c_ARG2#person=-0.347(1.000),RELPREF#consult-01#c_mod=-0.545(1.000),RELPREF#consult-01#c_mod#foreign=0.0(1.000),RELPREF#country#c_name=1.090(1.000),RELPREF#country#c_name#name=1.345(1.000),RELPREF#name#c_op=1.716(3.000),RELPREF#name#c_op#txt=1.716(3.000),RELPREF#outside#c_op1=0.424(1.000),RELPREF#outside#c_op1#country=0.675(1.000),RELPREF#person#c_name=0.473(1.000),RELPREF#person#c_name#name=0.694(1.000),RELPREF#report-01#c_ARG0=0.184(1.000),RELPREF#report-01#c_ARG0#person=1.169(1.000),UNARY#c_REL-of~~reporters#c_ARG0-of=0.777(1.000),UNARY#c_REL~~Afghan#c_name=0.489(1.000),UNARY#c_REL~~Kabul#c_name=0.388(1.000),UNARY#c_REL~~Oguz#c_name=0.293(1.000),UNARY#c_REL~~consultant#c_ARG2=0.0(1.000),UNARY#c_REL~~foreign#c_mod=0.323(1.000),UNARY#c_REL~~that#c_polarity=-4.271(2.000)}
+[P-T2] [P-T2] Had correct result: false
+[P-T2] [P-T2] Simple Shift Reduce: Testing true
+[P-T2] [P-T2] Beamsize 512. Packing Disabled false
+[P-T2] [P-T2] Neural Shift Reduce: Number of distinct derivations 0
+[P-T2] [P-T2] Cannot save shift reduce parse trees. Exception java.io.FileNotFoundException: /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/logs/trees/1467925639693_false (No such file or directory)
+[P-T2] [P-T2] Logging time 0
+[P-T2] [P-T2] Total AMR parsing time: 0.7310sec (cky=99.86%, baseProcess=0.00%, fg=0.00%)
+[P-T2] [P-T2] CKY parsing time: 0.7300sec (99.86%)
+[P-T2] [P-T2] Processed 0 base parses, created 0 pairs: 0.0000sec (0.00%)
+[P-T2] [P-T2] Second stage inference time (0 pairs): 0.0000sec (0.00%)
+[P-T2] [P-T2] Failed to write chart (directory missing)
+[P-T2] [P-T2] No correct executions
+[P-T2] [P-T2] SMATCH command: python /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/../../utils/smatch/smatch.py -r 20 --pr -f /tmp/smatch6-1469961985001120579-candidate.txt /tmp/smatch6-7754526207873946119-gold.txt
+[P-T2] [P-T2] SMATCH runtime: 0.0540
+[P-T2] [P-T2] SMATCH result: p=0.00, r=0.00, f1=0.00
+[P-T2] [P-T2] SMATCH command: python /home/robo328b/amr_exp2/./experiment_ff/dev.proxy.simple.sr/../../utils/smatch/smatch.py -r 20 --pr -f /tmp/smatch7-9219007201776468858-candidate.txt /tmp/smatch7-8138189807878603236-gold.txt
+[P-T2] [P-T2] SMATCH runtime: 0.7330
+[P-T2] [P-T2] SMATCH result: p=0.57, r=0.55, f1=0.56
+[P-T2] [P-T2] === EXACT statistics:
+Recall: 0.0/5.0 = 0.0
+Precision: 0.0/0.0 = 0.0
+F1: 0.0
+SKIP Recall: 0.0/5.0 = 0.0
+SKIP Precision: 0.0/5.0 = 0.0
+SKIP F1: 0.0
+
+=== smatch statistics:
+Recall: 0.0
+Precision: 0.0
+F1: 0.0
+SKIP Recall: 0.5545
+SKIP Precision:  = 0.5685
+SKIP F1: 0.5614
+Smatch calls: 7 [mean time: 0.218sec]
+0 samples recorded multiple max-scoring derivations (0 with sloppy inference)
+
+[P-T2] [P-T2] Total run time 45.7230 seconds
+[P-T2] [P-T2] ============ (Job test completed)
