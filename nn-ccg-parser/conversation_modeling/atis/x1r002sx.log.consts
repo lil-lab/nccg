@@ -1,0 +1,20 @@
+list airfares from kansas city to san francisco
+(REQ:task (ask:<act,prog> (pair:p obj:e (newobj:e tmp1:fl))) (query:act (lambda $0:e (and:t (fr:t obj:e kansas_city:ci) (to:t obj:e sf:ci) (cost:t obj:e $0)))))
+
+list airfares from saint louis to san francisco
+(REQ:task (ask:<act,prog> (pair:p obj:e (newobj:e tmp2:fl))) (query:act (lambda $0:e (and:t (fr:t obj:e st_louis:ci) (to:t obj:e sf:ci) (cost:t obj:e $0)))))
+
+list airfares for the flights
+// XXX : the constant obj:e should come from "flights", as well as the prediacte "flight:t"
+(REQ:task (ask:<act,prog> (pair:p obj:e tmp2:fl)) (query:act (lambda $0:e (and:t (flight:t obj:e) (cost:t obj:e $0)))))
+
+list flights and airfares from atlanta to san francisco
+// XXX : asking for two things
+(REQ:task (ask:<act,prog> (pair:p obj:e (newobj:e tmp3:fl))) (query:act (lambda $0:e (lambda $1:e (and:t (ref:t $0 obj:e) (cost:t $0 $1) (fr:t $0 atlanta:ci) (to:t $0 sf:ci))))))
+
+list fares from atlanta to san francisco
+(REQ:task (ask:<act,prog> (pair:p obj:e (newobj:e tmp4:fl))) (query:act (lambda $0:e (and:t (fr:t obj:e atlanta:ci) (to:t obj:e sf:ci) (cost:t obj:e $0)))))
+
+list airfares from atlanta to san francisco
+(REQ:task (ask:<act,prog> (pair:p obj:e (newobj:e tmp4:fl))) (query:act (lambda $0:e (and:t (fr:t obj:e atlanta:ci) (to:t obj:e sf:ci) (cost:t obj:e $0)))))
+

@@ -1,0 +1,30 @@
+show me round trip flights from orlando to minneapolis with a stopover in kansas city
+(lambda $v0 e (and (flight $v0) (round_trip $v0) (from $v0 orlando:ci) (to $v0 minneapolis:ci) (stop $v0 kansas_city:ci)))
+
+show me the flights from orlando to kansas city continuing on then to minneapolis
+(lambda $v0 e (and (flight $v0) (from $v0 orlando:ci) (to $v0 minneapolis:ci) (stop $v0 kansas_city:ci)))
+
+show me the flights from orlando to kansas city
+(lambda $v0 e (and (flight $v0) (from $v0 orlando:ci) (to $v0 kansas_city:ci)))
+
+show me the round trip fares
+(lambda $v1 e (exists $v0 (and (flight $v0) (from $v0 orlando:ci) (to $v0 kansas_city:ci) (round_trip $v0) (= (fare $v0) $v1))))
+
+show me the flights from kansas city to minneapolis that leave after 11am on a weekday
+(lambda $v0 e (and (flight $v0) (from $v0 kansas_city:ci) (to $v0 minneapolis:ci) (> (departure_time $v0) 1100:ti) (weekday $v0)))
+
+show me the round trip fare for these flights
+(lambda $v1 e (exists $v0 (and (flight $v0) (from $v0 kansas_city:ci) (to $v0 minneapolis:ci) (> (departure_time $v0) 1100:ti) (weekday $v0) (round_trip $v0) (= (fare $v0) $v1))))
+
+show me the flights from minneapolis to kansas city
+(lambda $v0 e (and (flight $v0) (from $v0 minneapolis:ci) (to $v0 kansas_city:ci)))
+
+show me the round trip fares
+(lambda $v1 e (exists $v0 (and (flight $v0) (from $v0 minneapolis:ci) (to $v0 kansas_city:ci) (round_trip $v0) (= (fare $v0) $v1)))
+
+show me the flights from kansas city to orlando and the round trip fare
+(lambda $v0 e (lambda $v1 e (and (flight $v0) (to $v0 orlando:ci) (from $v0 kansas_city:ci) (round_trip $v0) (= (fare $v0) $v1)))
+
+show me the flights from minneapolis to orlando with a stopover in kansas city
+(lambda $v0 e (and (flight $v0) (to $v0 orlando:ci) (from $v0 minneapolis:ci) (stop $v0 kansas_city:ci)))
+

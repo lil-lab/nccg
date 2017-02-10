@@ -1,0 +1,43 @@
+ first class columbus to chicago before 10am one way 
+(lambda $v0 e (and (class_type $v0 first:cl) (from $v0 columbus:ci) (to $v0 chicago:ci) (oneway $v0) (< (departure_time $v0) 1000:ti)))
+
+ columbus to chicago 
+(lambda $v0 e (and (from $v0 columbus:ci) (to $v0 chicago:ci)))
+
+ one way first class before 10am 
+(lambda $v0 e (and (class_type $v0 first:cl) (from $v0 columbus:ci) (to $v0 chicago:ci) (oneway $v0) (< (departure_time $v0) 1000:ti)))
+
+ first class please 
+(lambda $v0 e (and (class_type $v0 first:cl) (from $v0 columbus:ci) (to $v0 chicago:ci) (oneway $v0) (< (departure_time $v0) 1000:ti)))
+
+ show me the airlines please 
+(lambda $v1 e (exists $v0 (and (class_type $v0 first:cl) (from $v0 columbus:ci) (to $v0 chicago:ci) (oneway $v0) (< (departure_time $v0) 1000:ti) (= (airline $v0) $v1))))
+
+ saint petersburg to detroit  
+(lambda $v0 e (and (from $v0 st_petersburg:ci) (to $v0 detroit:ci)))
+
+ arrive before 7pm cheapest flight please 
+(argmin $v0 (and (flight $v0) (from $v0 st_petersburg:ci) (to $v0 detroit:ci) (< (arrival_time $v0) 1900:ti)) (fare $v0))
+
+ show airlines please 
+(airline (argmin $v0 (and (flight $v0) (from $v0 st_petersburg:ci) (to $v0 detroit:ci) (< (arrival_time $v0) 1900:ti)) (fare $v0)))
+
+ round trip kansas city to phoenix nonstop 
+(lambda $v0 e (and (round_trip $v0) (nonstop $v0) (from $v0 kansas_city:ci) (to $v0 phoenix:ci)))
+
+ lowest fares please 
+(min $v1 (exists $v0 (and (round_trip $v0) (nonstop $v0) (from $v0 kansas_city:ci) (to $v0 phoenix:ci) (= (fare $v0) $v1))))
+
+ show airline names please 
+(lambda $v1 e (exists $v0 (and (round_trip $v0) (nonstop $v0) (from $v0 kansas_city:ci) (to $v0 phoenix:ci) (= (airline $v0) $v1))))
+
+ what does wn mean 
+wn:al
+
+ return flights please 
+(lambda $v0 e (and (flight $v0) (to $v0 kansas_city:ci) (from $v0 phoenix:ci)))
+
+ phoenix to kansas city nonstop 
+(lambda $v0 e (and (nonstop $v0) (to $v0 kansas_city:ci) (from $v0 phoenix:ci)))
+
+

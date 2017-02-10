@@ -1,0 +1,33 @@
+could you show me all weekday flights from phoenix to denver
+(lambda $v0 e (and (flight $v0) (from $v0 phoenix:ci) (to $v0 denver:ci) (weekday $v0) ))
+
+could you show me all weekday flights from phoenix to denver
+(lambda $v0 e (and (flight $v0) (from $v0 phoenix:ci) (to $v0 denver:ci) (weekday $v0) ))
+
+could you show me the meals for these flights
+(lambda $m e (exists $v1 (and (flight $v1) (from $v1 phoenix:ci) (to $v1 denver:ci) (weekday $v1)  (= (meal $v1) $m))))
+
+does the phoenix airport have ground transportation to and from downtown
+(lambda $v0 e (and (ground_transport $v0) (to_city $v0 phoenix:ci) (from_airport $v0 phx:ap) ))
+
+does the phoenix airport have ground transportation to and from downtown
+(lambda $v0 e (and (ground_transport $v0) (to_city $v0 phoenix:ci) (from_airport $v0 phx:ap) ))
+
+does this airport have ground transportation
+(lambda $v0 e (and (ground_transport $v0) (from_airport $v0 phx:ap) ))
+
+is there ground transportation between airport and downtown
+(lambda $v0 e (and (ground_transport $v0) (to_city $v0 phoenix:ci) (from_airport $v0 phx:ap) ))
+
+could you please show me all the weekday flights between denver and dallas
+(lambda $v0 e (and (flight $v0) (from $v0 denver:ci) (to $v0 dallas:ci) (weekday $v0) ))
+
+could you show me the meals for these flights
+(lambda $m e (exists $v1 (and (flight $v1) (from $v1 denver:ci) (to $v1 dallas:ci) (weekday $v1)  (= (meal $v1) $m))))
+
+in dallas is there ground transportation between the airport and downtown
+(lambda $v0 e (and (ground_transport $v0) (to_city $v0 dallas:ci) (from_airport $v0 dfw:ap) ))
+
+what does ua stand for
+ua:al
+

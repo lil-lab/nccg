@@ -1,0 +1,44 @@
+(
+do-sequentially:<t,<t,t>>
+
+// functions
+=:<e,<e,t>>
+!=:<e,<e,t>>
+distance:<loc,n>
+// if e is in the set <e,t>, return true
+in-set:<e,<<e,t>,t>>
+
+// Should fail if unique is not true
+unique-thing:<<e,t>,e>
+
+// truth->entity (returns a set), number->entity (returns an ordering), n (pull n-th thing from ordered list) I am not convinced this works - that the ordering has the context for the things it's ordering.  It would be simpler to have n-th assume correct ordering and have a different function that needs the extra input.
+n-th:<<e,t>,<<e,n>,<n,e>>>
+
+// use 'e' for generality
+hall:<e,t>
+junction:<e,t>
+room:<e,t>
+adjacent:<e,t>
+
+//finally need this
+verify:<t,t>
+
+// the set of everything ahead, left, etc
+// for each location, return a truth value for whether it's in the set or not
+locations-ahead:<e,t>
+locations-left:<e,t>
+locations-right:<e,t>
+
+// adjacent areas in directions
+//forward-loc:loc
+//left-loc:loc
+//right-loc:loc
+
+// we use move-to exclusively right now, which is silly. move makes more sense.
+move-to:<loc,t>
+move:<ac,t>
+
+// procedural=type stuff
+do-until:<<e,t>,<t,t>>
+
+)

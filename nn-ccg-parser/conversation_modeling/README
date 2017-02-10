@@ -1,0 +1,35 @@
+* Using the old typing format since the darpa_communicator corpus hasn't been converted yet.
+
+
+User speech acts:
+REQ:task
+YES:task			// Answer a question positively
+NO:task				// Answer a question negatively
+CONFIRM:task		// confirm the latest system statement
+REJECT:task			// Reject the system statement, in contrast to confirming it
+
+OK:comm				// OK conversation status
+REPEAT_REQ:comm
+RESTART_REQ:comm
+FAIL_PARSE:comm
+
+# Predicate that manipulate objects
+newobj:<e,e>		// Create a new object with the given name and type.
+					// If such an object already exists, overwrite it.
+
+# Actions
+query:<<e,t>,act>	// Take a set defined by <e,t> and return a query action
+query:<e,act>		// Take a set defined by all entries that follow the constraints of
+					// the given entity and returns a query action
+
+# Executors
+refine:<p*,<act,prog>>		// Take a list pairs of grounding pairs and return a function that takes an action and refines an existing query using that action
+							// At least one grouding pair is given. It's impossible to refine without at least one grounding
+ask:<p*,<act,prog>>			// Given an action, returns an answer, which can be a number or a binary answer
+
+
+(REQ:task (refine:<act,prog> ($0 s1:sg)) (query:act (lambda $0:e (to:t $0 nyc:ci))))
+speech_act(grounding operation, action(lambda content))
+
+For a media player:
+(REQ:task exec:<act,prog> (play:act (lambda $0:e (artist:t $0 dylan:name))))

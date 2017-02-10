@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;edu.cornell.cs.nlp.spf.parser.ccg.rnn.shiftreduce.dataset&apos; to &apos;parser.ccg.rnn.shiftreduce/src&apos;&#x0A;- Original project: &apos;parser.ccg.neural.abstract&apos;&#x0A;- Destination element: &apos;parser.ccg.rnn.shiftreduce/src&apos;&#x0A;- Original element: &apos;parser.ccg.neural.abstract/src/edu.cornell.cs.nlp.spf.parser.ccg.rnn.shiftreduce.dataset&apos;&#x0A;- Update references to refactored element" description="Move package" destination="=parser.ccg.rnn.shiftreduce/src" element1="/src&lt;edu.cornell.cs.nlp.spf.parser.ccg.rnn.shiftreduce.dataset" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1457907768216" version="1.0"/>
+</session>

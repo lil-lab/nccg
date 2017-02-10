@@ -1,0 +1,23 @@
+1459958889442	Copy compilation unit
+1459959163268	Rename local variable 'batch'
+1459960597265	Rename field 'featureEmbedding'
+1459961500370	Rename field 'nonLocaFeatures'
+1459961523280	Rename field 'nonLocaActionFeatures'
+1459962910983	Copy compilation unit
+1459964903178	Copy compilation unit
+1459965016384	Copy compilation unit
+1459969989957	Rename local variable 'stateEncoding'
+1459977261813	Rename local variable 'denoms'
+1459977623561	Rename local variable 'singleton'
+1460069034410	Rename local variable 'nIn'
+1460143725685	Copy compilation unit
+1460143758947	Rename type 'StackTypeFeatures'
+1460144012123	Rename field 'TAG1'
+1460144022544	Rename field 'TAG2'
+1460144031759	Rename field 'TAG3'
+1460144038592	Rename field 'TYPE1'
+1460144044896	Rename field 'TypeTAG3'
+1460144060504	Rename field 'TYPETYPE1'
+1460146884894	Rename field 'NoSyntax'
+1460192839332	Delete element
+1460200476195	Copy compilation unit

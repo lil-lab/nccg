@@ -1,0 +1,3 @@
+## Model initializers
+type=init.lex.unification id=initSeedLex data=train
+type=init.lex	id=initNPs	lexicon=npLexicon	fixed=true

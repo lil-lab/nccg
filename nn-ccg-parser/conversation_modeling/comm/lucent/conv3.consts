@@ -1,0 +1,490 @@
+61611_998683042.910_2001_Lucent_08_998683943.470_145712_EDT_24
+
+system	hello , evaluation user . welcome to the bell labs travel reservation system . i have a tutorial explaining my new features . if you ' d like to hear it , just ask me for the tutorial . how can i help you ?
+## (OPEN_CLOSE:task)
+// SET s:sg=s1:sg
+// Generated from template 356
+
+user	i ' d like to travel to boise idaho please from newark
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (to:t $0 boise_id:ci) (fr:t $0 newark_nj:ci)))))
+
+system	o . k . i have you arriving in boise after that , i ' m confused about what you said . from which city ?
+## (STATE_CONFIRMED:comm)
+## (IMPLICIT_CONFIRM:comm (to:t s1:sg boise_id:ci))
+## (APOLOGY:comm)
+## (REQUEST_INFO:task (lambda $0:ci (fr:t s1:sg $0)))
+// Generated from template 1197
+
+user	from newark new jersey
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (fr:t $0 newark_nj:ci)))))
+
+system	i understand you ' re leaving newark airport leaving newark on what date ?
+## (IMPLICIT_CONFIRM:comm (fr:t s1:sg ewr:ap))
+## (REQUEST_INFO:task (lambda $0:d (and:t (fr:t s1:sg newark_nj:ci) (ddate:t s1:sg $0))))
+// Generated from template 839
+
+user	september the twenty first in the morning
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (ddate:t $0 (date_mn:d sep:mon 21:n)) (dtime:t $0 (range:tm 0600:tm 1200:tm))))))
+
+system	i ' ve got you leaving on friday, september twenty first in the morning what is your preferred airline ?
+## (IMPLICIT_CONFIRM:comm (and:t (ddate:t s1:sg (date_dmn:d fri:day sep:mon 21:n)) (dtime:t s1:sg (range:tm 0600:tm 1200:tm))))
+## (REQUEST_INFO:task (lambda $0:al (airline:t s1:sg $0)))
+// Generated from template 494
+
+user	continental
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (airline:t $0 coa:al)))))
+
+system	recapping the first flight segment : i have you leaving newark on friday, september twenty first in the morning and arriving in boise flying on continental . is this correct ?
+## (EXPLICIT_CONFIRM:comm (and:t (sgnum:t s1:sg 1:n) (fr:t s1:sg newark_nj:ci) (ddate:t s1:sg (date_dmn:d fri:day sep:mon 21:n)) (dtime:t s1:sg (range:tm 0600:tm 1200:tm)) (to:t s1:sg boise_id:ci) (airline:t s1:sg coa:al)))
+// Generated from template 1221
+
+user	correct
+## (CONFIRM:task)
+
+system	got that . is boise your final destination ?
+## (STATE_CONFIRMED:comm)
+## (REQUEST_INFO:task (exist:t (lambda $0:sg (fr:t $0 boise_id:ci))))
+// SET s:sg=s2:sg
+// Generated from template 391
+
+user	yes it is
+## (YES:task)
+
+system	i ' ve got you arriving in los angeles leaving boise on what date ?
+## (IMPLICIT_CONFIRM:comm (to:t s2:sg la_ca:ci))
+## (REQUEST_INFO:task (lambda $0:d (and:t (fr:t s2:sg boise_id:ci) (ddate:t s2:sg $0))))
+// Generated from template 450
+
+user	no
+## (REJECT:task)
+
+system	what date would you like to depart boise ?
+## (REQUEST_INFO:task (lambda $0:d (and:t (fr:t s2:sg boise_id:ci) (ddate:t s2:sg $0))))
+// Generated from template 161
+
+user	i ' d like to go from boise to newark
+## (REQ:task (refine:<act,prog> (pair:p obj:e s2:sg)) (query:act (lambda $0:e (and:t (and:t (ref:t $0 obj:e) (fr:t $0 boise_id:ci) (to:t $0 newark_nj:ci))))))
+
+system	sorry , i must have misunderstood . i just heard you say that the arrival city was newark airport . was the arrival city los angeles or newark airport
+## (APOLOGY:comm)
+## (IMPLICIT_CONFIRM:comm (to:t s2:sg ewr:ap))
+## (SELECT:task (to:t s2:sg la_ca:ci) (to:t s2:sg ewr:ap))
+// Generated from template 1178
+
+user	newark airport
+## (REQ:task (refine:<act,prog> (pair:p obj:e s2:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (to:t $0 ewr:ap)))))
+
+system	i ' ve got you arriving in newark airport give me the departure date , for example , july twentieth .
+## (IMPLICIT_CONFIRM:comm (to:t s2:sg ewr:ap))
+## (REQUEST_INFO:task (lambda $0:d (ddate:t s2:sg $0)))
+## (INSTRUCTION:frame (d:t (date_mn:d jul:mon 20:n)))
+// Generated from template 1054
+
+user	september twenty four
+## (REQ:task (refine:<act,prog> (pair:p obj:e s2:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (ddata:t $0 (date_mn:d sep:mon 24:n))))))
+
+system	you ' re leaving on monday, september twenty fourth leaving at what time ?
+## (IMPLICIT_CONFIRM:comm (ddate:t s2:sg (date_dmn:d mon:day sep:mon 24:n)))
+## (REQUEST_INFO:task (lambda $0:tm (dtime:t s2:sg $0)))
+// Generated from template 404
+
+user	can we start over
+## (RESTART_REQ:comm)
+
+system	lets start over . how can i help you ?
+## (RESET:comm)
+## (OPEN_CLOSE:task)
+// SET s:sg=s1:sg
+// Generated from template 402
+
+user	i ' d like to go to boise idaho
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (to:t $0 boise_id:ci)))))
+
+system	i ' ve got you arriving in boise from which city ?
+## (IMPLICIT_CONFIRM:comm (to:t s1:sg boise_id:ci))
+## (REQUEST_INFO:task (lambda $0:ci (fr:t s1:sg $0)))
+// Generated from template 813
+
+user	from newark airport
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (fr:t $0 ewr:ap)))))
+
+system	o . k . i have you leaving newark airport leaving newark on what date ?
+## (STATE_CONFIRMED:comm)
+## (IMPLICIT_CONFIRM:comm (fr:t s1:sg ewr:ap))
+## (REQUEST_INFO:task (lambda $0:d (and:t (fr:t s1:sg newark_nj:ci) (ddate:t s1:sg $0))))
+// Generated from template 925
+
+user	september the twenty first
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (ddate:t $0 (date_mn:d sep:mon 21:n))))))
+
+system	i understand you ' re leaving on friday, september twenty first leaving at what time ?
+## (IMPLICIT_CONFIRM:comm (ddate:t s1:sg (date_dmn:d fri:day sep:mon 21:n)))
+## (REQUEST_INFO:task (lambda $0:tm (dtime:t s1:sg $0)))
+// Generated from template 442
+
+user	in the morning
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (dtime:t $0 (range:tm 0600:tm 1200:tm))))))
+
+system	i understand you ' re leaving in the morning what is your preferred airline ?
+## (IMPLICIT_CONFIRM:comm (dtime:t s1:sg (range:tm 0600:tm 1200:tm)))
+## (REQUEST_INFO:task (lambda $0:al (airline:t s1:sg $0)))
+// Generated from template 462
+
+user	continental
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (airline:t $0 coa:al)))))
+
+system	for this leg , you ' re leaving out of newark on friday, september twenty first in the morning and arriving in boise flying on continental . is this correct ?
+## (EXPLICIT_CONFIRM:comm (and:t (fr:t s1:sg newark_nj:ci) (ddate:t s1:sg (date_dmn:d fri:day sep:mon 21:n)) (dtime:t s1:sg (range:tm 0600:tm 1200:tm)) (to:t s1:sg boise_id:ci) (airline:t s1:sg coa:al)))
+// Generated from template 270
+
+user	yes
+## (CONFIRM:task)
+
+system	got that . is boise your final destination ?
+## (STATE_CONFIRMED:comm)
+## (REQUEST_INFO:task (exist:t (lambda $0:sg (fr:t $0 boise_id:ci))))
+// SET s:sg=s2:sg
+// Generated from template 391
+
+user	yes
+## (YES:task)
+
+system	i ' ll access the database now ; this may take a moment .
+## (REQUEST_WAIT:comm)
+// Generated from template 68
+
+system	o . k . i found 12 options in the database . i ' ll give each option to you one leg at a time . i found a route with continental for nine hundred ninety eight dollars . from newark airport there is a flight leaving on friday, september twenty first at seven thirty five a. m. and arriving in boise at two forty p. m. with a stop in seattle . do you want to keep this itinerary ?
+## (STATE_CONFIRMED:comm)
+## (NUM_RESULTS:task 12:n)
+## (INSTRUCTION:frame)
+## (OFFER:task (and:t (cost:t s1:sg (dollar:n 998:n)) (airline:t s1:sg coa:al) (in:t s1:sg s1l1:lg) (in:t s1:sg s1l2:lg) (bef:t s1l1:lg s1l2:lg) (fr:t s1l1:lg ewr:ap) (ddate:t s1l1:lg (date_dmn:d fri:day sep:mon 21:n)) (dtime:t s1l1:lg 0735:tm) (atime:t s1l2:lg 1440:tm) (to:t s1l2:lg boise_id:ci) (to:t s1l1:lg seattle_wa:ci) (fr:t s1l2:lg seattle_wa:ci)))
+// SET s:sg=s1:sg
+// Generated from template 1565
+
+user	no
+## (NO:task)
+
+system	here ' s the next option : continental has a flight for nine hundred ninety eight dollars leaving at eleven fifty five a. m. and arriving at six thirty p. m. with a stop in seattle . do you want to keep this itinerary ?
+## (OFFER:task (and:t (airline:t s1:sg coa:al) (cost:t s1:sg (dollar:n 998:n)) (in:t s1:sg s1l1:lg) (in:t s1:sg s1l2:lg) (bef:t s1l1:lg s1l2:lg) (dtime:t s1l1:lg 1155:tm) (atime:t s1l2:lg 1830:tm) (to:t s1l1:lg seattle_wa:ci) (fr:t s1l2:lg seattle_wa:ci)))
+// Generated from template 1377
+
+user	no
+## (NO:task)
+
+system	here ' s the next option : continental has a flight for one thousand zero dollars leaving at eight a. m. and arriving at one eighteen p. m. with a stop in minneapolis st paul . do you want to keep this itinerary ?
+## (OFFER:task (and:t (airline:t s1:sg coa:al) (cost:t s1:sg (dollar:n 1000:n)) (in:t s1:sg s1l1:lg) (in:t s1:sg s1l2:lg) (bef:t s1l1:lg s1l2:lg) (dtime:t s1l1:lg 0800:tm) (atime:t s1l2:lg 1318:tm) (to:t s1l1:lg msp:ap) (fr:t s1l2:lg msp:ap)))
+// Generated from template 1374
+
+user	yes
+## (YES:task)
+
+system	ok , i ' ve updated your itinerary . here is a summary of your flight plans . continental flight sixty five forty three leaves newark airport at eight a. m. on friday, september twenty first . change planes in minneapolis st paul for continental flight sixty two seventy one this flight arrives in boise at one eighteen p. m. \ if you don ' t need a car or hotel reservation , hang up and your itinerary will be mailed to you . if you actually want to take this trip , please remember to book it through an agent . would you like to rent a car in boise ?
+## (STATE_CONFIRMED:comm)
+## (INSTRUCTION:frame)
+## (IMPLICIT_CONFIRM:comm (and:t (in:t s1:sg s1l1:lg) (in:t s1:sg s1l2:lg) (bef:t s1l1:lg s1l2:lg) (airline:t s1l1:lg coa:al) (flnum:t s1l1:lg 6543:n) (fr:t s1l1:lg ewr:ap) (dtime:t s1l1:lg 0800:tm) (ddate:t s1l1:lg (date_dmn:d fri:day sep:mon 21:n)) (to:t s1l1:lg msp:ap) (fr:t s1l2:lg msp:ap) (airline:t s1l2:lg coa:al) (flnum:t s1l2:lg 6271:n) (to:t s1l2:lg boise_id:ci) (atime:t s1l2:lg 1318:tm)))
+## (INSTRUCTION:frame)
+## (INSTRUCTION:frame)
+## (REQUEST_INFO:task (exist:t (lambda $0:cr (and:t (cr:t $0) (crloc:t $0 boise_id:ci)))))
+// Generated from template 2460
+
+user	can we start over
+## (RESTART_REQ:comm)
+
+system	lets start over . how can i help you ?
+## (RESET:comm)
+## (OPEN_CLOSE:task)
+// SET s:sg=s1:sg
+// Generated from template 402
+
+user	i would like to go from newark airport to boise idaho
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (fr:t $0 ewr:ap) (to:t $0 boise_id:ci)))))
+
+system	you ' re leaving newark airport where are you flying to ?
+## (IMPLICIT_CONFIRM:comm (fr:t s1:sg ewr:ap))
+## (REQUEST_INFO:task (lambda $0:loc (to:t s1:sg $0)))
+// Generated from template 407
+
+user	boise idaho
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (to:t $0 boise_id:ci)))))
+
+system	you ' re arriving in boise leaving newark on what date ?
+## (IMPLICIT_CONFIRM:comm (to:t s1:sg boise_id:ci))
+## (REQUEST_INFO:task (lambda $0:d (and:t (fr:t s1:sg newark_nj:ci) (ddate:t s1:sg $0))))
+// Generated from template 418
+
+user	september the twenty first
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (ddate:t $0 (date_mn:d sep:mon 21:n))))))
+
+system	i ' ve got you leaving on friday, september twenty first leaving at what time ?
+## (IMPLICIT_CONFIRM:comm (ddate:t s1:sg (date_dmn:d fri:day sep:mon 21:n)))
+## (REQUEST_INFO:task (lambda $0:tm (dtime:t s1:sg $0)))
+// Generated from template 436
+
+user	in the morning
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (dtime:t $0 (range:tm 0600:tm 1200:tm))))))
+
+system	o . k . i have you leaving in the morning what is your preferred airline ?
+## (STATE_CONFIRMED:comm)
+## (IMPLICIT_CONFIRM:comm (dtime:t s1:sg (range:tm 0600:tm 1200:tm)))
+## (REQUEST_INFO:task (lambda $0:al (airline:t s1:sg $0)))
+// Generated from template 992
+
+user	continental
+## (REQ:task (refine:<act,prog> (pair:p obj:e s1:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (airline:t $0 coa:al)))))
+
+system	here ' s a summary of the first flight segment : i ' ve got you leaving newark on friday, september twenty first in the morning and arriving in boise flying on continental . is this correct ?
+## (EXPLICIT_CONFIRM:comm (and:t (sgnum:t s1:sg 1:n) (fr:t s1:sg newark_nj:ci) (ddate:t s1:sg (date_dmn:d fri:day sep:mon 21:n)) (dtime:t s1:sg (range:tm 0600:tm 1200:tm)) (to:t s1:sg boise_id:ci) (airline:t s1:sg coa:al)))
+// Generated from template 220
+
+user	yes
+## (CONFIRM:task)
+
+system	o . k . good . is boise your final destination ?
+## (STATE_CONFIRMED:comm)
+## (REQUEST_INFO:task (exist:t (lambda $0:sg (fr:t $0 boise_id:ci))))
+// SET s:sg=s2:sg
+// Generated from template 419
+
+user	no
+## (NO:task)
+
+system	are you returning to newark , or do you have another destination in mind ?
+## (SELECT:task (and:t (return:t s2:sg) (to:t s2:sg newark_nj:ci)) (lambda $0:loc (to:t s2:sg $0)))
+// Generated from template 321
+
+user	returning to newark
+## (REQ:task (refine:<act,prog> (pair:p obj:e s2:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (return:t $0) (to:t $0 ewr:ap)))))
+
+system	o . k . i have you arriving in newark airport leaving boise on what date ?
+## (STATE_CONFIRMED:comm)
+## (IMPLICIT_CONFIRM:comm (to:t s2:sg ewr:ap))
+## (REQUEST_INFO:task (lambda $0:d (and:t (fr:t s2:sg boise_id:ci) (ddate:t s2:sg $0))))
+// Generated from template 964
+
+user	september the twenty fourth
+## (REQ:task (refine:<act,prog> (pair:p obj:e s2:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (ddate:t $0 (date_mn:d sep:mon 24:n))))))
+
+system	you ' re leaving on monday, september twenty fourth leaving at what time ?
+## (IMPLICIT_CONFIRM:comm (ddate:t s2:sg (date_dmn:d mon:day sep:mon 24:n)))
+## (REQUEST_INFO:task (lambda $0:tm (dtime:t s2:sg $0)))
+// Generated from template 404
+
+user	in the morning
+## (REQ:task (refine:<act,prog> (pair:p obj:e s2:sg)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (dtime:t $0 (range:tm 0600:tm 1200:tm))))))
+
+system	for this leg , you ' re leaving from boise on monday, september twenty fourth in the morning and arriving in newark flying on continental . is this correct ?
+## (EXPLICIT_CONFIRM:comm (and:t (fr:t s2:sg boise_id:ci) (ddate:t s2:sg (date_dmn:d mon:day sep:mon 24:n)) (dtime:t s2:sg (range:tm 0600:tm 1200:tm)) (to:t s2:sg newark_nj:ci) (airline:t s2:sg coa:al)))
+// Generated from template 187
+
+user	yes
+## (CONFIRM:task)
+
+system	great ! i ' ll access the database now ; this may take a moment .
+## (STATE_CONFIRMED:comm)
+## (REQUEST_WAIT:comm)
+// Generated from template 470
+
+system	o . k . i found 27 options in the database . i ' ll give each option to you one leg at a time . i found a route with continental for five hundred nine dollars . from newark airport there is a flight leaving on friday, september twenty first at eight a. m. and arriving in boise at one eighteen p. m. with a stop in minneapolis st paul . is this flight o . k . if so , i ' ll give you the next leg .
+## (STATE_CONFIRMED:comm)
+## (NUM_RESULTS:task 27:n)
+## (INSTRUCTION:frame)
+## (OFFER:task (and:t (cost:t s1:sg (dollar:n 509:n)) (airline:t s1:sg coa:al) (in:t s1:sg s1l1:lg) (in:t s1:sg s1l2:lg) (bef:t s1l1:lg s1l2:lg) (fr:t s1l1:lg ewr:ap) (ddate:t s1l1:lg (date_dmn:d fri:day sep:mon 21:n)) (dtime:t s1l1:lg 0800:tm) (atime:t s1l2:lg 1318:tm) (to:t s1l2:lg boise_id:ci) (to:t s1l1:lg msp:ap) (fr:t s1l2:lg msp:ap)))
+## (INSTRUCTION:frame)
+// SET s:sg=s1:sg
+// Generated from template 1605
+
+user	yes
+## (YES:task)
+
+system	for the second segment , continental has a flight from boise leaving on monday, september twenty fourth at eight ten a. m. and arriving in newark airport at four forty eight p. m. with a stop in minneapolis st paul . do you want to keep this itinerary ?
+## (OFFER:task (and:t (sgnum:t s2:sg 2:n) (in:t s2:sg s2l1:lg) (airline:t s2:sg coa:al) (in:t s2:sg s2l1:lg) (in:t s2:sg s2l2:lg) (bef:t s2l1:lg s2l2:lg) (fr:t s2l1:lg boise_id:ci) (ddate:t s2l1:lg (date_dmn:d mon:day sep:mon 24:n)) (dtime:t s2l1:lg 0810:tm) (to:t s2l2:lg ewr:ap) (atime:t s2l2:lg 1648:tm) (to:t s2l1:lg msp:ap) (fr:t s2l2:lg msp:ap)))
+// SET s:sg=s2:sg
+// Generated from template 334
+
+user	yes
+## (YES:task)
+
+system	ok , i ' ve updated your itinerary . here is a summary of your flight plans . in the first leg , continental flight sixty five forty three leaves newark airport at eight a. m. on friday, september twenty first . change planes in minneapolis st paul for continental flight sixty two seventy one this flight arrives in boise at one eighteen p. m. \ in the second leg , continental flight sixty two seventy leaves boise at eight ten a. m. on monday, september twenty fourth . change planes in minneapolis st paul for continental flight fifty five sixty six this flight arrives in newark airport at four forty eight p. m. \ if you don ' t need a car or hotel reservation , hang up and your itinerary will be mailed to you . if you actually want to take this trip , please remember to book it through an agent . would you like to rent a car in boise ?
+## (STATE_CONFIRMED:comm)
+## (INSTRUCTION:frame)
+## (IMPLICIT_CONFIRM:comm (and:t (sgnum:t s1:sg 1:n) (in:t s1:sg s1l1:lg) (in:t s1:sg s1l2:lg) (bef:t s1l1:lg s1l2:lg) (airline:t s1l1:lg coa:al) (flnum:t s1l1:lg 6543:n) (fr:t s1l1:lg ewr:ap) (dtime:t s1l1:lg 0800:tm) (ddate:t s1l1:lg (date_dmn:d fri:day sep:mon 21:n)) (to:t s1l1:lg msp:ap) (fr:t s1l2:lg msp:ap) (airline:t s1l2:lg coa:al) (flnum:t s1l2:lg 6271:n) (to:t s1l2:lg boise_id:ci) (atime:t s1l2:lg 1318:tm)))
+## (IMPLICIT_CONFIRM:comm (and:t (sgnum:t s2:sg 2:n) (in:t s2:sg s2l1:lg) (in:t s2:sg s2l2:lg) (bef:t s2l1:lg s2l2:lg) (airline:t s2l1:lg coa:al) (flnum:t s2l1:lg 6270:n) (fr:t s2l1:lg boise_id:ci) (dtime:t s2l1:lg 0810:tm) (ddate:t s2l1:lg (date_dmn:d mon:day sep:mon 24:n)) (to:t s2l1:lg msp:ap) (fr:t s2l2:lg msp:ap) (airline:t s2l2:lg coa:al) (flnum:t s2l2:lg 5566:n) (to:t s2l2:lg ewr:ap) (atime:t s2l2:lg 1648:tm)))
+## (INSTRUCTION:frame)
+## (INSTRUCTION:frame)
+## (REQUEST_INFO:task (exist:t (lambda $0:cr (and:t (cr:t $0) (crloc:t $0 boise_id:ci)))))
+// SET s:sg=s1:sg
+// SET s:sg=s2:sg
+// Generated from template 2482
+
+user	yes i would
+## (YES:task)
+
+system	what kind of car would you like ?
+## (REQUEST_INFO:task (lambda $0:cl (crclass:t c1:cr $0)))
+// SET c:cr=c1:cr
+// Generated from template 191
+
+user	an intermediate
+## (REQ:task (refine:<act,prog> (pair:p obj:e c1:cr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (crclass:t $0 intermediate:cl)))))
+
+system	i understand you ' re picking up a intermediate car which car rental company do you prefer ?
+## (IMPLICIT_CONFIRM:comm (crclass:t c1:cr intermediate:cl))
+## (REQUEST_INFO:task (lambda $0:rn (crcomp:t c1:cr $0)))
+// Generated from template 983
+
+user	avis
+## (REQ:task (refine:<act,prog> (pair:p obj:e c1:cr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (crcomp:t $0 avis:rn)))))
+
+system	i currently have you picking up a intermediate car in boise on friday, september twenty first dropping it off on monday, september twenty fourth is this correct ?
+## (EXPLICIT_CONFIRM:comm (and:t (crclass:t c1:cr intermediate:cl) (crloc:t c1:cr boise_id:ci) (crpick:t c1:cr (date_dmn:d fri:day sep:mon 21:n)) (crdrop:t c1:cr (date_dmn:d mon:day sep:mon 24:n))))
+// Generated from template 160
+
+user	yes it is
+## (CONFIRM:task)
+
+system	o . k . good . i ' ll access the database now ; this may take a moment .
+## (STATE_CONFIRMED:comm)
+## (REQUEST_WAIT:comm)
+// Generated from template 540
+
+system	o . k . i found 26 options in the database . enterprise has a intermediate car in boise for twenty seven dollars per day . do you want to add this to your itinerary ?
+## (STATE_CONFIRMED:comm)
+## (NUM_RESULTS:task 26:n)
+## (OFFER:task (and:t (crcomp:t c1:cr enterprise:rn) (crclass:t c1:cr intermediate:cl) (crloc:t c1:cr boise_id:ci) (cost:t c1:cr (perday:n (dollar:n 27:n)))))
+// Generated from template 633
+
+user	no i want an avis car
+## (NO:task)
+## (REQ:task (refine:<act,prog> (pair:p obj:e c1:cr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (crcomp:t $0 avis:rn)))))
+
+system	here ' s the next option : thrifty has a intermediate car for twenty eight dollars per day . do you want to add this to your itinerary ?
+## (OFFER:task (and:t (crcomp:t c1:cr thrifty:rn) (crclass:t c1:cr intermediate:cl) (cost:t c1:cr (perday:n (dollar:n 28:n)))))
+// Generated from template 249
+
+user	no
+## (NO:task)
+
+system	here ' s the next option : dollar has a intermediate car for thirty one dollars per day . do you want to add this to your itinerary ?
+## (OFFER:task (and:t (crcomp:t c1:cr dollar:rn) (crclass:t c1:cr intermediate:cl) (cost:t c1:cr (perday:n (dollar:n 31:n)))))
+// Generated from template 249
+
+user	no could i get a car from avis please
+## (NO:task)
+## (REQ:task (refine:<act,prog> (pair:p obj:e c1:cr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (crcomp:t $0 avis:rn)))))
+
+system	i ' m sorry , i didn ' t get that .
+## (APOLOGY:comm)
+// Generated from template 364
+
+user	i ' d like a car from avis
+## (REQ:task (refine:<act,prog> (pair:p obj:e c1:cr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (crcomp:t $0 avis:rn)))))
+
+system	can you rephrase that ? i didn ' t understand .
+## (REQUEST_REPHRASE:comm)
+## (APOLOGY:comm)
+// Generated from template 413
+
+user	could i rent a car from avis
+## (REQ:task (refine:<act,prog> (pair:p obj:e c1:cr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (crcomp:t $0 avis:rn)))))
+
+system	i think you ' re trying to give me new information . do you want to change your car requirements ?
+## (APOLOGY:comm)
+## (REQUEST_CHANGE:comm c1:cr)
+// Generated from template 555
+
+user	yes
+## (YES:task)
+
+system	o . k . let ' s go back to fix your car plans . i currently have you picking up a intermediate car in boise on friday, september twenty first dropping it off on monday, september twenty fourth is this correct ?
+## (STATE_CONFIRMED:comm)
+## (INSTRUCTION:frame)
+## (EXPLICIT_CONFIRM:comm (and:t (crclass:t c1:cr intermediate:cl) (crloc:t c1:cr boise_id:ci) (crpick:t c1:cr (date_dmn:d fri:day sep:mon 21:n)) (crdrop:t c1:cr (date_dmn:d mon:day sep:mon 24:n))))
+// Generated from template 1383
+
+user	yes
+## (CONFIRM:task)
+
+system	got that . i ' ll access the database now ; this may take a moment .
+## (STATE_CONFIRMED:comm)
+## (REQUEST_WAIT:comm)
+// Generated from template 495
+
+system	o . k . i found 18 options in the database . enterprise has a intermediate car in boise for twenty seven dollars per day . do you want to add this to your itinerary ?
+## (STATE_CONFIRMED:comm)
+## (NUM_RESULTS:task 18:n)
+## (OFFER:task (and:t (crcomp:t c1:cr enterprise:rn) (crclass:t c1:cr intermediate:cl) (crloc:t c1:cr boise_id:ci) (cost:t c1:cr (perday:n (dollar:n 27:n)))))
+// Generated from template 633
+
+user	sure i ' ll take it
+## (YES:task)
+
+system	ok , i ' ve updated your itinerary . in boise you are renting a intermediate car from enterprise on friday, september twenty first for three days at twenty seven dollars per day . would you like a hotel room in boise ?
+## (STATE_CONFIRMED:comm)
+## (IMPLICIT_CONFIRM:comm (and:t (crloc:t c1:cr boise_id:ci) (crclass:t c1:cr intermediate:cl) (crcomp:t c1:cr enterprise:rn) (crpick:t c1:cr (date_dmn:d fri:day sep:mon 21:n)) (crlen:t c1:cr 3:n) (cost:t c1:cr (perday:n (dollar:n 27:n)))))
+## (REQUEST_INFO:task (exist:t (lambda $0:hr (and:t (hr:t $0) (hrloc:t $0 boise_id:ci)))))
+// SET h:hr=h1:hr
+// Generated from template 657
+
+user	no thank you i ' m staying with a friend
+## (NO:task)
+## (FAIL_PARSE:comm)
+
+system	what is your hotel preference ?
+## (REQUEST_INFO:task (lambda $0:hc (hrchain:t h1:hr $0)))
+// Generated from template 153
+
+user	no no hotel
+## (REJECT:task)
+## (REQ:task (refine:<act,prog> (pair:p obj:e h1:hr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (not:t (hr:t $0))))))
+
+system	i currently have you staying in boise from friday, september twenty first until monday, september twenty fourth is this correct ?
+## (EXPLICIT_CONFIRM:comm (and:t (hrloc:t h1:hr boise_id:ci) (hrcin:t h1:hr (date_dmn:d fri:day sep:mon 21:n)) (hrcout:t h1:hr (date_dmn:d mon:day sep:mon 24:n))))
+// Generated from template 47
+
+user	correct
+## (CONFIRM:task)
+
+system	got that . i ' ll access the database now ; this may take a moment .
+## (STATE_CONFIRMED:comm)
+## (REQUEST_WAIT:comm)
+// Generated from template 495
+
+system	o . k . i found 13 options in the database . you can stay at the holiday inn extd stay am boise for fifty nine dollars per night . do you want to add this to your itinerary ?
+## (STATE_CONFIRMED:comm)
+## (NUM_RESULTS:task 13:n)
+## (OFFER:task (and:t (hrname:t h1:hr holiday_inn_extd_stay_am_boise:hn) (cost:t h1:hr (perday:n (dollar:n 59:n)))))
+// Generated from template 634
+
+user	no let ' s forget the hotel
+## (NO:task)
+## (REQ:task (refine:<act,prog> (pair:p obj:e h1:hr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (not:t (hr:t $0))))))
+
+system	here ' s the next option : you can stay at the holiday inn express boise id for sixty two dollars per night . do you want to add this to your itinerary ?
+## (OFFER:task (and:t (hrname:t h1:hr holiday_inn_express_boise_id:hn) (cost:t h1:hr (perday:n (dollar:n 62:n)))))
+// Generated from template 22
+
+user	no i do not want a hotel
+## (NO:task)
+## (REQ:task (refine:<act,prog> (pair:p obj:e h1:hr)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (not:t (hr:t $0))))))
+
+system	just to make sure : do you want to cancel the hotel reservation ?
+## (EXPLICIT_CONFIRM:comm (not:t (hr:t h1:hr)))
+// Generated from template 871
+
+user	yes
+## (YES:task)
+
+system	hotel reservation canceled . let ' s make sure we have your hotel plans correct . would you like a hotel room in boise ?
+## (REMOVE_OBJ:task h1:hr)
+## (INSTRUCTION:frame)
+## (REQUEST_INFO:task (exist:t (lambda $0:hr (and:t (hr:t $0) (hrloc:t $0 boise_id:ci)))))
+// Generated from template 1171
+
+user	no
+## (NO:task)
+
+system	your itinerary is finalized and will be mailed to you . if you want to take this trip , please remember to book it through an agent . thank you for using our system . goodbye .
+## (TASK_COMPLETED:task)
+## (OPEN_CLOSE:task)
+// Generated from template 648
+

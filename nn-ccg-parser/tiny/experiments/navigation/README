@@ -1,0 +1,1 @@
+This directly includes files gathered by Cynthia Matuszek that describe route naviation direction in a discrete maze world. The representation is designed so that it could be directly used to navigate the maze. Cynthia has code outside of this repository fore actually executing the representation.

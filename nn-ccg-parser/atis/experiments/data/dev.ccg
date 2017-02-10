@@ -1,0 +1,1491 @@
+what flights are available tomorrow from denver to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (tomorrow:<tr,t> $0)))
+
+show me the afternoon flights from washington to boston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 washington:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+list all arrivals from any airport to baltimore on thursday morning arriving before 9am
+(lambda $0:e (and:<t*,t> (day_arrival:<fl,<d,t>> $0 thursday:da) (to:<fl,<lo,t>> $0 baltimore:ci) (<:<i,<i,t>> (arrival_time:<tr,i> $0) 900:ti) (during_day:<tr,<pd,t>> $0 morning:pd) (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (airport:<ap,t> $1) (from:<fl,<lo,t>> $0 $1))))))
+
+flights from phoenix to milwaukee
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 phoenix:ci) (to:<fl,<lo,t>> $0 milwaukee:ci)))
+
+i'd like to fly from philadelphia to san francisco through dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (stop:<fl,<lo,t>> $0 dallas:ci)))
+
+i'm starting from denver
+(lambda $0:e (from:<fl,<lo,t>> $0 denver:ci))
+
+please list all flights between boston and san francisco nonstop
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+can you list flights from boston to washington with the lowest one way fares that leave on saturday
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (oneway:<tr,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 washington:ci) (day:<tr,<da,t>> $0 saturday:da))) (lambda $0:e (fare:<fl,i> $0)))
+
+denver to atlanta
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 atlanta:ci)))
+
+show me the flights from baltimore to atlanta
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 atlanta:ci)))
+
+what flights are there from newark to tampa
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 newark:ci) (to:<fl,<lo,t>> $0 tampa:ci)))
+
+show me the flights from atlanta to baltimore
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+show me the flights from dallas to boston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+list the flights from st. paul to san jose and from st. paul to houston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (or:<t*,t> (and:<t*,t> (from:<fl,<lo,t>> $0 st_paul:ci) (to:<fl,<lo,t>> $0 san_jose:ci)) (and:<t*,t> (from:<fl,<lo,t>> $0 st_paul:ci) (to:<fl,<lo,t>> $0 houston:ci)))))
+
+i'd like to book the cheapest one way flight from pittsburgh to atlanta on july twentieth
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (oneway:<tr,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (day_number:<tr,<dn,t>> $0 20:dn) (month:<tr,<mn,t>> $0 july:mn))) (lambda $0:e (fare:<fl,i> $0)))
+
+what flights from houston to milwaukee on friday on american airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 houston:ci) (to:<fl,<lo,t>> $0 milwaukee:ci) (day:<tr,<da,t>> $0 friday:da)))
+
+is there a flight on united airlines from boston to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+show me flights from denver to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+what is the earliest flight leaving denver going to boston
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 boston:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+display all flights from san francisco to boston on august eighth
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 boston:ci) (day_number:<tr,<dn,t>> $0 8:dn) (month:<tr,<mn,t>> $0 august:mn)))
+
+i would like a flight from oakland to philadelphia at one in the afternoon arriving at 5pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (departure_time:<tr,<ti,t>> $0 1300:ti) (arrival_time:<tr,<ti,t>> $0 1700:ti) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+what's the lowest round trip fare from dallas to any city
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 dallas:ci) (round_trip:<fl,t> $1) (exists:<<e,t>,t> (lambda $2:e (and:<t*,t> (city:<ci,t> $2) (to:<fl,<lo,t>> $1 $2)))) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+please give me the flight times i would like to fly from boston to baltimore in the morning before 8
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (<:<i,<i,t>> (departure_time:<tr,i> $1) 800:ti) (during_day:<tr,<pd,t>> $1 morning:pd) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 baltimore:ci) (=:<i,<i,t>> (departure_time:<tr,i> $1) $0)))))
+
+list all flights from boston to san francisco with the maximum number of stops
+(argmax:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 san_francisco:ci))) (lambda $0:e (stops:<fl,i> $0)))
+
+what flights does american airlines fly from philadelphia to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+show me the flights arriving in baltimore from philadelphia at about 4 o'clock
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (approx_arrival_time:<tr,<ti,t>> $0 1600:ti) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+what's the cheapest fare for a round trip from indianapolis to orlando on december twenty seventh
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 indianapolis:ci) (to:<fl,<lo,t>> $1 orlando:ci) (day_number:<tr,<dn,t>> $1 27:dn) (month:<tr,<mn,t>> $1 december:mn) (round_trip:<fl,t> $1) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+what are the flights and prices from la to charlotte for monday morning
+(lambda $0:e (lambda $1:i (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 los_angeles:ci) (to:<fl,<lo,t>> $0 charlotte:ci) (day:<tr,<da,t>> $0 monday:da) (=:<i,<i,t>> (fare:<fl,i> $0) $1))))
+
+i would like information on flights from pittsburgh to baltimore arriving in baltimore before 10am on thursday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (<:<i,<i,t>> (arrival_time:<tr,i> $0) 1000:ti) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 baltimore:ci) (day:<tr,<da,t>> $0 thursday:da)))
+
+what are the flights available between 10am and 3pm between pittsburgh and fort worth
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1000:ti) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1500:ti) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 fort_worth:ci)))
+
+what are the flights from dallas to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+what flights does us air have from san francisco to pittsburgh on tuesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 us:al) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+what is the cost of united airlines flight 415 from chicago to kansas city thursday night
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 ua:al) (flight_number:<fl,<fn,t>> $1 415:fn) (during_day:<tr,<pd,t>> $1 late:pd) (from:<fl,<lo,t>> $1 chicago:ci) (to:<fl,<lo,t>> $1 kansas_city:ci) (day:<tr,<da,t>> $1 thursday:da) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+show me the flights from boston to san francisco stopping in dallas on american airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (stop:<fl,<lo,t>> $0 dallas:ci)))
+
+i want an early morning flight between philadelphia and pittsburgh on tuesday morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 early:pd) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+list all flights from pittsburgh to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+now i'd like flights from philadelphia to pittsburgh leaving between 430 and 530pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 pittsburgh:ci) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1630:ti) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1700:ti) (from:<fl,<lo,t>> $0 philadelphia:ci)))
+
+show me all midwest express flights from detroit to chicago
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 yx:al) (from:<fl,<lo,t>> $0 detroit:ci) (to:<fl,<lo,t>> $0 chicago:ci)))
+
+find me the earliest boston departure and the latest atlanta return trip so that i can be on the ground the maximum amount of time in atlanta and return to boston on the same day
+(lambda $0:e (lambda $1:e (and:<t*,t> (equals:<e,<e,t>> $0 (argmin:<<e,t>,<<e,i>,e>> (lambda $2:e (and:<t*,t> (flight:<fl,t> $2) (from:<fl,<lo,t>> $2 boston:ci) (to:<fl,<lo,t>> $2 atlanta:ci))) (lambda $2:e (arrival_time:<tr,i> $2)))) (equals:<e,<e,t>> $1 (argmax:<<e,t>,<<e,i>,e>> (lambda $2:e (and:<t*,t> (flight:<fl,t> $2) (to:<fl,<lo,t>> $2 boston:ci) (from:<fl,<lo,t>> $2 atlanta:ci))) (lambda $2:e (departure_time:<tr,i> $2)))))))
+
+information on flights from baltimore to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+hello i would like to plan a flight from boston to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+i need an early flight from dallas to houston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 early:pd) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 houston:ci)))
+
+give me a flight from philadelphia to denver on sunday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 denver:ci) (day:<tr,<da,t>> $0 sunday:da)))
+
+what flights does delta have from denver to dallas after 5
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 dl:al) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1700:ti) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+please show me the cost of flight ua 201 from boston to denver and flight ua 343 from boston to denver
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (or:<t*,t> (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 ua:al) (flight_number:<fl,<fn,t>> $1 201:fn) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 denver:ci)) (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 ua:al) (flight_number:<fl,<fn,t>> $1 343:fn) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 denver:ci))) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+list all round trip flights between indianapolis and orlando on the twenty seventh of december
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (round_trip:<fl,t> $0) (from:<fl,<lo,t>> $0 indianapolis:ci) (to:<fl,<lo,t>> $0 orlando:ci) (day_number:<tr,<dn,t>> $0 27:dn) (month:<tr,<mn,t>> $0 december:mn)))
+
+i want information on flights from atlanta to washington dc give me information on flights after 4pm on wednesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1600:ti) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 washington:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+from toronto to atlanta in the afternoon
+(lambda $0:e (and:<t*,t> (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 toronto:ci) (to:<fl,<lo,t>> $0 atlanta:ci)))
+
+leaving denver flying to san francisco before 10am what type of aircraft is used
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (<:<i,<i,t>> (departure_time:<tr,i> $1) 1000:ti) (from:<fl,<lo,t>> $1 denver:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+i would like a flight between denver and san francisco leaving from denver in the afternoon and arriving at 5pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (arrival_time:<tr,<ti,t>> $0 1700:ti) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+from denver to baltimore
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+find travel arrangements for a round trip flight from dallas to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (round_trip:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+show me the ground transportation schedule in philadelphia in the morning on wednesday
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (ground_transport:<gt,t> $1) (to_city:<gt,<ci,t>> $1 philadelphia:ci) (during_day:<tr,<pd,t>> $1 morning:pd) (day:<tr,<da,t>> $1 wednesday:da) (=:<i,<i,t>> (departure_time:<tr,i> $1) $0)))))
+
+list round trip flights from orlando to kansas city
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (round_trip:<fl,t> $0) (from:<fl,<lo,t>> $0 orlando:ci) (to:<fl,<lo,t>> $0 kansas_city:ci)))
+
+ground transportation oakland
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 oakland:ci)))
+
+i would like to see flights from denver to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+list flights from san francisco to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+what is the price of american airlines flight 19 from new york to los angeles
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 aa:al) (flight_number:<fl,<fn,t>> $1 19:fn) (from:<fl,<lo,t>> $1 new_york:ci) (to:<fl,<lo,t>> $1 los_angeles:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+list all direct flights from boston to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+list all flights from tampa florida to miami that are the cheapest one way
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (oneway:<tr,t> $0) (from:<fl,<lo,t>> $0 tampa:ci) (to:<fl,<lo,t>> $0 miami:ci))) (lambda $0:e (fare:<fl,i> $0)))
+
+please give me flights leaving san francisco and going to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+is there a flight on american airlines from boston to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+show business class fares from san francisco to denver on united airlines
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (airline2:<fl,<al,t>> $1 ua:al) (class_type:<fl,<cl,t>> $1 business:cl) (from:<fl,<lo,t>> $1 san_francisco:ci) (to:<fl,<lo,t>> $1 denver:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+what are the costs of flights from dallas to boston tomorrow
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 boston:ci) (tomorrow:<tr,t> $1) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+i'd like to fly from philadelphia to dallas through atlanta
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci) (stop:<fl,<lo,t>> $0 atlanta:ci)))
+
+list aircraft types that fly between boston and san francisco
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+what flights are available from boston to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+i need to go from boston to atlanta in the same day find me the earliest flight from boston
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+us air flights departing from charlotte around 1pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 us:al) (approx_departure_time:<tr,<ti,t>> $0 1300:ti) (from:<fl,<lo,t>> $0 charlotte:ci)))
+
+give me the flights from salt lake city to new york city arriving before 6pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (<:<i,<i,t>> (arrival_time:<tr,i> $0) 1800:ti) (from:<fl,<lo,t>> $0 salt_lake_city:ci) (to:<fl,<lo,t>> $0 new_york:ci)))
+
+can you show me what flights are available on december sixteen going from oakland to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 dallas:ci) (day_number:<tr,<dn,t>> $0 16:dn) (month:<tr,<mn,t>> $0 december:mn)))
+
+show me all first class prices from dallas to baltimore
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (class_type:<fl,<cl,t>> $1 first:cl) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 baltimore:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+show me the fares for delta flights from dallas to san francisco
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 dl:al) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+us air next wednesday from cleveland to miami
+(lambda $0:e (and:<t*,t> (airline2:<fl,<al,t>> $0 us:al) (from:<fl,<lo,t>> $0 cleveland:ci) (to:<fl,<lo,t>> $0 miami:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+i would like a flight from dallas to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+please list nonstop flights from las vegas to new york on america west
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (airline2:<fl,<al,t>> $0 hp:al) (from:<fl,<lo,t>> $0 las_vegas:ci) (to:<fl,<lo,t>> $0 new_york:ci)))
+
+which cities are serviced by both american and delta airlines
+(lambda $0:e (and:<t*,t> (city:<ci,t> $0) (services:<al,<lo,t>> aa:al $0) (services:<al,<lo,t>> dl:al $0)))
+
+i wish to fly from boston to washington please find an airline for me
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 washington:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+what does iah mean
+iah:ap
+
+what are the flights from atlanta to baltimore which arrive in baltimore at 7 o'clock pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (arrival_time:<tr,<ti,t>> $0 1900:ti) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+i need to go from philadelphia to dallas
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+i need a flight from philadelphia to denver on sunday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 denver:ci) (day:<tr,<da,t>> $0 sunday:da)))
+
+could you show me all flights from montreal to charlotte
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 montreal:ci) (to:<fl,<lo,t>> $0 charlotte:ci)))
+
+how many flights are there between san francisco and philadelphia on august eighteenth
+(count:<<e,t>,i> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (day_number:<tr,<dn,t>> $0 18:dn) (month:<tr,<mn,t>> $0 august:mn))))
+
+boston to pittsburgh
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+what's the most expensive way i can fly to washington
+(argmax:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 washington:ci))) (lambda $0:e (fare:<fl,i> $0)))
+
+flights from la guardia or jfk to cleveland
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (or:<t*,t> (from:<fl,<lo,t>> $0 jfk:ap) (from:<fl,<lo,t>> $0 lga:ap)) (to:<fl,<lo,t>> $0 cleveland:ci)))
+
+i would like a flight from denver to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+what is the earliest flight from atlanta to boston
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 boston:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+what is the first flight from atlanta to boston leaving on thursday september fifth
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 boston:ci) (day:<tr,<da,t>> $0 thursday:da) (day_number:<tr,<dn,t>> $0 5:dn) (month:<tr,<mn,t>> $0 september:mn))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+show flights from san francisco to denver on wednesday and thursday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 denver:ci) (or:<t*,t> (day:<tr,<da,t>> $0 wednesday:da) (day:<tr,<da,t>> $0 thursday:da))))
+
+airlines that fly to miami from new york on friday
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 new_york:ci) (to:<fl,<lo,t>> $1 miami:ci) (day:<tr,<da,t>> $1 friday:da) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+show flights leaving boston on wednesday morning and arriving in denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+i would like to see the flights available from pittsburgh to san francisco for monday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+in boston is there ground transportation between airport and downtown
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 boston:ci) (from_airport:<gt,<lo,t>> $0 bos:ap)))
+
+i would like to fly from dallas to san francisco on saturday and arrive in san francisco before 4pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (<:<i,<i,t>> (arrival_time:<tr,i> $0) 1600:ti) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (day:<tr,<da,t>> $0 saturday:da)))
+
+show me all flights from denver to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+what are the delta flights from dallas to boston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 dl:al) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+what aircraft is co 1209
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (airline2:<fl,<al,t>> $1 co:al) (flight_number:<fl,<fn,t>> $1 1209:fn) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+list all flights on continental departing on monday before noon from denver to chicago
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 co:al) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 chicago:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+show me the flights from atlanta to boston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+list all flights on united from san francisco to boston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+how many united flights are there to san francisco
+(count:<<e,t>,i> (lambda $0:e (and:<t*,t> (airline2:<fl,<al,t>> $0 ua:al) (to:<fl,<lo,t>> $0 san_francisco:ci) (flight:<fl,t> $0))))
+
+i want a flight from houston to memphis on tuesday morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 houston:ci) (to:<fl,<lo,t>> $0 memphis:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+what are the cheapest one way flights from atlanta to pittsburgh
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (oneway:<tr,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci))) (lambda $0:e (fare:<fl,i> $0)))
+
+what ground transportation is available from the pittsburgh airport to downtown and how much does it cost
+(lambda $0:e (lambda $1:i (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 pittsburgh:ci) (from_airport:<gt,<lo,t>> $0 pittsburgh:ci) (=:<i,<i,t>> (ground_fare:<gt,i> $0) $1))))
+
+flight information from san francisco to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+what flights are available from san francisco to pittsburgh on monday morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+train to newark
+(lambda $0:e (and:<t*,t> (rapid_transit:<gt,t> $0) (to_city:<gt,<ci,t>> $0 newark:ci)))
+
+i'm traveling from boston to atlanta and i'd like to go sometime after 5pm but i want to know what kind of airplane it's on
+(lambda $0:e (lambda $1:e (and:<t*,t> (equals:<e,<e,t>> (airline:<fl,e> $0) $1) (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1700:ti) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci))))
+
+dallas to baltimore
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+what does ff mean
+ff:al
+
+well i'll try last time tell me the kind of aircraft united airlines flies from denver to san francisco before 10 o'clock in the morning
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 ua:al) (<:<i,<i,t>> (departure_time:<tr,i> $1) 1000:ti) (from:<fl,<lo,t>> $1 denver:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+i need a flight from philadelphia to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+what is the round trip first class fare on united from boston to san francisco
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (round_trip:<fl,t> $1) (airline2:<fl,<al,t>> $1 ua:al) (class_type:<fl,<cl,t>> $1 first:cl) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+i'd like also to book a one way flight from pittsburgh to atlanta the cheapest one on july twentieth
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (oneway:<tr,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (day_number:<tr,<dn,t>> $0 20:dn) (month:<tr,<mn,t>> $0 july:mn))) (lambda $0:e (fare:<fl,i> $0)))
+
+find me the cheapest one way fare i can get from boston to denver
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 denver:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+flights from baltimore to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+i want to fly from baltimore to dallas round trip
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (round_trip:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+what are all the flights into atlanta's airport
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 atl:ap)))
+
+show me the flights from philadelphia to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+what flights from seattle to salt lake city
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 seattle:ci) (to:<fl,<lo,t>> $0 salt_lake_city:ci)))
+
+what is the earliest flight from pittsburgh to san francisco
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 san_francisco:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+are there any flights from pittsburgh to boston that leave between noon and 5 o'clock
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1700:ti) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+what is ord
+ord:ap
+
+list all nonstop flights from los angeles to pittsburgh which arrive before 5pm on tuesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (<:<i,<i,t>> (arrival_time:<tr,i> $0) 1700:ti) (from:<fl,<lo,t>> $0 los_angeles:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+show me about the ground transportation in boston
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 boston:ci)))
+
+what's the earliest flight from boston to bwi that serves lunch
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (meal2:<fl,<me,t>> $0 lunch:me) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 bwi:ap))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+how many flights arrive at general mitchell international
+(count:<<e,t>,i> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 mke:ap))))
+
+where does canadian airlines international fly
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 cp:al) (or:<t*,t> (to:<fl,<lo,t>> $1 $0) (from:<fl,<lo,t>> $1 $0))))))
+
+what ground transportation is available from the pittsburgh airport to the town
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 pittsburgh:ci) (from_airport:<gt,<lo,t>> $0 pittsburgh:ci)))
+
+what's the capacity of an f28
+(capacity:<e,i> f28:ac)
+
+what car rentals are available next sunday from denver airport
+(lambda $0:e (and:<t*,t> (from_airport:<gt,<lo,t>> $0 den:ap) (day:<tr,<da,t>> $0 sunday:da) (rental_car:<gt,t> $0)))
+
+show flights leaving miami to cleveland on us air that leave after noon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 us:al) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (from:<fl,<lo,t>> $0 miami:ci) (to:<fl,<lo,t>> $0 cleveland:ci)))
+
+i want a flight from atlanta to washington that leaves after 3pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1500:ti) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 washington:ci)))
+
+show me the flights from cleveland to memphis
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 cleveland:ci) (to:<fl,<lo,t>> $0 memphis:ci)))
+
+what does the fare code qw mean
+qw:fb
+
+show me all the flights from cincinnati to toronto
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 cincinnati:ci) (to:<fl,<lo,t>> $0 toronto:ci)))
+
+from las vegas to new york a nonstop twa and fare
+(lambda $0:e (lambda $1:i (and:<t*,t> (nonstop:<fl,t> $0) (airline2:<fl,<al,t>> $0 tw:al) (from:<fl,<lo,t>> $0 las_vegas:ci) (to:<fl,<lo,t>> $0 new_york:ci) (=:<i,<i,t>> (fare:<fl,i> $0) $1))))
+
+i'd like to know the latest flight from atlanta to boston
+(argmax:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 boston:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+show flights from memphis to las vegas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 memphis:ci) (to:<fl,<lo,t>> $0 las_vegas:ci)))
+
+could you please find me a nonstop flight from atlanta to baltimore on a boeing 757 arriving at 7pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (manufacturer:<e,<mf,t>> $0 boeing:mf) (nonstop:<fl,t> $0) (aircraft_code2:<fl,<ac,t>> $0 757:ac) (arrival_time:<tr,<ti,t>> $0 1900:ti) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+what flights from st. paul to kansas city on friday with supper served
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (meal2:<fl,<me,t>> $0 dinner:me) (from:<fl,<lo,t>> $0 st_paul:ci) (to:<fl,<lo,t>> $0 kansas_city:ci) (day:<tr,<da,t>> $0 friday:da)))
+
+could you tell me if there is ground transportation between the boston airport and boston downtown
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 boston:ci) (from_airport:<gt,<lo,t>> $0 bos:ap)))
+
+is it possible for me to fly from baltimore to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+what is the first class fare for a round trip dallas to denver
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (round_trip:<fl,t> $1) (class_type:<fl,<cl,t>> $1 first:cl) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 denver:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+list all flights on continental leaving seattle on sunday after 430pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 co:al) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1630:ti) (from:<fl,<lo,t>> $0 seattle:ci) (day:<tr,<da,t>> $0 sunday:da)))
+
+all flights and fares from pittsburgh to dallas round trip after 12pm less than 1100 dollars
+(lambda $0:e (lambda $1:i (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (<:<i,<i,t>> (fare:<fl,i> $0) 1100:do) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 dallas:ci) (=:<i,<i,t>> (fare:<fl,i> $0) $1))))
+
+what flights are available from boston to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+i need a cheap flight from baltimore to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (economy:<tr,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+a first class flight on american to san francisco on the coming tuesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (class_type:<fl,<cl,t>> $0 first:cl) (to:<fl,<lo,t>> $0 san_francisco:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+does any airline have an early afternoon flight from boston to denver
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (during_day:<tr,<pd,t>> $1 early:pd) (during_day:<tr,<pd,t>> $1 afternoon:pd) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 denver:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+show me flights on monday from philadelphia to boston after 7am
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 700:ti) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 boston:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+looking for a flight to salt lake city
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 salt_lake_city:ci)))
+
+show me the nonstop flights from nashville to st. louis
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (from:<fl,<lo,t>> $0 nashville:ci) (to:<fl,<lo,t>> $0 st_louis:ci)))
+
+what are the different classes that an airline offers
+(lambda $0:e (booking_class:<e,t> $0))
+
+what type of ground transportation is available between the airport and downtown san francisco
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 san_francisco:ci) (from_airport:<gt,<lo,t>> $0 san_francisco:ci)))
+
+show me flights from atlanta to washington
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 washington:ci)))
+
+what is fare code qo mean
+qo:fb
+
+what's the price of the least expensive first class round trip ticket on us air from cleveland to miami
+(fare:<fl,i> (argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (airline2:<fl,<al,t>> $0 us:al) (class_type:<fl,<cl,t>> $0 first:cl) (from:<fl,<lo,t>> $0 cleveland:ci) (to:<fl,<lo,t>> $0 miami:ci) (round_trip:<fl,t> $0))) (lambda $0:e (fare:<fl,i> $0))))
+
+show me the list of flights from dallas to baltimore on american and delta airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (or:<t*,t> (airline2:<fl,<al,t>> $0 dl:al) (airline2:<fl,<al,t>> $0 aa:al)) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+how much does the limousine service cost within pittsburgh
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (limousine:<gt,t> $1) (to_city:<gt,<ci,t>> $1 pittsburgh:ci) (=:<i,<i,t>> (ground_fare:<gt,i> $1) $0)))))
+
+what is the cheapest one way fare from boston to washington
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 washington:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+i need a flight this sunday from miami to las vegas and i would prefer a morning flight
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 miami:ci) (to:<fl,<lo,t>> $0 las_vegas:ci) (day:<tr,<da,t>> $0 sunday:da)))
+
+please list all flights from atlanta to baltimore on wednesday and thursday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 baltimore:ci) (or:<t*,t> (day:<tr,<da,t>> $0 wednesday:da) (day:<tr,<da,t>> $0 thursday:da))))
+
+how much does it cost to fly from atlanta to san francisco
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 atlanta:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+i need an early flight from denver to san francisco please and i would like breakfast served on that
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (meal2:<fl,<me,t>> $0 breakfast:me) (during_day:<tr,<pd,t>> $0 early:pd) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+what round trip tickets are there from cleveland to miami on us air that arrive before 4pm
+(lambda $0:e (and:<t*,t> (round_trip:<fl,t> $0) (airline2:<fl,<al,t>> $0 us:al) (<:<i,<i,t>> (arrival_time:<tr,i> $0) 1600:ti) (from:<fl,<lo,t>> $0 cleveland:ci) (to:<fl,<lo,t>> $0 miami:ci)))
+
+what are the classes of service on lufthansa
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (airline2:<fl,<al,t>> $1 lh:al) (equals:<e,<e,t>> (booking_class:<e,e> $1) $0)))))
+
+which airlines provide direct flights between washington and denver
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (nonstop:<fl,t> $1) (from:<fl,<lo,t>> $1 washington:ci) (to:<fl,<lo,t>> $1 denver:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+i have two friends that would like to visit me on wednesday here in washington dc one of them lives in denver and the other lives in miami
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (or:<t*,t> (from:<fl,<lo,t>> $0 denver:ci) (from:<fl,<lo,t>> $0 miami:ci)) (to:<fl,<lo,t>> $0 washington:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+does flight ua 270 from denver to philadelphia have a meal
+(lambda $0:e (and:<t*,t> (has_meal:<fl,t> $0) (to:<fl,<lo,t>> $0 philadelphia:ci) (from:<fl,<lo,t>> $0 denver:ci) (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (flight_number:<fl,<fn,t>> $0 270:fn)))
+
+show me all the eastern airlines flights leaving pittsburgh between 12 and 4 in the afternoon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ea:al) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1600:ti) (from:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+give me us air flights for next wednesday from cleveland to miami
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 us:al) (from:<fl,<lo,t>> $0 cleveland:ci) (to:<fl,<lo,t>> $0 miami:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+what nonstop flights are available from oakland to philadelphia arriving between 5 and 6pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (>:<i,<i,t>> (arrival_time:<tr,i> $0) 1700:ti) (<:<i,<i,t>> (arrival_time:<tr,i> $0) 1800:ti) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+give me the flights from phoenix to milwaukee on wednesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 phoenix:ci) (to:<fl,<lo,t>> $0 milwaukee:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+all flights and fares from atlanta to dallas round trip after 12pm less than 1100 dollars
+(lambda $0:e (lambda $1:i (and:<t*,t> (to:<fl,<lo,t>> $0 dallas:ci) (from:<fl,<lo,t>> $0 atlanta:ci) (round_trip:<fl,t> $0) (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (<:<i,<i,t>> (fare:<fl,i> $0) 1100:do) (=:<i,<i,t>> (fare:<fl,i> $0) $1))))
+
+show me the nonstop flights from dallas to houston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 houston:ci)))
+
+i need a list of late afternoon flights from chicago to milwaukee
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 late:pd) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 chicago:ci) (to:<fl,<lo,t>> $0 milwaukee:ci)))
+
+what flights are available on wednesday from atlanta to washington dc
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 washington:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+what flights leave philadelphia for dallas and depart before noon on american airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+what is the fare on american airlines flight 928 from dallas fort worth to boston
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 aa:al) (flight_number:<fl,<fn,t>> $1 928:fn) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 boston:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+how far from the airport in the dallas fort worth airport is dallas
+(lambda $0:e (and:<t*,t> (miles_distant:<gt,t> $0) (to_city:<gt,<ci,t>> $0 dallas:ci) (from_airport:<gt,<lo,t>> $0 dfw:ap)))
+
+i would like an american airlines flight from cincinnati to burbank leaving this afternoon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 cincinnati:ci) (to:<fl,<lo,t>> $0 burbank:ci)))
+
+yes i live in washington and i want to make a trip to san francisco which airlines may i use for this trip
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 washington:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+i'd like a twa flight from las vegas to new york nonstop
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (airline2:<fl,<al,t>> $0 tw:al) (from:<fl,<lo,t>> $0 las_vegas:ci) (to:<fl,<lo,t>> $0 new_york:ci)))
+
+pm flights dallas to atlanta
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 pm:pd) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 atlanta:ci)))
+
+can you list all the flights between phoenix and las vegas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 phoenix:ci) (to:<fl,<lo,t>> $0 las_vegas:ci)))
+
+what flights arrive in chicago on sunday on continental
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 co:al) (to:<fl,<lo,t>> $0 chicago:ci) (day_arrival:<fl,<d,t>> $0 sunday:da)))
+
+show me all flights from denver to philadelphia on saturday after sunday which leave after noon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (day:<tr,<da,t>> $0 saturday:da) (day:<tr,<da,t>> $0 sunday:da)))
+
+show me the flights from love field to other airports
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 dal:ap) (flight:<fl,t> $0) (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (to:<fl,<lo,t>> $0 $1) (airport:<ap,t> $1))))))
+
+show me the flights to and from love field
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (or:<t*,t> (from:<fl,<lo,t>> $0 dal:ap) (to:<fl,<lo,t>> $0 dal:ap))))
+
+does american airlines offer a flight from boston to oakland which stops in denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 oak:ap) (stop:<fl,<lo,t>> $0 denver:ci)))
+
+can you show me one way economy fares from dallas to atlanta
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (economy:<tr,t> $1) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 atlanta:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+what is ground transportation between the san francisco airport and the city
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 san_francisco:ci) (from_airport:<gt,<lo,t>> $0 sfo:ap)))
+
+anything from baltimore or washington with a stopover in denver going to san francisco
+(lambda $0:e (and:<t*,t> (or:<t*,t> (from:<fl,<lo,t>> $0 baltimore:ci) (from:<fl,<lo,t>> $0 washington:ci)) (to:<fl,<lo,t>> $0 san_francisco:ci) (stop:<fl,<lo,t>> $0 denver:ci)))
+
+are there any flights from atlanta to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+what ground transportation is available in san francisco
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 san_francisco:ci)))
+
+flights from oakland to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+show me all flights from new york to miami leaving on a tuesday and returning on sunday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 new_york:ci) (to:<fl,<lo,t>> $0 miami:ci) (day:<tr,<da,t>> $0 tuesday:da) (day_return:<fl,<da,t>> $0 sunday:da)))
+
+what first class flights are available on july twenty fifth 1991 from denver to baltimore
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (class_type:<fl,<cl,t>> $0 first:cl) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 baltimore:ci) (day_number:<tr,<dn,t>> $0 25:dn) (month:<tr,<mn,t>> $0 july:mn) (year:<fl,<yr,t>> $0 1991:yr)))
+
+give me flights on american airlines from milwaukee to phoenix
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 milwaukee:ci) (to:<fl,<lo,t>> $0 phoenix:ci)))
+
+what's the lowest round trip fare from atlanta to bwi
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 atlanta:ci) (to:<fl,<lo,t>> $1 bwi:ap) (round_trip:<fl,t> $1) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+show me the airlines between toronto and denver
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 toronto:ci) (to:<fl,<lo,t>> $1 denver:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+what is the earliest flight that has no stops from washington to san francisco on friday
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (from:<fl,<lo,t>> $0 washington:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (day:<tr,<da,t>> $0 friday:da))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+what is the fare on november seventh going one way from san francisco to oakland
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (from:<fl,<lo,t>> $1 san_francisco:ci) (to:<fl,<lo,t>> $1 oakland:ci) (day_number:<tr,<dn,t>> $1 7:dn) (month:<tr,<mn,t>> $1 november:mn) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+what does ewr mean
+ewr:ap
+
+i would like an early morning flight from chicago into seattle on continental airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 co:al) (during_day:<tr,<pd,t>> $0 early:pd) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 chicago:ci) (to:<fl,<lo,t>> $0 seattle:ci)))
+
+show me round trip flights from denver to baltimore that offer first class service on united
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (round_trip:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (class_type:<fl,<cl,t>> $0 first:cl) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+i'm traveling to dallas from philadelphia
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+could you tell me the flights leaving pittsburgh around midnight for oakland
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (approx_departure_time:<tr,<ti,t>> $0 0:ti) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 oakland:ci)))
+
+how much does flight ua 297 from denver to san francisco cost
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 ua:al) (flight_number:<fl,<fn,t>> $1 297:fn) (from:<fl,<lo,t>> $1 denver:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+please list the flights from dallas fort worth to dc baltimore on july twenty third
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 washington:ci) (day_number:<tr,<dn,t>> $0 23:dn) (month:<tr,<mn,t>> $0 july:mn)))
+
+which flights go from philadelphia to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+show me all flights from san francisco to boston philadelphia or baltimore
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (or:<t*,t> (to:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 baltimore:ci))))
+
+atlanta to oakland thursday
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 oakland:ci) (day:<tr,<da,t>> $0 thursday:da)))
+
+show me flights from tampa to st. louis leaving before 10am
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1000:ti) (from:<fl,<lo,t>> $0 tampa:ci) (to:<fl,<lo,t>> $0 st_louis:ci)))
+
+does american airlines fly from philadelphia to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+flights from kansas city to cleveland on wednesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 kansas_city:ci) (to:<fl,<lo,t>> $0 cleveland:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+show me the flights from philadelphia to baltimore in the morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+what are all of the flights into and out of atlanta's airport
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (or:<t*,t> (from:<fl,<lo,t>> $0 atl:ap) (to:<fl,<lo,t>> $0 atl:ap))))
+
+show me the cities served by canadian airlines international
+(lambda $0:e (and:<t*,t> (city:<ci,t> $0) (services:<al,<lo,t>> cp:al $0)))
+
+give me the least expensive first class round trip ticket on us air from cleveland to miami
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (airline2:<fl,<al,t>> $0 us:al) (class_type:<fl,<cl,t>> $0 first:cl) (from:<fl,<lo,t>> $0 cleveland:ci) (to:<fl,<lo,t>> $0 miami:ci) (round_trip:<fl,t> $0))) (lambda $0:e (fare:<fl,i> $0)))
+
+what is the cheapest one way fare from pittsburgh to atlanta traveling on tuesday august twentieth
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (from:<fl,<lo,t>> $1 pittsburgh:ci) (to:<fl,<lo,t>> $1 atlanta:ci) (day:<tr,<da,t>> $1 tuesday:da) (day_number:<tr,<dn,t>> $1 20:dn) (month:<tr,<mn,t>> $1 august:mn) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+show me the car rentals in baltimore
+(lambda $0:e (and:<t*,t> (rental_car:<gt,t> $0) (to_city:<gt,<ci,t>> $0 baltimore:ci)))
+
+i'd like to fly from san francisco to boston with a stopover in dallas fort worth and i want to fly on delta airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 dl:al) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 boston:ci) (stop:<fl,<lo,t>> $0 dallas:ci)))
+
+does midwest express serve indianapolis
+(services:<al,<lo,t>> yx:al indianapolis:ci)
+
+all flights from boston to washington dc after 5pm on november eleventh economy class
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (economy:<tr,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1700:ti) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 washington:ci) (day_number:<tr,<dn,t>> $0 11:dn) (month:<tr,<mn,t>> $0 november:mn)))
+
+show me the us air flights from atlanta to boston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 us:al) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+american flights to houston from cincinnati
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 cincinnati:ci) (to:<fl,<lo,t>> $0 houston:ci)))
+
+list flights from denver to san francisco no denver to philadelphia
+(lambda $0:e (and:<t*,t> (to:<fl,<lo,t>> $0 philadelphia:ci) (not:<t,t> (to:<fl,<lo,t>> $0 san_francisco:ci)) (from:<fl,<lo,t>> $0 denver:ci) (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci)))
+
+flights between new york and miami
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 new_york:ci) (to:<fl,<lo,t>> $0 miami:ci)))
+
+which airlines have connections between pittsburgh and baltimore
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 pittsburgh:ci) (to:<fl,<lo,t>> $1 baltimore:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+what is the cheapest flight from pittsburgh to atlanta leaving on october fifth
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (day_number:<tr,<dn,t>> $0 5:dn) (month:<tr,<mn,t>> $0 october:mn))) (lambda $0:e (fare:<fl,i> $0)))
+
+what is sa
+sa:dc
+
+show me the united flights from bwi to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (from:<fl,<lo,t>> $0 bwi:ap) (to:<fl,<lo,t>> $0 denver:ci)))
+
+find me the earliest boston departure for atlanta and the lastest return trip from atlanta so that i can be in atlanta the longest amount of time but return to boston the same day
+(lambda $0:e (lambda $1:e (and:<t*,t> (equals:<e,<e,t>> $0 (argmin:<<e,t>,<<e,i>,e>> (lambda $2:e (and:<t*,t> (flight:<fl,t> $2) (from:<fl,<lo,t>> $2 boston:ci) (to:<fl,<lo,t>> $2 atlanta:ci))) (lambda $2:e (arrival_time:<tr,i> $2)))) (equals:<e,<e,t>> $1 (argmax:<<e,t>,<<e,i>,e>> (lambda $2:e (and:<t*,t> (flight:<fl,t> $2) (to:<fl,<lo,t>> $2 boston:ci) (from:<fl,<lo,t>> $2 atlanta:ci))) (lambda $2:e (departure_time:<tr,i> $2)))))))
+
+give me information on flights from atlanta to washington dc leaving on thursday before 0900
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (<:<i,<i,t>> (departure_time:<tr,i> $0) 900:ti) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 washington:ci) (day:<tr,<da,t>> $0 thursday:da)))
+
+list american airlines flights from newark to nashville
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 newark:ci) (to:<fl,<lo,t>> $0 nashville:ci)))
+
+on monday show me flights from baltimore to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 dallas:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+all flights from boston to washington dc on november eleventh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 washington:ci) (day_number:<tr,<dn,t>> $0 11:dn) (month:<tr,<mn,t>> $0 november:mn)))
+
+tell me about ground transportation between orlando international and orlando
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 orlando:ci) (from_airport:<gt,<lo,t>> $0 mco:ap)))
+
+show me the least expensive flight from miami to cleveland on sunday after noon
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (>:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (day:<tr,<da,t>> $0 sunday:da) (to:<fl,<lo,t>> $0 cleveland:ci) (from:<fl,<lo,t>> $0 miami:ci) (flight:<fl,t> $0))) (lambda $0:e (fare:<fl,i> $0)))
+
+chicago to san francisco on continental
+(lambda $0:e (and:<t*,t> (airline2:<fl,<al,t>> $0 co:al) (from:<fl,<lo,t>> $0 chicago:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+what are the flights from las vegas to burbank on saturday may twenty two
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 las_vegas:ci) (to:<fl,<lo,t>> $0 burbank:ci) (day:<tr,<da,t>> $0 saturday:da) (day_number:<tr,<dn,t>> $0 22:dn) (month:<tr,<mn,t>> $0 may:mn)))
+
+what flights from atlanta to st. louis on tuesday arriving around 230pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (approx_arrival_time:<tr,<ti,t>> $0 1430:ti) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 st_louis:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+list the flight from philadelphia to san francisco on american airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+give me the flights from milwaukee to st. louis leaving sunday morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 milwaukee:ci) (to:<fl,<lo,t>> $0 st_louis:ci) (day:<tr,<da,t>> $0 sunday:da)))
+
+flights from pittsburgh to newark
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 newark:ci)))
+
+on the 8am flight from san francisco to atlanta what type of aircraft is used
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (departure_time:<tr,<ti,t>> $1 800:ti) (from:<fl,<lo,t>> $1 san_francisco:ci) (to:<fl,<lo,t>> $1 atlanta:ci) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+show me ground transport in seattle
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 seattle:ci)))
+
+i'd like information on the least expensive airfare round trip from pittsburgh to boston
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 pittsburgh:ci) (to:<fl,<lo,t>> $1 boston:ci) (round_trip:<fl,t> $1) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+i'd like to find a nonstop flight from boston to atlanta that leaves sometime in the afternoon and arrives in atlanta before evening
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (<:<i,<i,t>> (arrival_time:<tr,i> $0) 1800:ti) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci)))
+
+what afternoon flights are available from atlanta to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+show me flights from baltimore to philadelphia please
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+please show me flights from san francisco to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+list all flights from boston to san francisco with more than 3 stops
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (stops:<fl,i> $0) 3:i) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+list least expensive flight from dallas to baltimore
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 baltimore:ci))) (lambda $0:e (fare:<fl,i> $0)))
+
+when is the first flight leaving from oakland to boston
+(departure_time:<tr,i> (argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 boston:ci))) (lambda $0:e (departure_time:<tr,i> $0))))
+
+show me the earliest flight on thursday from atlanta to washington
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 washington:ci) (day:<tr,<da,t>> $0 thursday:da))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+i'd like the earliest flight from dallas to boston
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 boston:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+i need to reverse the flight from pittsburgh to denver please
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+please give me the earliest flight tomorrow from st. petersburg to milwaukee
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 st_petersburg:ci) (to:<fl,<lo,t>> $0 milwaukee:ci) (tomorrow:<tr,t> $0))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+give me all the flights from memphis to charlotte
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 memphis:ci) (to:<fl,<lo,t>> $0 charlotte:ci)))
+
+show me the flights from philadelphia to dallas with one stop
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (stops:<fl,<i,t>> $0 1:i) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+also give me a list of flights between oakland and boston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+can you list costs of denver rental cars
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (rental_car:<gt,t> $1) (to_city:<gt,<ci,t>> $1 denver:ci) (=:<i,<i,t>> (ground_fare:<gt,i> $1) $0)))))
+
+round trip flights from minneapolis to san diego coach economy fare
+(lambda $0:e (and:<t*,t> (economy:<tr,t> $0) (to:<fl,<lo,t>> $0 san_diego:ci) (from:<fl,<lo,t>> $0 minneapolis:ci) (flight:<fl,t> $0) (class_type:<fl,<cl,t>> $0 coach:cl) (round_trip:<fl,t> $0)))
+
+i need information on flight from atlanta to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+what airlines flies out of atlanta
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 atlanta:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+can you show me fares for december sixteenth from oakland to dallas one way only
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (from:<fl,<lo,t>> $1 oakland:ci) (to:<fl,<lo,t>> $1 dallas:ci) (day_number:<tr,<dn,t>> $1 16:dn) (month:<tr,<mn,t>> $1 december:mn) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+what airlines fly from boston to atlanta
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 atlanta:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+what are the fares for flights serving a meal from boston to pittsburgh before noon on thursday
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (<:<i,<i,t>> (departure_time:<tr,i> $1) 1200:ti) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 pittsburgh:ci) (day:<tr,<da,t>> $1 thursday:da) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+show me flights from denver to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+what are the flights between dallas and pittsburgh on july eight
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (day_number:<tr,<dn,t>> $0 8:dn) (month:<tr,<mn,t>> $0 july:mn)))
+
+please give me the flight times the morning on united airlines for september twentieth from philadelphia to san francisco
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (airline2:<fl,<al,t>> $1 ua:al) (during_day:<tr,<pd,t>> $1 morning:pd) (from:<fl,<lo,t>> $1 philadelphia:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (day_number:<tr,<dn,t>> $1 20:dn) (month:<tr,<mn,t>> $1 september:mn) (=:<i,<i,t>> (departure_time:<tr,i> $1) $0)))))
+
+show me flights from san francisco to denver on weekdays
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 denver:ci) (weekday:<tr,t> $0)))
+
+show me flights from philadelphia to baltimore
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+yes i'm looking for a flight between oakland and boston with a stopover in dallas fort worth do you have one of those
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 boston:ci) (stop:<fl,<lo,t>> $0 dallas:ci)))
+
+show morning flights from san francisco to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+show me all the flights from columbus to baltimore
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 columbus:ci) (to:<fl,<lo,t>> $0 baltimore:ci)))
+
+what does fare code qx mean
+qx:fb
+
+could you tell me about flights from philadelphia to dallas that arrives in the early afternoon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day_arrival:<fl,<pd,t>> $0 early:pd) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+how much does it cost to fly on delta from dallas to baltimore
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 dl:al) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 baltimore:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+on eastern flight 825 flying from atlanta to denver can you tell me what type of aircraft is used on a flight when it leaves at 555
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 ea:al) (flight_number:<fl,<fn,t>> $1 825:fn) (departure_time:<tr,<ti,t>> $1 555:ti) (from:<fl,<lo,t>> $1 atlanta:ci) (to:<fl,<lo,t>> $1 denver:ci) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+i want to go from boston to oakland on united and leave at 838am which flight should i take
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (departure_time:<tr,<ti,t>> $0 838:ti) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 oakland:ci)))
+
+show me the continental flights leaving chicago early saturday morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 co:al) (during_day:<tr,<pd,t>> $0 early:pd) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 chicago:ci) (day:<tr,<da,t>> $0 saturday:da)))
+
+what does code y stand for
+y:fb
+
+what are the flights and fares from boston to philadelphia
+(lambda $0:e (lambda $1:i (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (=:<i,<i,t>> (fare:<fl,i> $0) $1))))
+
+i'd like to fly united airlines from washington to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (from:<fl,<lo,t>> $0 washington:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+i'd like to see flights from pittsburgh to atlanta
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 atlanta:ci)))
+
+tell me about ground transportation at san francisco
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 san_francisco:ci)))
+
+what flights leave phoenix on wednesday evening and arrive in milwaukee
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 evening:pd) (from:<fl,<lo,t>> $0 phoenix:ci) (to:<fl,<lo,t>> $0 milwaukee:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+show me the flights on delta that go through atlanta
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 dl:al) (stop:<fl,<lo,t>> $0 atlanta:ci)))
+
+what is the yn code
+yn:fb
+
+what is the latest flight on wednesday going from atlanta to washington dc
+(argmax:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 washington:ci) (day:<tr,<da,t>> $0 wednesday:da))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+what nonstop flights between boston and washington arrive after 4 o'clock pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (>:<i,<i,t>> (arrival_time:<tr,i> $0) 1600:ti) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 washington:ci)))
+
+show me the flights from san francisco to washington dc
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 washington:ci)))
+
+what is the earliest flight leaving boston and arriving in atlanta on november seventh
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (day_number_arrival:<fl,<dn,t>> $0 7:dn) (month_arrival:<fl,<mn,t>> $0 november:mn))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+what morning flights do you have between oakland and denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+is there a flight between philadelphia and denver that leaves philadelphia around 2 o'clock in the afternoon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (approx_departure_time:<tr,<ti,t>> $0 1400:ti) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+what are the flights from kansas city to burbank on saturday may twenty two on america west
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 hp:al) (from:<fl,<lo,t>> $0 kansas_city:ci) (to:<fl,<lo,t>> $0 burbank:ci) (day:<tr,<da,t>> $0 saturday:da) (day_number:<tr,<dn,t>> $0 22:dn) (month:<tr,<mn,t>> $0 may:mn)))
+
+on tuesday i'd like to fly from detroit to st. petersburg
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 detroit:ci) (to:<fl,<lo,t>> $0 st_petersburg:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+what is the cheapest round trip flight from atlanta to pittsburgh
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (round_trip:<fl,t> $0))) (lambda $0:e (fare:<fl,i> $0)))
+
+show first flight from philadelphia to dallas
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+how many first class flights does united have leaving from all cities today
+(count:<<e,t>,i> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (class_type:<fl,<cl,t>> $0 first:cl) (today:<fl,t> $0))))
+
+what flights do you have from baltimore to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+show me the aircraft that canadian airlines uses
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (airline2:<fl,<al,t>> $1 cp:al) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+show me flights from baltimore to philadelphia arriving after 2100
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (arrival_time:<tr,i> $0) 2100:ti) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+morning flights from pittsburgh to atlanta on wednesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+i want a flight originating in denver going to pittsburgh and atlanta in either order
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (stop:<fl,<lo,t>> $0 atlanta:ci)))
+
+i want to go from baltimore to san francisco with a stopover in denver
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (stop:<fl,<lo,t>> $0 denver:ci)))
+
+oakland to philadelphia
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+what flights leave from chicago to seattle on saturday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 chicago:ci) (to:<fl,<lo,t>> $0 seattle:ci) (day:<tr,<da,t>> $0 saturday:da)))
+
+show me the flights to love field from all other airports
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 dal:ap) (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (airport:<ap,t> $1) (from:<fl,<lo,t>> $0 $1))))))
+
+i would like a flight as early as possible in the day leaving from boston and to denver
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+i would like to book an early morning flight from tampa florida to charlotte north carolina on april sixth
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 early:pd) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 tampa:ci) (to:<fl,<lo,t>> $0 charlotte:ci) (day_number:<tr,<dn,t>> $0 6:dn) (month:<tr,<mn,t>> $0 april:mn)))
+
+cheapest flight from memphis to miami
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 memphis:ci) (to:<fl,<lo,t>> $0 miami:ci))) (lambda $0:e (fare:<fl,i> $0)))
+
+what afternoon flights are available from denver to san francisco on wednesdays
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+is there ground transportation in dallas from the dallas airport to downtown dallas
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 dallas:ci) (from_airport:<gt,<lo,t>> $0 dfw:ap)))
+
+list the morning flights at a 124 dollars from atlanta to boston
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (fare:<fl,<do,t>> $0 124:do) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+thank you for that information now i would like to book a flight from philadelphia to boston on the night of april sixteen around 9 o'clock
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 boston:ci) (during_day:<tr,<pd,t>> $0 late:pd) (month:<tr,<mn,t>> $0 april:mn) (approx_departure_time:<tr,<ti,t>> $0 2100:ti) (day_number:<tr,<dn,t>> $0 16:dn)))
+
+round trip flights between houston and las vegas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (round_trip:<fl,t> $0) (from:<fl,<lo,t>> $0 houston:ci) (to:<fl,<lo,t>> $0 las_vegas:ci)))
+
+flights from san jose to st. paul
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_jose:ci) (to:<fl,<lo,t>> $0 st_paul:ci)))
+
+how many seats in a 734
+(capacity:<e,i> 734:ac)
+
+what does ewr stand for
+ewr:ap
+
+i would like to know if i fly on american flight number 813 from boston to oakland if i will stop enroute at another city
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 aa:al) (flight_number:<fl,<fn,t>> $1 813:fn) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 oakland:ci) (stop:<fl,<lo,t>> $1 $0)))))
+
+i need a flight from pittsburgh to new york city
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 new_york:ci)))
+
+is twa flight 497766 from st. petersburg to milwaukee with one stop available tomorrow morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 st_petersburg:ci) (to:<fl,<lo,t>> $0 milwaukee:ci) (stops:<fl,<i,t>> $0 1:i) (during_day:<tr,<pd,t>> $0 morning:pd) (tomorrow:<tr,t> $0) (airline2:<fl,<al,t>> $0 tw:al)))
+
+what airline is ea the abbreviation for
+ea:al
+
+define airline us
+us:al
+
+please show me ground transportation in denver
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 denver:ci)))
+
+american airlines from phoenix to denver
+(lambda $0:e (and:<t*,t> (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 phoenix:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+is there any flight leaving washington around 3 o'clock for denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (approx_departure_time:<tr,<ti,t>> $0 1500:ti) (from:<fl,<lo,t>> $0 washington:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+show me all flights from orlando to san diego on a boeing 737
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (manufacturer:<e,<mf,t>> $0 boeing:mf) (aircraft_code2:<fl,<ac,t>> $0 737:ac) (from:<fl,<lo,t>> $0 orlando:ci) (to:<fl,<lo,t>> $0 san_diego:ci)))
+
+how much is the 718am flight from las vegas to new york twa
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 tw:al) (departure_time:<tr,<ti,t>> $1 718:ti) (from:<fl,<lo,t>> $1 las_vegas:ci) (to:<fl,<lo,t>> $1 new_york:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+ground transportation in denver
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 denver:ci)))
+
+what are the flights from pittsburgh to denver and back
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+please list ground transport in san francisco
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 san_francisco:ci)))
+
+what flights leave denver before noon on northwest airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 nw:al) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (from:<fl,<lo,t>> $0 denver:ci)))
+
+list all the flights that fly into general mitchell international
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 mke:ap)))
+
+show me the flights from denver to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+what limousine service is in boston
+(lambda $0:e (and:<t*,t> (limousine:<gt,t> $0) (to_city:<gt,<ci,t>> $0 boston:ci)))
+
+show me all the flights leaving baltimore
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci)))
+
+explain the restriction ap/80
+ap_80:rc
+
+give me a list of all the flights from baltimore to philadelphia or denver to philadelphia or pittsburgh to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (or:<t*,t> (and:<t*,t> (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)) (and:<t*,t> (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)) (and:<t*,t> (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))))
+
+could you please give me the cost of a round trip flight from denver to pittsburgh
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (round_trip:<fl,t> $1) (from:<fl,<lo,t>> $1 denver:ci) (to:<fl,<lo,t>> $1 pittsburgh:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+what airlines fly from boston to san francisco
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+show me all direct flights from dallas fort worth to either san francisco or oakland
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (or:<t*,t> (to:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 oakland:ci))))
+
+show all flights from pittsburgh to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+list the fares of us air flights from boston to philadelphia
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 us:al) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 philadelphia:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+i would like an afternoon flight from denver colorado to dallas texas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+show me all flights from chicago to kansas city on thursday june seventeenth arriving in kansas city at around 7 o'clock in the evening
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (approx_arrival_time:<tr,<ti,t>> $0 1900:ti) (from:<fl,<lo,t>> $0 chicago:ci) (to:<fl,<lo,t>> $0 kansas_city:ci) (day:<tr,<da,t>> $0 thursday:da) (day_number:<tr,<dn,t>> $0 17:dn) (month:<tr,<mn,t>> $0 june:mn)))
+
+what flight from boston to atlanta arrives earliest in atlanta
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci))) (lambda $0:e (arrival_time:<tr,i> $0)))
+
+what is the least expensive one way ticket from atlanta to denver leaving on october twelfth
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (from:<fl,<lo,t>> $1 atlanta:ci) (to:<fl,<lo,t>> $1 denver:ci) (day_number:<tr,<dn,t>> $1 12:dn) (month:<tr,<mn,t>> $1 october:mn) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+tell me about flights from toronto to salt lake city leaving toronto between 530 and 7pm
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1730:ti) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1900:ti) (from:<fl,<lo,t>> $0 toronto:ci) (to:<fl,<lo,t>> $0 salt_lake_city:ci)))
+
+i would like to fly delta airlines from atlanta to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 dl:al) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+i want to travel from washington dc to philadelphia on tuesday morning
+(lambda $0:e (and:<t*,t> (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 washington:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+show me airports in washington dc
+(lambda $0:e (and:<t*,t> (airport:<ap,t> $0) (loc:<lo,<lo,t>> $0 washington:ci)))
+
+list lowest cost flight from dallas to baltimore that serves a meal
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (has_meal:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 baltimore:ci))) (lambda $0:e (fare:<fl,i> $0)))
+
+i would like to fly from denver to boston on wednesday the twenty first
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 boston:ci) (day:<tr,<da,t>> $0 wednesday:da) (day_number:<tr,<dn,t>> $0 21:dn)))
+
+are there delta flights leaving denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 dl:al) (from:<fl,<lo,t>> $0 denver:ci)))
+
+what is the ground transportation from boston airport to boston downtown
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 boston:ci) (from_airport:<gt,<lo,t>> $0 bos:ap)))
+
+what is the earliest flight from tampa to milwaukee tomorrow
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 tampa:ci) (to:<fl,<lo,t>> $0 milwaukee:ci) (tomorrow:<tr,t> $0))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+i need to go to san diego from toronto but i want to stopover in denver
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 toronto:ci) (to:<fl,<lo,t>> $0 san_diego:ci) (stop:<fl,<lo,t>> $0 denver:ci)))
+
+give me the flights from san francisco to washington dc for december first
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 washington:ci) (day_number:<tr,<dn,t>> $0 1:dn) (month:<tr,<mn,t>> $0 december:mn)))
+
+list nonstop flights from baltimore to newark on wednesday before noon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 newark:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+please list all flights from denver to philadelphia two saturdays from now
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (day:<tr,<da,t>> $0 saturday:da)))
+
+what are the coach class fares on flights from pittsburgh to atlanta
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (class_type:<fl,<cl,t>> $1 coach:cl) (from:<fl,<lo,t>> $1 pittsburgh:ci) (to:<fl,<lo,t>> $1 atlanta:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+is there an airport limousine at the atlanta airport
+(lambda $0:e (and:<t*,t> (limousine:<gt,t> $0) (from_airport:<gt,<lo,t>> $0 atlanta:ci)))
+
+what is the latest flight departing from boston to san francisco
+(argmax:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 san_francisco:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+do you have a flight from charlotte to atlanta next tuesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 charlotte:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+what is the cost of round trip ticket first class between oakland and atlanta
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (round_trip:<fl,t> $1) (class_type:<fl,<cl,t>> $1 first:cl) (from:<fl,<lo,t>> $1 oakland:ci) (to:<fl,<lo,t>> $1 atlanta:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+flights from nashville to seattle
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 nashville:ci) (to:<fl,<lo,t>> $0 seattle:ci)))
+
+now please give me the latest flight tomorrow on twa from milwaukee to tacoma
+(argmax:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 tw:al) (from:<fl,<lo,t>> $0 milwaukee:ci) (to:<fl,<lo,t>> $0 tacoma:ci) (tomorrow:<tr,t> $0))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+what's the first class fare round trip from atlanta to denver
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (round_trip:<fl,t> $1) (class_type:<fl,<cl,t>> $1 first:cl) (from:<fl,<lo,t>> $1 atlanta:ci) (to:<fl,<lo,t>> $1 denver:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+newark to cleveland daily
+(lambda $0:e (and:<t*,t> (daily:<fl,t> $0) (from:<fl,<lo,t>> $0 newark:ci) (to:<fl,<lo,t>> $0 cleveland:ci)))
+
+how much is a round trip fare from indianapolis to seattle
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (round_trip:<fl,t> $1) (from:<fl,<lo,t>> $1 indianapolis:ci) (to:<fl,<lo,t>> $1 seattle:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+show me which flights from san francisco to pittsburgh on a monday are first class
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (class_type:<fl,<cl,t>> $0 first:cl) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+give me flights from chicago to seattle on saturday morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 chicago:ci) (to:<fl,<lo,t>> $0 seattle:ci) (day:<tr,<da,t>> $0 saturday:da)))
+
+give me the flights from pittsburgh to los angeles on thursday evening
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 evening:pd) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 los_angeles:ci) (day:<tr,<da,t>> $0 thursday:da)))
+
+give me the flights on december twenty seventh with the fares from indianapolis to orlando
+(lambda $0:e (lambda $1:i (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 indianapolis:ci) (to:<fl,<lo,t>> $0 orlando:ci) (day_number:<tr,<dn,t>> $0 27:dn) (month:<tr,<mn,t>> $0 december:mn) (=:<i,<i,t>> (fare:<fl,i> $0) $1))))
+
+show all flights between san francisco and philadelphia for september fifteenth
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (day_number:<tr,<dn,t>> $0 15:dn) (month:<tr,<mn,t>> $0 september:mn)))
+
+could you please find me the earliest flight from boston to oakland
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 oakland:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+what kind of ground transportation is there in washington dc
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 washington:ci)))
+
+please show me the flights from washington to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 washington:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+explain restriction ap please
+ap:rc
+
+list the flights on friday afternoon from philadelphia to oakland
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 oakland:ci) (day:<tr,<da,t>> $0 friday:da)))
+
+what flights from st. paul to kansas city on friday with a meal
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (has_meal:<fl,t> $0) (from:<fl,<lo,t>> $0 st_paul:ci) (to:<fl,<lo,t>> $0 kansas_city:ci) (day:<tr,<da,t>> $0 friday:da)))
+
+find a flight from long beach to st. louis stopping in dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 long_beach:ci) (to:<fl,<lo,t>> $0 st_louis:ci) (stop:<fl,<lo,t>> $0 dallas:ci)))
+
+how long does it take to get from kansas city to st. paul
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 kansas_city:ci) (to:<fl,<lo,t>> $1 st_paul:ci) (=:<i,<i,t>> (time_elapsed:<e,i> $1) $0)))))
+
+flights from los angeles to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 los_angeles:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+give me the cheapest one way flights between boston and philadelphia which arrive after noon on a tuesday
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (oneway:<tr,t> $0) (>:<i,<i,t>> (arrival_time:<tr,i> $0) 1200:ti) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (day:<tr,<da,t>> $0 tuesday:da))) (lambda $0:e (fare:<fl,i> $0)))
+
+flight from denver to philadelphia
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+show me all the flights from philadelphia to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+what are the flights from denver to san francisco on tuesday october fifteenth
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (day:<tr,<da,t>> $0 tuesday:da) (day_number:<tr,<dn,t>> $0 15:dn) (month:<tr,<mn,t>> $0 october:mn)))
+
+what flights from denver to salt lake city
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 salt_lake_city:ci)))
+
+what classes of service does twa have
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (airline2:<fl,<al,t>> $1 tw:al) (equals:<e,<e,t>> (booking_class:<e,e> $1) $0)))))
+
+list nonstop flights from baltimore washington airport to oakland that depart in the afternoon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 bwi:ap) (to:<fl,<lo,t>> $0 oakland:ci)))
+
+what's the earliest flight from dallas to houston
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 houston:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+i need a flight to seattle leaving from baltimore making a stop in minneapolis
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 seattle:ci) (stop:<fl,<lo,t>> $0 minneapolis:ci)))
+
+is there a flight between san francisco and boston with a stopover in dallas fort worth
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 boston:ci) (stop:<fl,<lo,t>> $0 dallas:ci)))
+
+how far is the airport from san francisco
+(miles_distant:<e,<e,i>> sfo:ap san_francisco:ci)
+
+what airline is dl
+dl:al
+
+show me the latest flight to love field
+(argmax:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 dal:ap))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+list all the flights that arrive at general mitchell international airport
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (to:<fl,<lo,t>> $0 mke:ap)))
+
+show me the flights from new york to los angeles with stop in milwaukee
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 new_york:ci) (to:<fl,<lo,t>> $0 los_angeles:ci) (stop:<fl,<lo,t>> $0 milwaukee:ci)))
+
+list the flights from philadelphia to dallas on american airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+show me the flights from westchester county to cincinnati
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 westchester_county:ci) (to:<fl,<lo,t>> $0 cincinnati:ci)))
+
+show me the monday flights from san francisco to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+what is the lowest cost for a one way ticket from boston to washington
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 washington:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+what is the latest evening flight leaving san francisco for washington
+(argmax:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 evening:pd) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 washington:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+what ground transport is available in minneapolis
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 minneapolis:ci)))
+
+what type of airplane is an m80
+m80:ac
+
+i'm looking for flights from pittsburgh to philadelphia leaving before 9am
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (<:<i,<i,t>> (departure_time:<tr,i> $0) 900:ti) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+show me all economy prices from dallas to baltimore
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (economy:<tr,t> $1) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 baltimore:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+flights from milwaukee to phoenix on saturday or sunday american airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 milwaukee:ci) (to:<fl,<lo,t>> $0 phoenix:ci) (or:<t*,t> (day:<tr,<da,t>> $0 saturday:da) (day:<tr,<da,t>> $0 sunday:da))))
+
+what airport is at tampa
+(lambda $0:e (and:<t*,t> (airport:<ap,t> $0) (loc:<lo,<lo,t>> $0 tampa:ci)))
+
+show me all the flights out of boston today
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (today:<fl,t> $0)))
+
+give me fares from atlanta to baltimore
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 atlanta:ci) (to:<fl,<lo,t>> $1 baltimore:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+show prices for all flights from baltimore to dallas on july twenty ninth
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 baltimore:ci) (to:<fl,<lo,t>> $1 dallas:ci) (day_number:<tr,<dn,t>> $1 29:dn) (month:<tr,<mn,t>> $1 july:mn) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+show me fares from houston to las vegas
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 houston:ci) (to:<fl,<lo,t>> $1 las_vegas:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+show me all fares from new york to miami leaving on a tuesday
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 new_york:ci) (to:<fl,<lo,t>> $1 miami:ci) (day:<tr,<da,t>> $1 tuesday:da) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+from sfo to denver
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 sfo:ap) (to:<fl,<lo,t>> $0 denver:ci)))
+
+what flights go from dallas to tampa
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 tampa:ci)))
+
+my question is i want to go to san francisco and i live in denver and i would like to fly on united airlines do you have an early flight
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 ua:al) (during_day:<tr,<pd,t>> $0 early:pd) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+baltimore to philadelphia
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 philadelphia:ci)))
+
+now i need a flight on tuesday from phoenix to detroit
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 phoenix:ci) (to:<fl,<lo,t>> $0 detroit:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+i want a flight from toronto to san diego that stops in st. louis are there flights
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 toronto:ci) (to:<fl,<lo,t>> $0 san_diego:ci) (stop:<fl,<lo,t>> $0 st_louis:ci)))
+
+could you tell me what the earliest flight that goes between atlanta and denver is which serves a meal
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (has_meal:<fl,t> $0) (from:<fl,<lo,t>> $0 atlanta:ci) (to:<fl,<lo,t>> $0 denver:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+show me times for flights from san francisco to atlanta
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 san_francisco:ci) (to:<fl,<lo,t>> $1 atlanta:ci) (=:<i,<i,t>> (departure_time:<tr,i> $1) $0)))))
+
+give me the flights from washington dc to philadelphia for december second
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 washington:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (day_number:<tr,<dn,t>> $0 2:dn) (month:<tr,<mn,t>> $0 december:mn)))
+
+what is a flight that goes from baltimore to san francisco and arrives at san francisco at 8pm on a friday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (arrival_time:<tr,<ti,t>> $0 2000:ti) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (day_arrival:<fl,<d,t>> $0 friday:da)))
+
+i want to go between boston and san francisco
+(lambda $0:e (and:<t*,t> (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+what type of aircraft does eastern fly from atlanta to denver before 6pm
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 ea:al) (<:<i,<i,t>> (departure_time:<tr,i> $1) 1800:ti) (from:<fl,<lo,t>> $1 atlanta:ci) (to:<fl,<lo,t>> $1 denver:ci) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+is there a flight tomorrow morning from columbus to nashville
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 columbus:ci) (to:<fl,<lo,t>> $0 nashville:ci) (tomorrow:<tr,t> $0)))
+
+show me all the flights from san francisco to boston for august thirty first 1991
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 boston:ci) (day_number:<tr,<dn,t>> $0 31:dn) (month:<tr,<mn,t>> $0 august:mn) (year:<fl,<yr,t>> $0 1991:yr)))
+
+show me all first class fares from new york to miami leaving on a tuesday
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (class_type:<fl,<cl,t>> $1 first:cl) (from:<fl,<lo,t>> $1 new_york:ci) (to:<fl,<lo,t>> $1 miami:ci) (day:<tr,<da,t>> $1 tuesday:da) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+show me all flights from phoenix to milwaukee on american airlines on wednesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 phoenix:ci) (to:<fl,<lo,t>> $0 milwaukee:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+what flights from tampa to cincinnati
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 tampa:ci) (to:<fl,<lo,t>> $0 cincinnati:ci)))
+
+what kind of ground transportation is there in philadelphia
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 philadelphia:ci)))
+
+rental cars in washington dc
+(lambda $0:e (and:<t*,t> (rental_car:<gt,t> $0) (to_city:<gt,<ci,t>> $0 washington:ci)))
+
+show me the flights from boston to atlanta and the return flights from atlanta to boston
+(lambda $0:e (lambda $1:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (flight:<fl,t> $1) (to:<fl,<lo,t>> $1 boston:ci) (from:<fl,<lo,t>> $1 atlanta:ci))))
+
+show me the fares from dallas to san francisco
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+how far is downtown from the airport in dallas
+(lambda $0:e (and:<t*,t> (miles_distant:<gt,t> $0) (to_city:<gt,<ci,t>> $0 dallas:ci) (from_airport:<gt,<lo,t>> $0 dallas:ci)))
+
+show me round trip fares from san jose to salt lake city
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (round_trip:<fl,t> $1) (from:<fl,<lo,t>> $1 san_jose:ci) (to:<fl,<lo,t>> $1 salt_lake_city:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+what is the fare from san francisco to dallas fort worth on delta flight 852
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 dl:al) (flight_number:<fl,<fn,t>> $1 852:fn) (from:<fl,<lo,t>> $1 san_francisco:ci) (to:<fl,<lo,t>> $1 dallas:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+all flights from pittsburgh to philadelphia next tuesday arriving near 6 o'clock
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (approx_arrival_time:<tr,<ti,t>> $0 1800:ti) (from:<fl,<lo,t>> $0 pittsburgh:ci) (to:<fl,<lo,t>> $0 philadelphia:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+show me the cheapest fare from dallas to baltimore
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 baltimore:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+what are the early morning flights from boston to denver
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 early:pd) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci)))
+
+what're the lowest one way fares from denver to atlanta
+(min:<<i,t>,i> (lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (oneway:<tr,t> $1) (from:<fl,<lo,t>> $1 denver:ci) (to:<fl,<lo,t>> $1 atlanta:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))))
+
+i would like information for flights from baltimore to dallas on early tuesday morning
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 early:pd) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 baltimore:ci) (to:<fl,<lo,t>> $0 dallas:ci) (day:<tr,<da,t>> $0 tuesday:da)))
+
+flight leaving chicago to nashville
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 chicago:ci) (to:<fl,<lo,t>> $0 nashville:ci)))
+
+what are the flights on january first 1992 from boston to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (day_number:<tr,<dn,t>> $0 1:dn) (month:<tr,<mn,t>> $0 january:mn) (year:<fl,<yr,t>> $0 1992:yr)))
+
+show flights from san francisco to denver on a thursday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 denver:ci) (day:<tr,<da,t>> $0 thursday:da)))
+
+please tell me how many nonstop flights there are from boston to atlanta
+(count:<<e,t>,i> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci))))
+
+list daily flights from oakland to boston using twa
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (daily:<fl,t> $0) (airline2:<fl,<al,t>> $0 tw:al) (from:<fl,<lo,t>> $0 oakland:ci) (to:<fl,<lo,t>> $0 boston:ci)))
+
+is there a continental flight leaving from las vegas to new york nonstop
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (nonstop:<fl,t> $0) (airline2:<fl,<al,t>> $0 co:al) (from:<fl,<lo,t>> $0 las_vegas:ci) (to:<fl,<lo,t>> $0 new_york:ci)))
+
+list all flights from boston to atlanta before 5 o'clock am on thursday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (<:<i,<i,t>> (departure_time:<tr,i> $0) 500:ti) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (day:<tr,<da,t>> $0 thursday:da)))
+
+show me the flights from philadelphia to dallas that stop in atlanta
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci) (stop:<fl,<lo,t>> $0 atlanta:ci)))
+
+show me the flights from st. petersburg to toronto that leave monday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 st_petersburg:ci) (to:<fl,<lo,t>> $0 toronto:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+which airlines serve pittsburgh
+(lambda $0:e (and:<t*,t> (airline:<al,t> $0) (services:<al,<lo,t>> $0 pittsburgh:ci)))
+
+how much does flight ua 270 from denver to philadelphia cost
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 ua:al) (flight_number:<fl,<fn,t>> $1 270:fn) (from:<fl,<lo,t>> $1 denver:ci) (to:<fl,<lo,t>> $1 philadelphia:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+what airlines go to pittsburgh
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (to:<fl,<lo,t>> $1 pittsburgh:ci) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+which flights from memphis to tacoma also stop in los angeles
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 memphis:ci) (to:<fl,<lo,t>> $0 tacoma:ci) (stop:<fl,<lo,t>> $0 los_angeles:ci)))
+
+fares and flights from pittsburgh to philadelphia
+(lambda $0:i (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 pittsburgh:ci) (to:<fl,<lo,t>> $1 philadelphia:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0))))
+
+show flights between toronto and san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 toronto:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+what's the fare for delta flight 217 from dallas to san francisco
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (airline2:<fl,<al,t>> $1 dl:al) (flight_number:<fl,<fn,t>> $1 217:fn) (from:<fl,<lo,t>> $1 dallas:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+list all flights from boston to atlanta after 6 o'clock pm on wednesday
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (>:<i,<i,t>> (departure_time:<tr,i> $0) 1800:ti) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 atlanta:ci) (day:<tr,<da,t>> $0 wednesday:da)))
+
+okay i'd like a flight on us air from indianapolis to san diego in the afternoon what's available
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 us:al) (during_day:<tr,<pd,t>> $0 afternoon:pd) (from:<fl,<lo,t>> $0 indianapolis:ci) (to:<fl,<lo,t>> $0 san_diego:ci)))
+
+what flights are available from boston to denver today
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci) (today:<fl,t> $0)))
+
+how can i get from the airport in pittsburgh to downtown
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 pittsburgh:ci) (from_airport:<gt,<lo,t>> $0 pittsburgh:ci)))
+
+could you please show me all flights from milwaukee to montreal
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 milwaukee:ci) (to:<fl,<lo,t>> $0 montreal:ci)))
+
+what is the earliest flight you have leaving boston heading to philadelphia
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 philadelphia:ci))) (lambda $0:e (departure_time:<tr,i> $0)))
+
+flight numbers from minneapolis to long beach on june twenty six
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (=:<i,<i,t>> (flight_number:<fl,fn> $1) $0) (month:<tr,<mn,t>> $1 june:mn) (day_number:<tr,<dn,t>> $1 26:dn) (to:<fl,<lo,t>> $1 long_beach:ci) (from:<fl,<lo,t>> $1 minneapolis:ci)))))
+
+locate flights from philadelphia to dallas stopping in hartfield
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 philadelphia:ci) (to:<fl,<lo,t>> $0 dallas:ci) (stop:<fl,<lo,t>> $0 atl:ap)))
+
+tell me which airlines have flights from pittsburgh to san francisco on monday september second
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 pittsburgh:ci) (to:<fl,<lo,t>> $1 san_francisco:ci) (day:<tr,<da,t>> $1 monday:da) (day_number:<tr,<dn,t>> $1 2:dn) (month:<tr,<mn,t>> $1 september:mn) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+what are the flights from boston to san francisco
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 san_francisco:ci)))
+
+may i have a list of flights going from boston to denver on the twenty ninth of july
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 denver:ci) (day_number:<tr,<dn,t>> $0 29:dn) (month:<tr,<mn,t>> $0 july:mn)))
+
+list types of planes that fly between pittsburgh and baltimore
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 pittsburgh:ci) (to:<fl,<lo,t>> $1 baltimore:ci) (equals:<e,<e,t>> (aircraft_code:<fl,ac> $1) $0)))))
+
+i want to go from boston to washington on monday morning
+(lambda $0:e (and:<t*,t> (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 boston:ci) (to:<fl,<lo,t>> $0 washington:ci) (day:<tr,<da,t>> $0 monday:da)))
+
+flight 417 from cincinnati to dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (flight_number:<fl,<fn,t>> $0 417:fn) (from:<fl,<lo,t>> $0 cincinnati:ci) (to:<fl,<lo,t>> $0 dallas:ci)))
+
+show me flights from dallas to atlanta
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 atlanta:ci)))
+
+is there ground transportation in boston from the airport
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (from_airport:<gt,<lo,t>> $0 bos:ap)))
+
+show me the flights from san francisco to las vegas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 san_francisco:ci) (to:<fl,<lo,t>> $0 las_vegas:ci)))
+
+what flights from houston to milwaukee on friday on american airlines
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (airline2:<fl,<al,t>> $0 aa:al) (from:<fl,<lo,t>> $0 houston:ci) (to:<fl,<lo,t>> $0 milwaukee:ci) (day:<tr,<da,t>> $0 friday:da)))
+
+how much does it cost to get downtown from the atlanta airport by limousine
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (limousine:<gt,t> $1) (to_city:<gt,<ci,t>> $1 atlanta:ci) (from_airport:<gt,<lo,t>> $1 atlanta:ci) (=:<i,<i,t>> (ground_fare:<gt,i> $1) $0)))))
+
+i would like a flight from denver to pittsburgh
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci)))
+
+i would like the evening schedule of flights from san francisco to washington
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (to:<fl,<lo,t>> $1 washington:ci) (from:<fl,<lo,t>> $1 san_francisco:ci) (during_day:<tr,<pd,t>> $1 evening:pd) (flight:<fl,t> $1) (=:<i,<i,t>> (departure_time:<tr,i> $1) $0)))))
+
+show me fares from seattle to minneapolis
+(lambda $0:i (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (from:<fl,<lo,t>> $1 seattle:ci) (to:<fl,<lo,t>> $1 minneapolis:ci) (=:<i,<i,t>> (fare:<fl,i> $1) $0)))))
+
+is there ground transportation from the airport to downtown phoenix
+(lambda $0:e (and:<t*,t> (ground_transport:<gt,t> $0) (to_city:<gt,<ci,t>> $0 phoenix:ci) (from_airport:<gt,<lo,t>> $0 phoenix:ci)))
+
+i'd like the flights from san jose to nashville on the morning of friday june third
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (during_day:<tr,<pd,t>> $0 morning:pd) (from:<fl,<lo,t>> $0 san_jose:ci) (to:<fl,<lo,t>> $0 nashville:ci) (day:<tr,<da,t>> $0 friday:da) (day_number:<tr,<dn,t>> $0 3:dn) (month:<tr,<mn,t>> $0 june:mn)))
+
+what flights are available saturday to san francisco from dallas
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 san_francisco:ci) (day:<tr,<da,t>> $0 saturday:da)))
+
+please give me the cheapest flight from denver to pittsburgh
+(argmin:<<e,t>,<<e,i>,e>> (lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (from:<fl,<lo,t>> $0 denver:ci) (to:<fl,<lo,t>> $0 pittsburgh:ci))) (lambda $0:e (fare:<fl,i> $0)))
+
+show me all flights from san diego to dulles on boeing 767
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (manufacturer:<e,<mf,t>> $0 boeing:mf) (aircraft_code2:<fl,<ac,t>> $0 767:ac) (from:<fl,<lo,t>> $0 san_diego:ci) (to:<fl,<lo,t>> $0 iad:ap)))
+
+which airlines fly from boston to washington dc via other cities
+(lambda $0:e (exists:<<e,t>,t> (lambda $1:e (and:<t*,t> (flight:<fl,t> $1) (from:<fl,<lo,t>> $1 boston:ci) (to:<fl,<lo,t>> $1 washington:ci) (exists:<<e,t>,t> (lambda $2:e (and:<t*,t> (city:<ci,t> $2) (stop:<fl,<lo,t>> $1 $2)))) (equals:<e,<e,t>> (airline:<fl,e> $1) $0)))))
+
+please give me all flights from dallas to oakland before noon
+(lambda $0:e (and:<t*,t> (flight:<fl,t> $0) (<:<i,<i,t>> (departure_time:<tr,i> $0) 1200:ti) (from:<fl,<lo,t>> $0 dallas:ci) (to:<fl,<lo,t>> $0 oakland:ci)))
+

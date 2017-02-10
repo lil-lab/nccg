@@ -1,0 +1,15 @@
+ what is the earliest flight from memphis to las vegas 
+(argmin $v1 (and (flight $v1) (from $v1 memphis:ci) (to $v1 las_vegas:ci)  ) (departure_time $v1))
+
+ what kind of ground transportation is available in las vegas 
+(lambda $v0 e (and (ground_transport $v0) (to_city $v0 las_vegas:ci) ))
+
+ what is the latest flight leaving las vegas for ontario 
+(argmax $v1 (and (flight $v1) (from $v1 las_vegas:ci) (to $v1 ontario:ci)  ) (departure_time $v1))
+
+ what is the earliest flight from ontario to memphis 
+(argmin $v1 (and (flight $v1) (from $v1 ontario:ci) (to $v1 memphis:ci)  ) (departure_time $v1))
+
+ what other flights are there from ontario to memphis 
+(lambda $v1 e (and (flight $v1) (from $v1 ontario:ci) (to $v1 memphis:ci) (not (equals $v1 (argmin $v6 (and (flight $v6) (from $v6 ontario:ci) (to $v6 memphis:ci)  ) (departure_time $v6))))))
+

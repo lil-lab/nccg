@@ -1,0 +1,37 @@
+.DS_Store
+*.pyc
+run.*
+
+*.class
+
+bin/
+dist/
+build/
+build.src/
+MANIFEST.MF
+
+# /tiny/
+tiny/logs
+commi/experiments/comm/*/*/*.log
+commi/experiments/comm/*/*/*.out
+tiny/experiments/atis/eclipse_run.log
+
+# /navi/
+navi/experiments/*/*/*.out
+navi/experiments/*/*/*.log
+navi/experiments/*/model
+
+# /atis/
+atis/experiments/*/*/*.out
+atis/experiments/*/*/*.log
+atis/experiments/*/model
+atis/experiments/*/learned.model
+
+# /navigation/
+navigation/sail/logs/*
+
+# Ignore the uncompressed data on navigation-sail
+navigation-sail/org-macmahon/corpus
+
+# Ignore giza binaries
+tiny/giza/giza-pp

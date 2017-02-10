@@ -1,0 +1,45 @@
+ first class columbus to chicago before 10am one way 
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp:fl))) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (class_type:t $0 first:cl) (fr:t $0 columbus:ci) (to:t $0 chicago:ci) (dtime:t $0 (bef:tm 1000:tm)) (oneway:t $0)))))
+
+ columbus to chicago 
+(REQ:task (refine:<act,prog> (pair:p obj:e tmp:fl)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (fr:t $0 columbus:ci) (to:t $0 chicago:ci)))))
+
+ one way first class before 10am 
+(REQ:task (refine:<act,prog> (pair:p obj:e tmp:fl)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (oneway:t $0) (class_type:t $0 first:cl) (dtime:t $0 (bef:tm 1000:tm))))))
+
+ first class please 
+(REQ:task (refine:<act,prog> (pair:p obj:e tmp:fl)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (class_type:t $0 first:cl)))))
+
+ show me the airlines please 
+(REQ:task (ask:<act,prog> (pair:p obj:e tmp:fl)) (query:act (lambda $0:e (airline:t obj:e $0))))
+
+ saint petersburg to detroit  
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp2:fl))) (query:act (lambda $0:e (ref:t $0 obj:e) (fr:t $0 st_ptersburg:ci) (to:t $0 detroit:ci))))
+
+ arrive before 7pm cheapest flight please 
+// XXX : not sure I am completely comfortable with a query that takes an entity and not a <e,t> expression. Is argmin really an 'e' and not a set <e,t>
+(REQ:task (refine:<act,prog> (pair:p obj:e tmp2:fl)) (query:act (argmin:e (lambda $0:e (and:t (ref:t $0 obj:e) (flight:t $0) (atime:t $0 (bef:tm 1900:tm)))) (lambda $0:n (cost:n $0)))))
+
+ show airlines please 
+(REQ:task (ask:<act,prog> (pair:p obj:e tmp2:fl)) (query:act (lambda $0:e (airline:t obj:e $0))))
+
+ round trip kansas city to phoenix nonstop 
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp3:fl))) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (round_trip:t $0) (fr:t $0 kansas_city:ci) (to:t $0 phoenix:ci) (nonstop:t $0)))))
+
+ lowest fares please 
+(REQ:task (refine:<act,prog> (pair:p obj:e tmp3:fl)) (query:act (argmin:e (lambda $0:e (ref:t $0 obj:e)) (lambda $0:n (cost:n $0)))))
+
+ show airline names please 
+(REQ:task (ask:<act,prog> (pair:p obj:e tmp3:fl)) (query:act (lambda $0:e (airline:t obj:e $0))))
+
+ what does wn mean 
+// XXX : not sure how to handle this
+wn:al
+
+ return flights please 
+(REQ:task (refine:<act,prog> (pair:p obj:e tmp3:fl)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (return:t $0)))))
+
+ phoenix to kansas city nonstop 
+(REQ:task (refine:<act,prog> (pair:p obj:e tmp3:fl)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (fr:t $0 phoenix:ci) (to:t $0 kansas_city:ci) (nonstop:t $0)))))
+
+

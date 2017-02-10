@@ -1,0 +1,101 @@
+(
+
+exist:<<e,t>,t>		// Existential quantifier
+eq:<e,<e,t>>
+neq:<e,<e,t>>
+argmin:<<e,t>,<<e,e>,e>>
+
+n					// numeral
+cost:<e,<n,t>>
+dollar:<n,n>
+perday:<n,n>
+bigger:<n,n>
+
+loc					// location
+(ci loc)			// city
+(ap loc)			// airport
+ap:<ap,t>
+ci:<ci,t>
+near:<loc,loc>
+downtown:<ci,loc>
+
+dt					// date-time
+before:<dt,<dt,t>>
+
+(d dt)				// date
+day
+mon
+year
+d:<d,t>
+date_dmn:<day,<mon,<n,d>>>			// Given a date, month and number (e.g. Wednesday March 28th), create a date 
+date_dmny:<day,<mon,<n,<year,d>>>>	// Given a day, month, day number and a year
+date_mny:<mon,<n,<year,d>>>			// Given a month, day number and a year
+date_mn:<mon,<n,d>>					// Given a month and a day number, create a date
+date_m:<mon,d>						// Given a month, create a date
+date_n:<n,d>
+before:<d,d>
+next:<d,d>							// Given a date X, return the date of the next X
+date_d:<day,d>
+
+(tm dt)				// time
+around:<tm,tm>
+before:<tm,tm>
+after:<tm,tm>
+range:<tm,<tm,tm>>
+
+al					// airline
+al:<al,t>
+
+sg					// segment (a flight plan is composed of at least one segment)
+(lg sg)				// leg (a segment is made of at least one leg)
+sg:<sg,t>
+lg:<lg,t>
+combine:<sg,<sg,sg>>
+sgnum:<sg,<n,t>>
+sg:<n,sg>			// Return the n segment
+in:<sg,<lg,t>>
+fr:<sg,<loc,t>>
+return:<sg,t>
+dtime:<sg,<tm,t>>
+dtime:<sg,tm>
+bef:<sg,<sg,t>>
+to:<sg,<loc,t>>
+to:<sg,loc>
+airline:<sg,<al,t>>
+atime:<sg,<tm,t>>
+ddate:<sg,<d,t>>
+adate:<sg,<d,t>>
+ddate:<sg,d>
+adate:<sg,d>
+flnum:<lg,<n,t>>
+round:<sg,t>
+direct:<sg,t>
+cost:<sg,n>			// Return the price of a flight segment
+
+cr					// Car rental
+cl					// Rented car class
+rn					// Rental agency
+cr:<cr,t>
+crloc:<cr,<loc,t>>
+crclass:<cr,<cl,t>>
+crpick:<cr,<d,t>>
+crdrop:<cr,<d,t>>
+crcomp:<cr,<rn,t>>
+crlen:<cr,<n,t>>		// Rental length
+
+hr					// Hotel reservation
+hn					// Hotel name
+hc					// Hotel chain
+rt					// Room type
+hr:<hr,t>
+hrloc:<hr,<loc,t>>
+hrname:<hr,<hn,t>>
+hrdate:<hr,<d,t>>
+hrcin:<hr,<d,t>>	// Hotel reservation check-in date
+hrcout:<hr,<d,t>>	// Hotel reservation check-out date
+hrlen:<hr,<n,t>>	// Hotel stay length
+hrchain:<hr,<hc,t>>
+room:<hr,<rt,t>>	// Room type
+
+
+)

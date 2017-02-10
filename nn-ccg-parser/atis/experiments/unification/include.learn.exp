@@ -1,0 +1,5 @@
+## Tester
+type=tester id=tester data=test parser=parser
+## Learners
+type=learner.validation.perceptron id=perceptron data=train genlexbeam=@lexbeam iter=@iter validator=validator hard=true maxSentenceLength=@trainingMaxSentenceLength tester=tester conflateParses=false errorDriven=false genlex=genlex
+type=learner.validation.stocgrad id=stocgrad data=train genlexbeam=@lexbeam iter=@iter validator=validator maxSentenceLength=@trainingMaxSentenceLength tester=tester conflateParses=false errorDriven=false genlex=genlex

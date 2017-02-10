@@ -1,0 +1,565 @@
+leave the room and go right
+(do-sequentially:<t*,t> (verify:<t,t> (room:<e,t> current-loc:loc)) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> right-loc:loc)
+
+
+leave the room and turn right
+(do-sequentially:<t*,t> (verify:<t,t> (room:<e,t> current-loc:loc)) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> right-loc:loc)
+
+exit and go right
+(do-sequentially:<t*,t> (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> right-loc:loc))
+
+exit and turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> right-loc:loc))
+
+leave the room and go forward
+(do-sequentially:<t*,t> (verify:<t,t> (room:<e,t> current-loc:loc)) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> forward-loc:loc)
+
+leave the room and go straight
+(do-sequentially:<t*,t> (verify:<t,t> (room:<e,t> current-loc:loc)) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> forward-loc:loc)
+
+exit and go forward
+(do-sequentially:<t*,t> (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> forward-loc:loc))
+
+exit and go straight
+(do-sequentially:<t*,t> (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> forward-loc:loc))
+
+pass one junction
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc))
+
+go straight through one junction
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc))
+
+go through one junction
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc))
+
+go past one junction
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc))
+
+go through two junctions
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc))
+
+go past two junctions
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc))
+
+go straight through two junctions
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc))
+
+pass two junctions
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc))
+
+go past three junctions
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc))
+
+go straight through three junctions
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc))
+
+go through three junctions
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc))
+
+pass three junctions
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc))
+
+go straight through the next junction then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past one junction then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past the next junction and take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past the next junction then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through one junction and take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through one junction and turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through one junction then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through one junction then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through the next junction then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through one junction and go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through one junction and take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through one junction then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through the first junction then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through the next junction and take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through the next junction then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through the next junction then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+pass one junction and turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+pass one junction then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+pass one junction then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+pass the first junction then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+pass the second junction then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+pass the second junction then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through the second junction and turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through the second junction then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through the second junction and go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through the second junction and take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through the second junction then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past two junctions and go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past two junctions and take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through two junctions then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go through the third junction then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+pass three junctions and go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+pass three junctions then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past the third junction and turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past the third junction then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through the third junction then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through the third junction then turn left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through three junctions then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go straight through three junctions wd then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past three junctions then go left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past three junctions then take a left
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc)))
+
+go past one junction and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past one junction then go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past one junction then turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past the first junction and go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past the next junction then turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through one junction then turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through the next junction and go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through the next junction and turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go through the first junction and go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go through the next junction and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass one junction and go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass one junction then go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass the first junction then go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass the second junction and go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass the second junction and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass the second junction and turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass the second junction then go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass the second junction then take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass two junctions and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass two junctions and turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past the second junction then go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go through the second junction and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go through the second junction then turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through the second junction then take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past two junctions and turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past two junctions then turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through two junctions then go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through two junctions then take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through two junctions then turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go through two junctions and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go through two junctions and turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go through the third junction then go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass the third junction and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass the third junction and turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass three junctions and go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass three junctions and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass three junctions then take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+pass three junctions then turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go through three junctions and turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through the third junction and go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go straight through the third junction and turn right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past the third junction and go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past the third junction and take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past the third junction then go right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+go past the third junction then take a right
+(do-sequentially:<t*,t> (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> forward-loc:loc)) (do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc)))
+
+take the next left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+take the first left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+take the second left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> left-loc:loc))
+
+take the third left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> left-loc:loc))
+
+take the next right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+take the first right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+take the second right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> right-loc:loc))
+
+take the third right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the first junction and go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the first junction and take a left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the first junction and turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the first junction then go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the first junction then turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the next junction and go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the next junction and take a left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the next junction and turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the next junction then go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the next junction then turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (junction:<e,t> $0)) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the second junction and go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the second junction and turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the second junction and take a left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the second junction then go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the second junction then take a left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the second junction then turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the third junction and take a left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the third junction and go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the third junction and turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the third junction then go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the third junction then take a left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the third junction then turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> left-loc:loc))
+
+go to the first junction and go right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the first junction and take a right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the first junction and turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the first junction then go right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the first junction then take a right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the first junction then turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the next junction and go right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the next junction and take a right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the next junction and turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the next junction then go right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the next junction then turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 1:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the second junction and go right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the second junction and take a right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the second junction and turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the second junction then go right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the second junction then take a right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the second junction then turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 2:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the third junction and take a right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the third junction and turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the third junction then go right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the third junction then take a right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> right-loc:loc))
+
+go to the third junction then turn right
+(do-sequentially:<t*,t> (move-to:<loc,t> (n-th:<<e,t>,<<e,n>,<n,e>>> (lambda $0:e (and:<t*,t> (junction:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0))) (lambda $1:e (distance:<loc,n> $1)) 3:n)) (move-to:<loc,t> right-loc:loc))
+
+go left
+(move-to:<loc,t> left-loc:loc)
+
+take a left
+(move-to:<loc,t> left-loc:loc)
+
+turn left
+(move-to:<loc,t> left-loc:loc)
+
+go right
+(move-to:<loc,t> right-loc:loc)
+
+take a right
+(move-to:<loc,t> right-loc:loc)
+
+turn right
+(move-to:<loc,t> right-loc:loc)
+
+go forward
+(move-to:<loc,t> forward-loc:loc)
+
+go straight
+(move-to:<loc,t> forward-loc:loc)
+
+enter the room on the left
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> left-loc:loc $0)))))
+
+go into the room on the left
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> left-loc:loc $0)))))
+
+take a left into the room
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> left-loc:loc $0)))))
+
+go left into the room
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> left-loc:loc $0)))))
+
+turn left into the room
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> left-loc:loc $0)))))
+
+turn left and enter the room
+(do-sequentially:<t*,t> (move-to:<loc,t> left-loc:loc) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (and:<t*,t> (room:<e,t> $1) (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))))) 
+
+take a left and enter the room
+(do-sequentially:<t*,t> (move-to:<loc,t> left-loc:loc) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (and:<t*,t> (room:<e,t> $1) (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))))) 
+
+take a left into the room
+(do-sequentially:<t*,t> (move-to:<loc,t> left-loc:loc) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (and:<t*,t> (room:<e,t> $1) (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))))) 
+
+enter the room on the right
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> right-loc:loc $0)))))
+
+go into the room on the right
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> right-loc:loc $0)))))
+
+go right into the room
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> right-loc:loc $0)))))
+
+take a right into the room
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> right-loc:loc $0)))))
+
+turn right into the room
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> right-loc:loc $0)))))
+
+go right and enter the room
+(do-sequentially:<t*,t> (move-to:<loc,t> right-loc:loc) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (and:<t*,t> (room:<e,t> $1) (=:<e,<e,t>> (distance:<loc,n> $1) 1:n))))))
+
+take a right and enter the room
+(do-sequentially:<t*,t> (move-to:<loc,t> right-loc:loc) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (and:<t*,t> (room:<e,t> $1) (=:<e,<e,t>> (distance:<loc,n> $1) 1:n))))))
+
+turn right and enter the room
+(do-sequentially:<t*,t> (move-to:<loc,t> right-loc:loc) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (and:<t*,t> (room:<e,t> $1) (=:<e,<e,t>> (distance:<loc,n> $1) 1:n))))))
+
+enter the room ahead
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0)))))
+
+go into the room ahead
+(move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $0:loc (and:<t*,t> (room:<e,t> $0) (=:<e,<e,t>> forward-loc:loc $0)))))
+
+leave the room and go left
+(do-sequentially:<t*,t> (verify:<t,t> (room:<e,t> current-loc:loc)) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> left-loc:loc)
+
+leave the room and turn left
+(do-sequentially:<t*,t> (verify:<t,t> (room:<e,t> current-loc:loc)) (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> left-loc:loc)
+
+exit and go left
+(do-sequentially:<t*,t> (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> left-loc:loc))
+
+exit and turn left
+(do-sequentially:<t*,t> (move-to:<loc,t> (unique-thing:<<e,t>,e> (lambda $1:e (=:<e,<e,t>> (distance:<loc,n> $1) 1:n)))) (move-to:<loc,t> left-loc:loc))
+

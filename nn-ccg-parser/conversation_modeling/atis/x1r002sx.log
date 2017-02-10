@@ -1,0 +1,18 @@
+list airfares from kansas city to san francisco
+(lambda $v1 e (exists $v0 (and (from $v0 kansas_city:ci) (to $v0 san_francisco:ci) (= (fare $v0) $v1))))
+
+list airfares from saint louis to san francisco
+(lambda $v1 e (exists $v0 (and (from $v0 st_louis:ci) (to $v0 san_francisco:ci) (= (fare $v0) $v1))))
+
+list airfares for the flights
+(lambda $v1 e (exists $v0 (and (flight $v0) (from $v0 st_louis:ci) (to $v0 san_francisco:ci) (= (fare $v0) $v1))))
+
+list flights and airfares from atlanta to san francisco
+(lambda $v0 e (lambda $v1 e (and (flight $v0) (from $v0 atlanta:ci) (to $v0 san_francisco:ci) (= (fare $v0) $v1))))
+
+list fares from atlanta to san francisco
+(lambda $v1 e (exists $v0 (and (from $v0 atlanta:ci) (to $v0 san_francisco:ci) (= (fare $v0) $v1))))
+
+list airfares from atlanta to san francisco
+(lambda $v1 e (exists $v0 (and (from $v0 atlanta:ci) (to $v0 san_francisco:ci) (= (fare $v0) $v1))))
+

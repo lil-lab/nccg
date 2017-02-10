@@ -1,0 +1,21 @@
+include=../../default.params
+outputDir=logs
+globalLog=logs/global.log
+
+# Resources
+# Model
+include=../include.model.exp
+# Validation function
+include=../../include.validation.exp
+# Lexical generator
+include=../include.genlex.exp
+# Training and testing sets
+type=data.single id=train file=../../data/train.ccg
+type=data.single id=test file=../../data/dev.ccg
+# Learner and tester
+include=../include.learn.exp
+# Initializars
+include=../include.init.exp
+
+# Jobs
+include=../../include.jobs.exp

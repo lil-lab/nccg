@@ -1,0 +1,24 @@
+include=../../params.inc
+outputDir=logs
+globalLog=logs/global.log
+
+# Resources
+# Parser
+include=../../parser.inc
+# Model
+include=../model.inc
+# Validation function
+include=../../validation.inc
+# Lexical generator
+include=../genlex.inc
+# Training and testing sets
+[XX=0-9] type=data.single id=foldXX file=../../data/foldXX.ccg
+type=data.composite id=train sets=fold0,fold1,fold2,fold3,fold4,fold5,fold6,fold7,fold8,fold9
+type=data.single id=test file=../../data/test.ccg
+# Learner and tester
+include=learn.inc
+# Initializars
+include=../init.inc
+
+# Jobs
+include=../jobs.inc

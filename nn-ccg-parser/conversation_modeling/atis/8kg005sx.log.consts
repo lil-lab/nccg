@@ -1,0 +1,23 @@
+ what is the earliest flight from memphis to las vegas 
+// XXX : Create a temporary object for each query, unless we refine a previous one. When we refine a previous one, will we create a new object, or update the previous one? If we update, it's difficult to refer to the object's state before the refinement.
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp1:fl))) (query:act (argmin:e (lambda $0:e (and:t (ref:t $0 obj:e) (fr:t $0 memphis:ci) (to:t $0 las_vegas:ci))) (lambda $0:e (dtime:tm $0)))))
+// XXX : let's ask about the time (for example)
+// what is the earliest time for a flight from memphis to las vegas
+// (REQ:task (refine:<act,prog> (pair:p f:fl (newobj:e tmp1:fl))) (query:act (min:e (lambda $0:tm (and:t (fr:t f:fl memphis:ci) (to:t f:fl las_vegas:ci) (dtime:t f:fl $0)))
+
+ what kind of ground transportation is available in las vegas 
+// XXX : creating a new object of ground transport -- did you model such objects? I am making the assumption of a general questions here. I would like to discuss if this question is actually asking about possible transportation options for the flight we defined in tmp1:fl
+// XXX : Sometimes we use ref:t and sometimes not. I am worried about consistency here and how the parser will generate these coref literals when needed and won't in other cases
+(REQ:task (refine:<act,prog> (pair:p t:gt (newobj:e tmp1:gt))) (query:act (lambda $0:e (type:t t:gt $0) (loc:t t:gt las_vegas:ci))))
+
+ what is the latest flight leaving las vegas for ontario 
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp2:fl))) (query:act (argmax:e (lambda $0:e (and:t (ref:t $0 obj:e) (fr:t $0 las_vegas:ci) (to:t $0 ontario:ci))) (lambda $0:e (dtime:tm $0)))))
+
+ what is the earliest flight from ontario to memphis 
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp3:fl))) (query:act (argmin:e (lambda $0:e (and:t (ref:t $0 obj:e) (fr:t $0 ontario:ci) (to:t $0 memphis:ci))) (lambda $0:e (dtime:tm $0)))))
+
+ what other flights are there from ontario to memphis 
+// XXX : the lexical item of "other" will contain the refernece to another constant, which we need to ground
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp4:fl)) (pair:p obj2:e tmp3:fl)) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (!=:t $0 obj2:e) (fr:t $0 ontario:ci) (to:t $0 memphis:ci))))) 
+
+

@@ -1,0 +1,34 @@
+(
+
+i			// number
+(lo e) 		// location
+(ci lo) 	// city		
+(st lo) 	// state
+(ap lo) 	// airport
+(me e)		// meal description
+(mn e)		// month name
+(d e)		// day 
+(da d)	 	// day name
+(dn d)		// day number
+(pd e)		// period of day
+(yr e)		// year
+(al e)		// airline
+(fb e)		// fare basis code
+(ti i)		// time
+(cl e)		// class type
+(ac e)		// aircraft code
+(fn i)		// flight number
+(tr e)		// transport
+(fl tr)		// flight
+(gt tr)		// ground transportation
+(do i)		// dollars
+(hr i)		// hours
+(fa i)
+(rc e)		// restriction
+(ab e)		// abbreviation
+(se e)		// service
+(mc e)		// meal code
+(mf e)		// manufacturer
+(dc e)		// days code
+
+)

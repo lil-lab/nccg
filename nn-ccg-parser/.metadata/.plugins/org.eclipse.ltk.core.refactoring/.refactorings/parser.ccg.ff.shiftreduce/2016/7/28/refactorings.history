@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;NeuralParsingDotProductStepScorer.java&apos; to &apos;parser.ccg.ff.shiftreduce/src/edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser&apos;&#x0A;- Original project: &apos;parser.ccg.ff.shiftreduce&apos;&#x0A;- Destination element: &apos;parser.ccg.ff.shiftreduce/src/edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser&apos;&#x0A;- Original element: &apos;edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser.NeuralParsingDotProductStepScorer.java&apos;" description="Copy compilation unit" destination="/src&lt;edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser" element1="/src&lt;edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser{NeuralParsingDotProductStepScorer.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1467687198194" units="1" version="1.0"/>
+</session>

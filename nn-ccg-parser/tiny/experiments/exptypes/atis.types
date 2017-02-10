@@ -1,0 +1,177 @@
+(
+
+(i null)	// number
+lo 		// location
+(ci lo) 	// city		
+(st lo) 	// state
+(ap lo) 	// airport
+me		// meal description
+mn		// month name
+d		// day 
+(da d)	 	// day name
+(dn d)		// day number
+pd		// period of day
+yr		// year
+al		// airline
+fb		// fare basis code
+(ti i)		// time
+cl		// class type
+ac		// aircraft code
+(fn i)		// flight number
+tr		// transport
+(fl tr)		// flight
+(gt tr)		// ground transportation
+(do i)		// dollars
+(hr i)		// hours
+(fa i)
+rc		// restriction
+ab		// abbreviation
+se		// service
+mc		// meal code
+mf		// manufacturer
+dc		// days code
+
+exists:<<e,t>,t>
+forall:<<e,t>,t>
+count:<<e,t>,i>
+the:<<e,t>,e>
+argmax:<<e,t>,<<e,i>,e>>
+argmin:<<e,t>,<<e,i>,e>>
+sum:<<e,t>,<<e,i>,i>>
+max:<<i,t>,i>
+min:<<i,t>,i>
+>:<i,<i,t>>
+<:<i,<i,t>>
+=:<i,<i,t>>
+bef:<e,<e,t>>
+equals:<e,<e,t>>
+
+flight:<fl,t>
+weekday:<tr,t>
+city:<ci,t>
+airline:<al,t>
+airline2:<fl,<al,t>>
+airline:<fl,e>
+class_of_service:<e,t>
+jet:<fl,t>
+turboprop:<fl,t>
+rapid_transit:<gt,t>
+time_zone_code:<e,t>
+capacity:<e,i>
+rental_car:<gt,t>
+fare:<fl,i>
+ground_fare:<gt,i>
+fare:<fl,<do,t>>
+ground_fare:<gi,<i,t>>
+from:<fl,<lo,t>>
+from_airport:<gt,<lo,t>>
+to:<fl,<lo,t>>
+to_city:<gt,<ci,t>>
+stop:<fl,<lo,t>>
+services:<al,<lo,t>>
+meal2:<fl,<me,t>>
+meal:<me,t>
+meal:<fl,e>
+has_meal:<fl,t>
+discounted:<fl,t>
+oneway:<tr,t>
+overnight:<fl,t>
+has_stops:<fl,t>
+stops:<fl,i>
+stops:<fl,<i,t>>
+one_stop:<fl,t>
+round_trip:<fl,t>
+connecting:<fl,t>
+return:<fl,t>
+today:<fl,t>
+tomorrow:<tr,t>
+tomorrow_arrival:<fl,t>
+day_after_tomorrow:<tr,t>
+tonight:<fl,t>
+nonstop:<fl,t>
+direct:<fl,t>
+daily:<fl,t>
+economy:<tr,t>
+day:<tr,<da,t>>
+day_return:<fl,<da,t>>
+after_day:<fl,<da,t>>
+before_day:<fl,<da,t>>
+days_from_today:<fl,<i,t>>
+next_days:<fl,<i,t>>
+day_arrival:<fl,<d,t>>
+month:<tr,<mn,t>>
+month_return:<fl,<mn,t>>
+month_arrival:<fl,<mn,t>>
+arrival_month:<fl,<mn,t>>
+day_number_return:<fl,<dn,t>>
+day_number_arrival:<fl,<dn,t>>
+day_number:<tr,<dn,t>>
+during_day:<tr,<pd,t>>
+morning:<fl,t>
+evening:<fl,t>
+during_day_arrival:<fl,<pd,t>>
+year:<fl,e>
+year:<fl,<yr,t>>
+airline_name:<al,<al,t>>
+airline_name:<fl,al>
+airline_code:<ac,t>
+fare_basis_code2:<fl,<fb,t>>
+fare_basis_code:<tr,t>
+approx_departure_time:<tr,<ti,t>>
+approx_return_time:<tr,<ti,t>>
+departure_time:<tr,<ti,t>>
+departure_time:<tr,i>
+approx_time:<tr,<ti,t>>
+approx_arrival_time:<tr,<ti,t>>
+stop_arrival_time:<tr,i>
+arrival_time:<tr,<ti,t>>
+arrival_time:<tr,i>
+class_type:<fl,<cl,t>>
+aircraft_code2:<fl,<ac,t>>
+aircraft_code:<fl,ac>
+aircraft_code:<ac,t>
+flight_number:<fl,<fn,t>>
+taxi:<gt,t>
+limousine:<gt,t>
+ground_transport:<gt,t>
+air_taxi_operation:<gt,t>
+class_service:<e,<e,t>>
+cost:<e,i>
+minimum_connection_time:<e,<i,t>>
+one_direction_cost:<e,i>
+one_direction_cost:<e,<i,t>>
+distance:<e,i>
+minutes_distant:<e,<i,t>>
+minutes_distant:<e,i>
+miles_distant:<e,<e,i>>
+miles_distant:<gt,t>
+flight_number:<fl,fn>
+airport:<ap,t>
+airport2:<e,<ap,t>>
+manufacturer:<e,<mf,t>>
+aircraft2:<fl,<ac,t>>
+aircraft:<e,t>
+distance:<e,<e,<i,t>>>
+travel_time:<e,<e,<i,t>>>
+flight_time:<fl,<i,t>>
+time_elapsed:<fl,<i,t>>
+time_elapsed:<e,i>
+restriction:<e,<e,t>>
+service:<e,<ci,t>>
+abb:<e,<ab,t>>
+capacity:<e,<i,t>>
+airplane_size:<e,i>
+set_member:<e,<e,t>>
+code:<e,<e,t>>
+restriction_code:<e,<rc,t>>
+restriction_code:<e,e>
+meal_code2:<e,<e,t>>
+meal_code:<e,t>
+booking_class:<e,t>
+booking_class:<e,e>
+booking_class2:<e,<cl,t>>
+abbrev:<e,e>
+days_code:<e,<dc,t>>
+named:<e,<e,t>>
+loc:<lo,<lo,t>>
+)

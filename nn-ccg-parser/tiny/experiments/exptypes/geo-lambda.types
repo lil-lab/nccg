@@ -1,0 +1,57 @@
+(
+
+(i null)	// integer / number...
+
+n		//name
+lo		// location
+(s lo) 		// state
+(c lo)		// city
+(r lo)		// river
+(l lo)		// lake
+(m lo)		// mountain
+(co lo)		// country 
+(p lo)		// place
+(to lo)		// town
+
+exists:<<e,t>,t>
+forall:<<e,t>,t>
+count:<<e,t>,i>
+the:<<e,t>,e>
+argmax:<<e,t>,<<e,i>,e>>
+argmin:<<e,t>,<<e,i>,e>>
+sum:<<e,t>,<<e,i>,i>>
+>:<i,<i,t>>
+<:<i,<i,t>>
+=:<i,<i,t>>
+bef:<e,<e,t>>
+
+
+state:<s,t>
+city:<c,t>
+town:<lo,t>
+place:<p,t>
+lake:<l,t>
+mountain:<m,t>
+capital:<c,t>
+capital:<s,c>
+river:<r,t>
+major:<lo,t>
+loc:<lo,<lo,t>>
+in:<lo,<lo,t>>
+next_to:<lo,<lo,t>>
+capital2:<s,<c,t>>
+equals:<e,<e,t>>
+named:<e,<n,t>>
+population:<lo,<i,t>>
+density:<i,<lo,t>>
+high_point:<e,l>
+high_point:<e,<e,t>>
+elevation:<lo,<i,t>>
+elevation:<lo,i>
+population:<lo,i>
+density:<lo,i>
+len:<r,i>
+area:<lo,i>
+size:<lo,i>
+
+)

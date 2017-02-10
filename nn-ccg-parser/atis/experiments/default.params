@@ -1,0 +1,10 @@
+# Paths are relative to the .exp file using the parameters file
+ont=../../../resources/atis.consts.ont:../../../resources/atis.preds.ont
+types=../../../resources/atis.types
+seedlex=../../../resources/seed.lex
+nplist=../../../resources/np-list.lex
+beam=50
+lexbeam=500
+iter=20
+wordSkippingCost=-1.0
+trainingMaxSentenceLength=15

@@ -1,0 +1,39 @@
+could you show me all weekday flights from phoenix to denver
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp1:fl))) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (flight:t $0) (fr:t $0 phoenix:ci) (to:t $0 denver:ci) (weekday:t $0)))))
+
+could you show me all weekday flights from phoenix to denver
+// XXX : we have a new object here, or arguablly we are refining the previous one
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp2:fl))) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (flight:t $0) (fr:t $0 phoenix:ci) (to:t $0 denver:ci) (weekday:t $0)))))
+
+could you show me the meals for these flights
+// XXX : notice that this is an "ask" executor
+(REQ:task (ask:<act,prog> (pair:p obj:e tmp2:fl)) (query:act (lambda $0:e (and:t (flight:t obj:e) (meal:t obj:e $0))))
+
+does the phoenix airport have ground transportation to and from downtown
+// XXX : so the argument for a query can also be of type "t". Sounds ok?
+// XXX : not sure from what lexical item the ref:t literal is coming from
+(REQ:task (ask:<act,prog> (pair:p obj:e (newobj:e tmp1:gt))) (query:act (exist:t (lambda $0:e (and:t (ref:t $0 obj:e) (ground_transport:t $0) (fr:t $0 phx:ap) (to:t $0 phoenix:ci))))))
+
+does the phoenix airport have ground transportation to and from downtown
+(REQ:task (ask:<act,prog> (pair:p obj:e (newobj:e tmp2:gt))) (query:act (exist:t (lambda $0:e (and:t (ref:t $0 obj:e) (ground_transport:t $0) (fr:t $0 phx:ap) (to:t $0 phoenix:ci))))))
+
+does this airport have ground transportation
+// XXX : we are grouding to an attribute of a previous object. What do you think? Or maybe the literal from_airport:ap should be in the LF of the sentence and the grouding should be to tmp2:gt?
+(REQ:task (ask:<act,prog> (pair:p obj:e (from_airport:ap tmp2:gt))) (query:act (exist:t (lambda $0:e (and:t (from_airport:t $0 obj:e))))))
+
+is there ground transportation between airport and downtown
+(REQ:task (ask:<act,prog> (pair:p obj:e tmp2:gt)) (query:act (exist:t (lambda $0:e (and:t (from_airport:t $0 (from_airport:ap obj:e)) (to_city:t $0 (to_city:ci obj:e)))))))
+
+could you please show me all the weekday flights between denver and dallas
+(REQ:task (refine:<act,prog> (pair:p obj:e (newobj:e tmp3:fl))) (query:act (lambda $0:e (and:t (ref:t $0 obj:e) (flight:t $0) (fr:t $0 denver:ci) (to:t $0 dallas:ci) (weekday:t $0)))))
+
+could you show me the meals for these flights
+(REQ:task (ask:<act,prog> (pair:p obj:e tmp3:fl)) (query:act (lambda $0:e (and:t (flight:t obj:e) (meal:t obj:e $0))))
+
+in dallas is there ground transportation between the airport and downtown
+(REQ:task (ask:<act,prog> (pair:p obj:e (newobj:e tmp3:gt))) (query:act (exist:t (lambda $0:e (and:t (ref:t $0 obj:e) (ground_transport:t $0) (fr:t $0 dfw:ap) (to:t $0 dallas:ci))))))
+
+what does ua stand for
+// XXX : need a new speech act for these cases
+ua:al
+
