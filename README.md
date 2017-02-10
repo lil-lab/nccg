@@ -28,7 +28,9 @@ It is best to use the code with Eclipse. Instructions below assume you are using
   - You should see the amr project. Select it. You should now see amr in the project explorer. Ignore any errors for now.
 - Now import all the java projects in nn-ccg-dev similar to above.
 - Close the following projects tiny, learn.ubl and learn.weakp (right click on the project and click on close the project).
+- If you see any error then please see the FAQ section or raise an issue.
 
+## Understanding the code structure
 
 ## Build the model or use a saved model
 
