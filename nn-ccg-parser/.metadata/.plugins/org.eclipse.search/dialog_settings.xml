@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SearchDialog.ScopePart">
+		<item value="0" key="scope"/>
+	</section>
+	<section name="">
+		<item value="1000" key="org.eclipse.jdt.search.resultpage.limit"/>
+		<item value="TRUE" key="org.eclipse.jdt.search.resultpage.limit_enabled"/>
+	</section>
+	<section name="">
+		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
+	</section>
+	<section name="TextSearchPage">
+		<item value="12" key="HISTORY_SIZE"/>
+		<item value="false" key="CASE_SENSITIVE"/>
+		<item value="false" key="REG_EX_SEARCH"/>
+		<item value="false" key="WHOLE_WORD"/>
+		<item value="false" key="SEARCH_DERIVED"/>
+		<section name="HISTORY6">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="POS" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY7">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="Total AMR" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="&quot;LOGEXP&quot;" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY10">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="Shift" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="&quot;POS&quot;" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="EXTENSIONS">
+			<item value="*" key="0"/>
+			<item value="FeatureEmbedding.java" key="1"/>
+			<item value="" key="2"/>
+		</section>
+		<section name="HISTORY11">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="Parsing with perceptron" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY8">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="Entered" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY9">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="&quot;Shift&quot;" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY2">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="&quot;SHIFT&quot;" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY3">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="&quot;TEMPLATELEFTPOS&quot;" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY0">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="pingout" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
+			<item value="true" key="ignoreCase"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="&quot;SHIFTSEM&quot;" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.search.text.FileSearchResultPage">
+		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
+	</section>
+	<section name="Search">
+		<list key="Search.processedPageIds">
+			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
+			<item value="org.eclipse.mylyn.tasks.ui.search.page"/>
+			<item value="org.eclipse.egit.ui.commitSearchPage"/>
+			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
+		</list>
+		<list key="Search.enabledPageIds">
+			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
+			<item value="org.eclipse.mylyn.tasks.ui.search.page"/>
+			<item value="org.eclipse.egit.ui.commitSearchPage"/>
+			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
+		</list>
+	</section>
+	<section name="ReplaceDialog2">
+		<list key="replace_with">
+			<item value="import edu.cornell.cs.nlp.utils.collections.MapUtils;"/>
+			<item value="import edu.cornell.cs.nlp.utils.collections.CollectionUtils"/>
+			<item value="import edu.cornell.cs.nlp.utils.collections.SetUtils;"/>
+			<item value="import edu.cornell.cs.nlp.utils.filter.FilterUtils;"/>
+			<item value="import edu.cornell.cs.nlp.utils.filter.IFilter;"/>
+			<item value="import edu.cornell.cs.nlp.utils.collections.queue.DirectAccessBoundedPriorityQueue;"/>
+			<item value="import edu.cornell.cs.nlp.utils.composites.Pair;"/>
+		</list>
+	</section>
+	<section name="SearchDialog">
+		<item value="org.eclipse.search.internal.ui.text.TextSearchPage" key="PREVIOUS_PAGE"/>
+	</section>
+	<section name="org.eclipse.jdt.ui.JavaSearchResultPage">
+		<item value="1000" key="org.eclipse.jdt.search.resultpage.limit"/>
+		<item value="TRUE" key="org.eclipse.jdt.search.resultpage.limit_enabled"/>
+	</section>
+	<section name="DialogBounds_SearchDialog">
+		<item value="534" key="DIALOG_WIDTH"/>
+		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
+		<item value="472" key="DIALOG_HEIGHT"/>
+		<item value="796" key="DIALOG_X_ORIGIN"/>
+		<item value="163" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

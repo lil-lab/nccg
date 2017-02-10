@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="/parser.ccg"/>
+	<classpathentry kind="src" path="/spfbase"/>
+	<classpathentry kind="src" path="/mr.lambda"/>
+	<classpathentry kind="src" path="/amr"/>
+	<classpathentry kind="src" path="/parser.ccg.joint"/>
+	<classpathentry kind="src" path="/ccg.lexicon"/>
+	<classpathentry kind="src" path="/explat"/>
+	<classpathentry kind="src" path="/spfdist"/>
+	<classpathentry kind="src" path="/test"/>
+	<classpathentry kind="src" path="/data.singlesentence"/>
+	<classpathentry kind="src" path="/exec"/>
+	<classpathentry kind="src" path="/learn"/>
+	<classpathentry kind="src" path="/mr.lambda.ccg"/>
+	<classpathentry kind="src" path="/test.exec"/>
+	<classpathentry kind="src" path="/parser.ccg.rnn.shiftreduce"/>
+	<classpathentry kind="src" path="/data.situated"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/data.situated.labeled"/>
+	<classpathentry kind="src" path="/parser.ccg.cky.genlex"/>
+	<classpathentry kind="src" path="/parser.ccg.cky"/>
+	<classpathentry kind="src" path="/parser.ccg.features.basic"/>
+	<classpathentry kind="src" path="/parser.ccg.rules.lambda"/>
+	<classpathentry kind="src" path="/parser.ccg.rules"/>
+	<classpathentry kind="src" path="/parser.ccg.factoredlex"/>
+	<classpathentry kind="src" path="/genlex.ccg"/>
+	<classpathentry kind="src" path="/ccg.lexicon.factored.lambda"/>
+	<classpathentry kind="src" path="/data.singlesentence.lex"/>
+	<classpathentry kind="src" path="/genlex.ccg.template"/>
+	<classpathentry kind="src" path="/parser.ccg.normalform"/>
+	<classpathentry kind="src" path="/parser.ccg.features.lambda"/>
+	<classpathentry kind="src" path="/parser.ccg.joint.cky"/>
+	<classpathentry kind="src" path="/parser.ccg.ff.shiftreduce"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg.shiftreduce"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

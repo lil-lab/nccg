@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=parser.ccg.rnn.shiftreduce/src&lt;edu.cornell.cs.nlp.spf.parser.ccg.rnn.shiftreduce.wordembeddings{Word2Vec.java[Word2Vec" modifiers="1" timestamp="1453541535000"/>
+<typeInfo handle="=parser.ccg.shiftreduce/src&lt;edu.cornell.cs.nlp.spf.parser.ccg.shiftreduce{ShiftReduceParserOutput.java[ShiftReduceParserOutput" modifiers="1" timestamp="1464244808000"/>
+<typeInfo handle="=parser.ccg.ff.shiftreduce/src&lt;edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser{NeuralShiftReduceParser.java[NeuralShiftReduceParser" modifiers="1" timestamp="1473747226000"/>
+<typeInfo handle="=amr/src&lt;edu.uw.cs.lil.amr.features{AttributePOSTagFeatures.java[AttributePOSTagFeatures" modifiers="1" timestamp="1453542078000"/>
+<typeInfo handle="=amr/src&lt;edu.uw.cs.lil.amr.test{AmrDistributedExecTester.java[AmrDistributedExecTester[AMRTestJob" modifiers="10" timestamp="1456519077000"/>
+</typeInfoHistroy>

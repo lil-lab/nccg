@@ -1,0 +1,125 @@
+<project name="spf" default="dist" basedir=".">
+	<description>
+        Cornell SPF build file
+    </description>
+	<!-- set global properties for this build -->
+	<property file="build.properties" />
+	<property name="build" location="build" />
+	<property name="resources" location="resources" />
+	<property name="build.src" location="build.src" />
+	<property name="dist" location="dist" />
+	<property name="lib" location="lib" />
+
+	<path id="classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.src}" />
+		<copy todir="${build.src}" >
+			<fileset dir="${src.spfbase}" includes="**/*.java" />
+			<fileset dir="${src.utils}" includes="**/*.java" />
+			<fileset dir="${src.geoquery}" includes="**/*.java" />
+			<fileset dir="${src.ccg}" includes="**/*.java" />
+			<fileset dir="${src.ccg.lexicon}" includes="**/*.java" />
+			<fileset dir="${src.ccg.lexicon.factored.lambda}" includes="**/*.java" />
+			<fileset dir="${src.data}" includes="**/*.java" />
+			<fileset dir="${src.data.situated}" includes="**/*.java" />
+			<fileset dir="${src.data.situated.labeled}" includes="**/*.java" />
+			<fileset dir="${src.genlex.ccg}" includes="**/*.java" />
+			<fileset dir="${src.genlex.ccg.template}" includes="**/*.java" />
+			<fileset dir="${src.genlex.ccg.unification}" includes="**/*.java" />
+			<fileset dir="${src.exec}" includes="**/*.java" />
+			<fileset dir="${src.datasinglesentence}" includes="**/*.java" />
+			<fileset dir="${src.datasinglesentence.lex}" includes="**/*.java" />
+			<fileset dir="${src.explat}" includes="**/*.java" />
+			<fileset dir="${src.learn}" includes="**/*.java" />
+			<fileset dir="${src.learn.validation}" includes="**/*.java" />
+			<fileset dir="${src.learn.simple}" includes="**/*.java" />
+			<fileset dir="${src.learn.situated}" includes="**/*.java" />
+			<fileset dir="${src.mr.lambda}" includes="**/*.java" />
+			<fileset dir="${src.mr.lambda.ccg}" includes="**/*.java" />
+			<fileset dir="${src.mr.lambda.exec.naive}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.lambda}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.normalform}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.cky}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.factoredlex}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.features.basic}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.features.lambda}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.cky.genlex}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.rules}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.rules.skolem}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.rules.lambda}" includes="**/*.java" />
+			<fileset dir="${src.test}" includes="**/*.java" />
+			<fileset dir="${src.test.ccg.lambda}" includes="**/*.java" />
+			<fileset dir="${src.test.exec}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.joint}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.joint.genlex}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.joint.cky}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.rules.coordination}" includes="**/*.java" />
+			<fileset dir="${src.parser.ccg.rules.coordination.lambda}" includes="**/*.java" />
+			<fileset dir="${src.spfdist}" includes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac debug="true" srcdir="${build.src}" destdir="${build}" includeantruntime="false">
+			<classpath refid="classpath" />
+			<compilerarg value="-Xlint"/>
+			<compilerarg value="-Xlint:-serial"/>
+			<compilerarg value="-Xlint:-auxiliaryclass"/>
+			<compilerarg value="-Xlint:-overloads"/>
+		</javac>
+	</target>
+
+	<target name="dist" depends="compile" description="generate the distribution">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}" />
+		<delete file="MANIFEST.MF" />
+		<manifest file="MANIFEST.MF">
+			<attribute name="Main-Class" value="${mainclass}" />
+		</manifest>
+
+		<jar jarfile="${dist}/${ant.project.name}-${version}.jar" manifest="MANIFEST.MF">
+			<fileset dir="${build}" />
+			<fileset dir="${build.src}" />
+			<fileset dir="${geoquery}" includes="experiments/*" />
+			<fileset dir="${geoquery}" includes="resources/*" />
+			<fileset dir="${spfbase}" includes="resources/*" />
+			<zipgroupfileset dir="${lib}" includes="*.jar" />
+		</jar>
+		
+		<delete file="MANIFEST.MF" />
+	</target>
+
+	<target name="lib" depends="compile" description="generate the distribution">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}" />
+		<delete file="MANIFEST.MF" />
+		<manifest file="MANIFEST.MF">
+			<attribute name="Main-Class" value="${mainclass}" />
+		</manifest>
+
+		<jar jarfile="${dist}/${ant.project.name}-lib-${version}.jar" manifest="MANIFEST.MF">
+			<fileset dir="${build}" />
+			<fileset dir="${build.src}" />
+		</jar>
+		
+		<delete file="MANIFEST.MF" />
+	</target>
+
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}" />
+		<delete dir="${build.src}" />
+		<delete dir="${dist}" />
+	</target>
+</project>

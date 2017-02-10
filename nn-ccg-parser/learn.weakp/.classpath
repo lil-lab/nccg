@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/data"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/learn"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg.cky"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/tinybase"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg.joint"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/explat"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ccg.lexicon"/>
+	<classpathentry kind="src" path="/genlex.ccg"/>
+	<classpathentry kind="src" path="/parser.ccg.lambda"/>
+	<classpathentry kind="src" path="/data.singlesentence"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mr.lambda"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

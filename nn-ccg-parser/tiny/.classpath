@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src-test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/mr.lambda"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/tinyutils"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/explat"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/data"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/data.singlesentence"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/test"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/learn"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg.cky"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg.features.basic"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg.factoredlex"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mr.lambda.ccg"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/learn.ubl"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg.rules"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/parser.ccg.features.lambda"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/storage"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ccg.lexicon"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ccg.lexicon.factored.lambda"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/genlex.ccg"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/genlex.ccg.unification"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
