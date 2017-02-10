@@ -26,7 +26,9 @@ It is best to use the code with Eclipse. Instructions below assume you are using
   - To import projects, first open eclipse and change the workspace folder to the root folder of ./nccg. 
   - Now go to File->Import->General->Existing Projects Into Workspace and select the nn-amd-dev folder in the root.
   - You should see the amr project. Select it. You should now see amr in the project explorer. Ignore any errors for now.
-- Now import all the java projects in nn-ccg-dev.
+- Now import all the java projects in nn-ccg-dev similar to above.
+- Close the following projects tiny, learn.ubl and learn.weakp (right click on the project and click on close the project).
+
 
 ## Build the model or use a saved model
 
