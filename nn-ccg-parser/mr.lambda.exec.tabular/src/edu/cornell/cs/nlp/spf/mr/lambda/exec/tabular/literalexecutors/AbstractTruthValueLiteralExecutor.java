@@ -1,0 +1,46 @@
+/*******************************************************************************
+ * Copyright (C) 2011 - 2015 Yoav Artzi, All rights reserved.
+ * <p>
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or any later version.
+ * <p>
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ * <p>
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *******************************************************************************/
+package edu.cornell.cs.nlp.spf.mr.lambda.exec.tabular.literalexecutors;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import edu.cornell.cs.nlp.spf.mr.lambda.Literal;
+import edu.cornell.cs.nlp.spf.mr.lambda.LogicalExpression;
+import edu.cornell.cs.nlp.spf.mr.lambda.exec.tabular.Table;
+
+public abstract class AbstractTruthValueLiteralExecutor implements
+		ILiteralExecutor {
+
+	@Override
+	public void execute(Literal literal, Table table) {
+		for (final Map<LogicalExpression, Object> row : table) {
+			final int len = literal.numArgs();
+			final List<Object> objects = new ArrayList<Object>(
+					len);
+			for (int i = 0; i < len; ++i) {
+				objects.add(row.get(literal.getArg(i)));
+			}
+			final boolean rowResult = doExecute(objects);
+			row.put(literal, rowResult);
+		}
+	}
+
+	protected abstract boolean doExecute(List<Object> objects);
+
+}
