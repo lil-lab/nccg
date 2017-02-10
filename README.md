@@ -10,9 +10,18 @@ Uses the following code:
 2. Stanford parser (BLAH)
 3. CCG Supertagging (BLAH)
 
+# Pre Requisite
+
+ - java 8.0.
+ - 
+
 # Instructions for using the code
 
+It is best to use the code with Eclipse. Instructions below assume you are using Eclipse.
+
 ## Import the code in Eclipse
+
+- Import all the java projects in nn-amr-dev and nn-ccg-parser.
 
 ## Build the model or use a saved model
 
