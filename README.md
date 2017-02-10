@@ -26,12 +26,26 @@ It is best to use the code with Eclipse. Instructions below assume you are using
   - To import projects, first open eclipse and change the workspace folder to the root folder of ./nccg. 
   - Now go to File->Import->General->Existing Projects Into Workspace and select the nn-amd-dev folder in the root.
   - You should see the amr project. Select it. You should now see amr in the project explorer. Ignore any errors for now.
-- Now import all the java projects in nn-ccg-dev similar to above.
-- Close the following projects tiny, learn.ubl and learn.weakp (right click on the project and click on close the project).
+- Now import all the java projects in nn-ccg-dev in similar fashion.
+- Close the following projects tiny, learn.ubl and learn.weakp (right click on the project and click on Close Project).
 - If you see any error then please see the FAQ section or raise an issue.
 
 ## Understanding the code structure
 
+- Neural Shift Reduce CCG Semantic parser (NCCG) builds on top of SPF (Semantic Parsing Framework). Please see SPF documentation
+  to learn more.
+- There are three major components that create NCCG:
+
+   - Parser: 
+   - Creating dataset;
+   - Learning:
+
+## AMR Parsing using Neural Shift Reduce CCG Semantic parser (NCCG)
+
+
+
 ## Build the model or use a saved model
+
+   
 
 ## Run the code
