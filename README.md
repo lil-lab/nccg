@@ -57,7 +57,7 @@ In this section, we will describe how to do this.
 
 ### Build the jar file
 
-The main entry point for NCCG is the file BLAH. To build the jar file do the following:
+To build the jar file do the following:
 
 1. Right click on `amr.neural/src/edu.uw.cs.lil.amr.neural.exp/AmrNeuralGenericExp.java`
    and right click on `export-->java-->Runnable jar file`.
