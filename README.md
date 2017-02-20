@@ -31,7 +31,7 @@ We will launch a master instance and several worker instance to do test time par
    Launch a master instance using the above AMI and run the following command upon ssh:
    
    ```
-   cd /home/ubuntu/nccg/nn-amr-dev/
+   cd /home/ubuntu/amr_exp/
    java -Xmx110g -jar NeuralAmrParser_Test.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
    ```
    
@@ -44,15 +44,15 @@ We will launch a master instance and several worker instance to do test time par
       Paste the code below to run when the instance launch. It is a good idea to use spot instances for running workers.
       
    ```#!/bin/bash
-   cd /home/ubuntu/nccg/nn-amr-dev/
+   cd /home/ubuntu/amr_exp/
    screen -L
-   java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/worker1/worker.exp hostname=ip-address    
+   java -Xmx110g -jar ./NeuralAmrParser_Test.jar ./experiment_ff/worker1/worker.exp hostname=ip-address    
     master=ip-address masterPort=4444
    ```
    
    Supply the public IP address of master in place of ip-address. Above code runs with 110GB RAM which can be changed to any other number within the RAM limit.
   
-  The results will be printed in the `dev.proxy/logs4/test.log`. The final number should match the numbers reported in the paper.
+  The results will be printed in the `dev.proxy/logs/test.log`. The final number should match the numbers reported in the paper.
 
 ## Section 2: Using the source code with Eclipse
 
