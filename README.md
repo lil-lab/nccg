@@ -4,7 +4,7 @@ Contains implementation of Neural Shift Reduce Parser for CCG Semantic Parser of
 # Author
 Developed and maintained by Dipendra Misra (dkm@cs.cornell.edu)
 
-Uses the following code:
+Uses the following external codebase:
 
 1. Cornell SPF and AMR code maintained by Yoav Artzi (Artzi, 2016).
 2. [https://deeplearning4j.org/](DeepLearning4j).
@@ -12,6 +12,8 @@ Uses the following code:
 3. SMATCH metric (Cai and Knight, 2013).
 4. Illinois NER (Ratinov and Roth, 2009)
 5. Stanford CoreNLP POS Tagger (Manning et al., 2014)
+
+You don't have to install 1-5 above.
 
 # Pre Requisite
 
