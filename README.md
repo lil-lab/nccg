@@ -15,9 +15,9 @@ Uses the following external codebase:
 
 You don't have to install 1-5 above.
 
-# Pre Requisite
+# Prerequisite
 
- - Java 8.0.
+ - Java 8.0
  
 # Section 1: Using Amazon AMI to do AMR Parsing
 
