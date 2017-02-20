@@ -90,12 +90,18 @@ In this section, we will talk on how to use a saved model and perform parsing on
 1. To perform testing, we will define a job as 
 
 
-2. We will assume that we are performing distributed testing on Amazon aws (you can do testing on single machine
-   but it will take much longer). Run the following command on an Amazon EC2
+2. We will assume that we are performing distributed testing on Amazon AWS (you can do testing on single machine
+   but it will take much longer). For ease, we have supplied the public AMI for NCCG given below: 
+   
+   Run the following command on an Amazon EC2.
 
  - Run the master instance
  
- 
+   1. Launch a master instance with >60GB RAM. Run the following command upon ssh:
+   
+   ```cd /home/ubuntu/nccg/nn-amr-dev/
+   java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
+   ```
 
  - Run the worker instance
    
@@ -112,5 +118,6 @@ In this section, we will talk on how to use a saved model and perform parsing on
    Supply the public IP address of master in place of <id>.
    
  2. On launching these instances, you can check the log in master. The final results will be printed in the log of master.
-
+    These should match the numbers reported in the main paper upon completion.
+ 
 ### Perform Learning
