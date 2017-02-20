@@ -13,10 +13,45 @@ Uses the following code:
 # Pre Requisite
 
  - Java 8.0.
+ 
+# Section 1: Using Amazon AMI to do AMR Parsing
 
-# Instructions for using the code
+In this section, we will talk on how to use publically available Amazon AMI to perform parsing on devset.
+Later sections describe how to do customized training and testing. First, login to [https://aws.amazon.com/](https://aws.amazon.com/) and use the following AMI:
 
-It is best to use the code with Eclipse. Instructions below assume you are using Eclipse.
+We will launch a master instance and several worker instance to do test time parsing on the devset. 
+
+ - **Run the master instance**
+ 
+   Launch a master instance using the above AMI and run the following command upon ssh:
+   
+   ```
+   cd /home/ubuntu/nccg/nn-amr-dev/
+   java -Xmx60g -jar NeuralAmrParser_Test.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
+   ```
+   
+   You can find the log file in ```/home/ubuntu/nccg/nn-amr-dev/experiment_ff/dev.proxy/logs4/global.log```
+   It may take some time for the master to start the distributed job when running the code for the first time.
+
+ - **Run the worker instances**
+   
+   Launch some x number of instances (say 20) using the same public AMI.
+      Paste the code below to run when the instance launch.
+      
+   ```#!/bin/bash
+   cd /home/ubuntu/nccg/nn-amr-dev/
+   screen -L
+   java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/worker1/worker.exp hostname=<id>   
+    master=<id> masterPort=4444
+   ```
+   
+   Supply the public IP address of master in place of <id>. Above code runs with 110GB RAM which can be changed to any other number within the RAM limit.
+  
+  The results will be printed in the log of master. The final number should match the numbers reported in the paper.
+
+# Section 2: Using the source code with Eclipse
+
+Instructions below assume you are using [Eclipse](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/keplersr1) which is a powerful java IDE.
 
 ## Import the code in Eclipse
 
@@ -31,11 +66,9 @@ It is best to use the code with Eclipse. Instructions below assume you are using
 
 ## Understanding the code structure
 
-- Neural Shift Reduce CCG Semantic parser (NCCG) builds on top of SPF (Semantic Parsing Framework). Please see SPF documentation
-  to learn more.
-- The NCC project is contained in the project ./parser.ccg.ff.shiftreduce. 
+- Neural Shift Reduce CCG Semantic parser (NCCG) is developed on top of SPF (CCG Semantic Parsing Framework). Please see [https://github.com/cornell-lic/spf](SPF documentation) to learn more about SPF.
+- The NCCG is contained in the java project `./parser.ccg.ff.shiftreduce`. 
 - There are three major components that create NCCG.
-
 
   - *Parser*: NCCG model is a feed-forward neural network that generates probability over actions given parsing configuration.
      For technical details, please see Section 3 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf).
@@ -85,39 +118,7 @@ To build the jar file do the following:
    or other user defined job.
 
 ### Perform Testing
-In this section, we will talk on how to use a saved model and perform parsing on devset.
 
-We will assume that we are performing distributed testing on Amazon AWS (you can do testing on single machine
-but it will take much longer). For ease, we have supplied the public AMI for NCCG given below: 
-   
-We will launch a master instance and several worker instance to do test time parsing on the dev set.
-
- - **Run the master instance**
- 
-   1. Launch a master instance using the above AMI. Run the following command upon ssh:
-   
-   ```
-   cd /home/ubuntu/nccg/nn-amr-dev/
-   java -Xmx60g -jar NeuralAmrParser_Test.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
-   ```
-
- - **Run the worker instances**
-   
-   1. Launch some x number of instances (say 20) using the same public AMI.
-      Paste the code below to run when the instance launch.
-      
-   ```#!/bin/bash
-   cd /home/ubuntu/nccg/nn-amr-dev/
-   screen -L
-   java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/worker1/worker.exp hostname=<id>   
-    master=<id> masterPort=4444
-   ```
-   
-   Supply the public IP address of master in place of <id>. Above code runs with 110GB RAM which can be changed to 
-   any other number within the RAM limit.
-   
- 2. The results will be printed in the log of master. The final number should match the numbers reported in the paper.
- 
 ### Perform Learning
 
 TODO
