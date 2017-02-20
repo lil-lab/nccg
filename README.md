@@ -51,12 +51,42 @@ It is best to use the code with Eclipse. Instructions below assume you are using
 
 ## AMR Parsing using Neural Shift Reduce CCG Semantic parser (NCCG)
 
+In order to perform testing or learning with NCCG, you will have to build a jar file.
+In this section, we will describe how to do this.
 
+### Build the jar file
 
-## Build the jar file
+The main entry point for NCCG is the file BLAH. To build the jar file do the following:
 
-## Use saved model
+1. Right click on `amr.neural/src/edu.uw.cs.lil.amr.neural.exp/AmrNeuralGenericExp.java`
+   and right click on `export-->java-->Runnable jar file`.
+   Give a file name to the jar such as NeuralAMRParsing.jar
 
-## Perform Testing
+   Select the following option for Library Handling: Copy required libraries into a sub-folder next to the generated JAR
 
-## Perform Learning
+2. You should now see a generated JAR file :) 
+
+### Text Interface
+
+1. AMR package comes with a clean text interface that allows one to modify hyperparamter, file names etc.
+   without having to rebuild the JAR file. The text interface is defined in `nccg/nn-amr-dev/experiment_ff`
+  
+2. There are two kind of files-- one with .exp extension and one with .inc extension.
+   .exp files are the experiment files that define the chief experiment setup and .inc are support
+   files that define indvidual component.
+   
+3. `nccg/nn-amr-dev/experiment_ff/dev.proxy/dev.proxy.exp` defines one such experimental setup. 
+   The exp file defines several variables e.g., globalLog=logs1/global.log defines the location of global log file.
+   `dev.proxy.inc` defines other components such as parser and learning modules. `params.inc` defines
+   several hyperparameter such as number of epochs.
+   
+4. Finally, `dev.proxy.exp` defines a job.inc which defines the job to run. This job can be a learning job or testing job
+   or other user defined job.
+
+### Perform Testing
+
+In this section, we will talk on how to use a saved model and perform parsing on devset.
+
+1. To perform testing, we will define a job as 
+
+### Perform Learning
