@@ -87,26 +87,23 @@ To build the jar file do the following:
 ### Perform Testing
 In this section, we will talk on how to use a saved model and perform parsing on devset.
 
-1. 
-
-
-2. We will assume that we are performing distributed testing on Amazon AWS (you can do testing on single machine
-   but it will take much longer). For ease, we have supplied the public AMI for NCCG given below: 
+We will assume that we are performing distributed testing on Amazon AWS (you can do testing on single machine
+but it will take much longer). For ease, we have supplied the public AMI for NCCG given below: 
    
-   We will launch a master instance and several worker instance to do test time parsing on the dev set.
+We will launch a master instance and several worker instance to do test time parsing on the dev set.
 
- - Run the master instance
+ - **Run the master instance**
  
-   1. Launch a master instance with >60GB RAM. Run the following command upon ssh:
+   1. Launch a master instance using the above AMI. Run the following command upon ssh:
    
    ```
    cd /home/ubuntu/nccg/nn-amr-dev/
-   java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
+   java -Xmx60g -jar NeuralAmrParser_Test.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
    ```
 
- - Run the worker instance
+ - **Run the worker instances**
    
-   1. Launch some x number of instances (say 20). Make sure these instances have the NCCG code.
+   1. Launch some x number of instances (say 20) using the same public AMI.
       Paste the code below to run when the instance launch.
       
    ```#!/bin/bash
@@ -117,9 +114,9 @@ In this section, we will talk on how to use a saved model and perform parsing on
    ```
    
    Supply the public IP address of master in place of <id>. Above code runs with 110GB RAM which can be changed to 
-   any other number > 60GB.
+   any other number within the RAM limit.
    
- 2. The final results will be printed in the log of master which should match the numbers reported in the paper.
+ 2. The results will be printed in the log of master. The final number should match the numbers reported in the paper.
  
 ### Perform Learning
 
