@@ -32,7 +32,7 @@ We will launch a master instance and several worker instance to do test time par
    
    ```
    cd /home/ubuntu/nccg/nn-amr-dev/
-   java -Xmx60g -jar NeuralAmrParser_Test.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
+   java -Xmx110g -jar NeuralAmrParser_Test.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
    ```
    
    You can find the log file in ```/home/ubuntu/nccg/nn-amr-dev/experiment_ff/dev.proxy/logs4/global.log```
@@ -46,11 +46,11 @@ We will launch a master instance and several worker instance to do test time par
    ```#!/bin/bash
    cd /home/ubuntu/nccg/nn-amr-dev/
    screen -L
-   java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/worker1/worker.exp hostname=<id>   
-    master=<id> masterPort=4444
+   java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/worker1/worker.exp hostname=ip-address    
+    master=ip-address masterPort=4444
    ```
    
-   Supply the public IP address of master in place of <id>. Above code runs with 110GB RAM which can be changed to any other number within the RAM limit.
+   Supply the public IP address of master in place of ip-address. Above code runs with 110GB RAM which can be changed to any other number within the RAM limit.
   
   The results will be printed in the `dev.proxy/logs4/test.log`. The final number should match the numbers reported in the paper.
 
