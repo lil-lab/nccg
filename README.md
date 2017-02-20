@@ -85,9 +85,24 @@ The main entry point for NCCG is the file BLAH. To build the jar file do the fol
    or other user defined job.
 
 ### Perform Testing
-
 In this section, we will talk on how to use a saved model and perform parsing on devset.
 
 1. To perform testing, we will define a job as 
+
+
+2. We will assume that we are performing distributed testing on Amazon aws (you can do testing on single machine
+   but it will take much longer). Run the following command on an Amazon EC2
+
+ - Run the master instance
+
+ - Run the worker instance
+   
+   1. Launch some x number of instances (say 20). Make sure these instances have the NCCG code.
+      
+   ```#!/bin/bash
+   cd /home/ubuntu/nccg/nn-amr-dev/
+   screen -L
+   java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/worker1/worker.exp hostname=<id>   
+    master=<id> masterPort=4444```
 
 ### Perform Learning
