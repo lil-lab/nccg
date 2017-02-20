@@ -1,7 +1,7 @@
 # Neural Shift Reduce CCG Semantic Parser for AMR Parsing
 Contains implementation of Neural Shift Reduce Parser for CCG Semantic Parser of Misra and Artzi EMNLP 2016.
 
-# Author
+## Author
 Developed and maintained by Dipendra Misra (dkm@cs.cornell.edu)
 
 Uses the following external codebase:
@@ -15,11 +15,11 @@ Uses the following external codebase:
 
 You don't have to install 1-5 above.
 
-# Prerequisite
+## Prerequisite
 
  - Java 8.0
  
-# Section 1: Using Amazon AMI to do AMR Parsing
+## Section 1: Using Amazon AMI to do AMR Parsing
 
 In this section, we will talk on how to use publically available Amazon AMI to perform parsing on devset.
 Later sections describe how to do customized training and testing. First, login to [https://aws.amazon.com/](https://aws.amazon.com/) and use the following AMI:
@@ -54,11 +54,11 @@ We will launch a master instance and several worker instance to do test time par
   
   The results will be printed in the `dev.proxy/logs4/test.log`. The final number should match the numbers reported in the paper.
 
-# Section 2: Using the source code with Eclipse
+## Section 2: Using the source code with Eclipse
 
 Instructions below assume you are using [Eclipse](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/keplersr1) which is a powerful java IDE.
 
-## Import the code in Eclipse
+### Import the code in Eclipse
 
 - Import all the java projects in nn-amr-dev. 
 
@@ -69,7 +69,7 @@ Instructions below assume you are using [Eclipse](http://www.eclipse.org/downloa
   - Close the following projects tiny, learn.ubl and learn.weakp (right click on the project and click on Close Project).
   - If you see any error then please see the FAQ section or raise an issue.
 
-## Understanding the code structure
+### Understanding the code structure
 
 - Neural Shift Reduce CCG Semantic parser (NCCG) is developed on top of SPF (CCG Semantic Parsing Framework). Please see [https://github.com/cornell-lic/spf](SPF documentation) to learn more about SPF.
 - The NCCG is contained in the java project `./parser.ccg.ff.shiftreduce`. 
@@ -88,7 +88,7 @@ Instructions below assume you are using [Eclipse](http://www.eclipse.org/downloa
   - *Learning*: NCCG is trained using backpropagation. For technical details, please see Section 4 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf). This is described in the following file:
          `./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.learner/NeuralFeedForwardDotProductLearner.java`
 
-# Section 3: Custom Testing and Training
+## Section 3: Custom Testing and Training
 
 In order to perform testing or learning with NCCG, you will have to build a jar file.
 In this section, we will describe how to do this.
