@@ -40,15 +40,15 @@ It is best to use the code with Eclipse. Instructions below assume you are using
   - *Parser*: NCCG model is a feed-forward neural network that generates probability over actions given parsing configuration.
      For technical details, please see Section 3 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf).
      The model file is located in:
-         ./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser/NeuralDotProductShiftReduceParser.java
+         `./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.neuralparser/NeuralDotProductShiftReduceParser.java`
          
   - *Creating dataset*: NCCG parser is trained on configuration and gold action pairs that are generated using a CKY parser. 
      For technical details, please see Section 4 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf).
      This is described in the following package:
-         ./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.dataset
+         `./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.dataset`
          
   - *Learning*: NCCG is trained using backpropagation. For technical details, please see Section 4 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf). This is described in the following file:
-         ./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.learner/NeuralFeedForwardDotProductLearner.java
+         `./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.learner/NeuralFeedForwardDotProductLearner.java`
 
 ## AMR Parsing using Neural Shift Reduce CCG Semantic parser (NCCG)
 
@@ -87,19 +87,20 @@ The main entry point for NCCG is the file BLAH. To build the jar file do the fol
 ### Perform Testing
 In this section, we will talk on how to use a saved model and perform parsing on devset.
 
-1. To perform testing, we will define a job as 
+1. 
 
 
 2. We will assume that we are performing distributed testing on Amazon AWS (you can do testing on single machine
    but it will take much longer). For ease, we have supplied the public AMI for NCCG given below: 
    
-   Run the following command on an Amazon EC2.
+   We will launch a master instance and several worker instance to do test time parsing on the dev set.
 
  - Run the master instance
  
    1. Launch a master instance with >60GB RAM. Run the following command upon ssh:
    
-   ```cd /home/ubuntu/nccg/nn-amr-dev/
+   ```
+   cd /home/ubuntu/nccg/nn-amr-dev/
    java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
    ```
 
@@ -115,9 +116,11 @@ In this section, we will talk on how to use a saved model and perform parsing on
     master=<id> masterPort=4444
    ```
    
-   Supply the public IP address of master in place of <id>.
+   Supply the public IP address of master in place of <id>. Above code runs with 110GB RAM which can be changed to 
+   any other number > 60GB.
    
- 2. On launching these instances, you can check the log in master. The final results will be printed in the log of master.
-    These should match the numbers reported in the main paper upon completion.
+ 2. The final results will be printed in the log of master which should match the numbers reported in the paper.
  
 ### Perform Learning
+
+TODO
