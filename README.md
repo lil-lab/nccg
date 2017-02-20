@@ -94,15 +94,23 @@ In this section, we will talk on how to use a saved model and perform parsing on
    but it will take much longer). Run the following command on an Amazon EC2
 
  - Run the master instance
+ 
+ 
 
  - Run the worker instance
    
    1. Launch some x number of instances (say 20). Make sure these instances have the NCCG code.
+      Paste the code below to run when the instance launch.
       
    ```#!/bin/bash
    cd /home/ubuntu/nccg/nn-amr-dev/
    screen -L
    java -Xmx110g -jar ./NeuralAmrParserTest.jar ./experiment_ff/worker1/worker.exp hostname=<id>   
-    master=<id> masterPort=4444```
+    master=<id> masterPort=4444
+   ```
+   
+   Supply the public IP address of master in place of <id>.
+   
+   2. On launching these instances, you can check the log in master. The final results will be printed in the log of master.
 
 ### Perform Learning
