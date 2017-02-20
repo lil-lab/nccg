@@ -88,7 +88,7 @@ Instructions below assume you are using [Eclipse](http://www.eclipse.org/downloa
   - *Learning*: NCCG is trained using backpropagation. For technical details, please see Section 4 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf). This is described in the following file:
          `./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.learner/NeuralFeedForwardDotProductLearner.java`
 
-## Section 3: Custom Testing and Training
+# Section 3: Custom Testing and Training
 
 In order to perform testing or learning with NCCG, you will have to build a jar file.
 In this section, we will describe how to do this.
