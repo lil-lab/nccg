@@ -111,6 +111,6 @@ In this section, we will talk on how to use a saved model and perform parsing on
    
    Supply the public IP address of master in place of <id>.
    
-   2. On launching these instances, you can check the log in master. The final results will be printed in the log of master.
+ 2. On launching these instances, you can check the log in master. The final results will be printed in the log of master.
 
 ### Perform Learning
