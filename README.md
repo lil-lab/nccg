@@ -36,7 +36,7 @@ We will launch a master instance and several worker instance to do test time par
  - **Run the worker instances**
    
    Launch some x number of instances (say 20) using the same public AMI.
-      Paste the code below to run when the instance launch.
+      Paste the code below to run when the instance launch. It is a good idea to use spot instances for running workers.
       
    ```#!/bin/bash
    cd /home/ubuntu/nccg/nn-amr-dev/
@@ -47,7 +47,7 @@ We will launch a master instance and several worker instance to do test time par
    
    Supply the public IP address of master in place of <id>. Above code runs with 110GB RAM which can be changed to any other number within the RAM limit.
   
-  The results will be printed in the log of master. The final number should match the numbers reported in the paper.
+  The results will be printed in the `dev.proxy/logs4/test.log`. The final number should match the numbers reported in the paper.
 
 # Section 2: Using the source code with Eclipse
 
@@ -60,9 +60,9 @@ Instructions below assume you are using [Eclipse](http://www.eclipse.org/downloa
   - To import projects, first open eclipse and change the workspace folder to the root folder of ./nccg. 
   - Now go to File->Import->General->Existing Projects Into Workspace and select the nn-amd-dev folder in the root.
   - You should see the amr project. Select it. You should now see amr in the project explorer. Ignore any errors for now.
-- Now import all the java projects in nn-ccg-dev in similar fashion.
-- Close the following projects tiny, learn.ubl and learn.weakp (right click on the project and click on Close Project).
-- If you see any error then please see the FAQ section or raise an issue.
+  - Now import all the java projects in nn-ccg-dev in similar fashion.
+  - Close the following projects tiny, learn.ubl and learn.weakp (right click on the project and click on Close Project).
+  - If you see any error then please see the FAQ section or raise an issue.
 
 ## Understanding the code structure
 
@@ -83,7 +83,7 @@ Instructions below assume you are using [Eclipse](http://www.eclipse.org/downloa
   - *Learning*: NCCG is trained using backpropagation. For technical details, please see Section 4 in the [paper](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf). This is described in the following file:
          `./edu.cornell.cs.nlp.spf.parser.ff.shiftreduce.learner/NeuralFeedForwardDotProductLearner.java`
 
-## AMR Parsing using Neural Shift Reduce CCG Semantic parser (NCCG)
+## Section 3: Custom Testing and Training
 
 In order to perform testing or learning with NCCG, you will have to build a jar file.
 In this section, we will describe how to do this.
@@ -119,6 +119,11 @@ To build the jar file do the following:
 
 ### Perform Testing
 
+Use the jar file that is created and do testing as described in Section 1. You will have to of course
+copy the jar and its library folder to the server and also ensure that worker instances have access to the jar.
+This can be done by adding an rsync operation when running workers which copies the jar file from the master
+or by creating a new AMI and launching workers using that AMI.
+
 ### Perform Learning
 
-TODO
+TO Come
