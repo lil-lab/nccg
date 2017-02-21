@@ -1,5 +1,5 @@
 # Neural Shift Reduce CCG Semantic Parser for AMR Parsing
-Contains implementation of Neural Shift Reduce Parser for CCG Semantic Parser of [http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf](Misra and Artzi EMNLP 2016).
+Contains implementation of Neural Shift Reduce Parser for CCG Semantic Parser of [Misra and Artzi EMNLP 2016](http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf).
 
 ## Author
 Developed and maintained by Dipendra Misra (dkm@cs.cornell.edu)
@@ -7,7 +7,7 @@ Developed and maintained by Dipendra Misra (dkm@cs.cornell.edu)
 Uses the following external codebase:
 
 1. Cornell SPF and AMR code maintained by Yoav Artzi (Artzi, 2016).
-2. [https://deeplearning4j.org/](DeepLearning4j).
+2. [DeepLearning4j](https://deeplearning4j.org/).
 2. EasyCCG (Lewis and Steedman, 2014) for CCGBank categories.
 3. SMATCH metric (Cai and Knight, 2013).
 4. Illinois NER (Ratinov and Roth, 2009)
