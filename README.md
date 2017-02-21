@@ -1,5 +1,5 @@
 # Neural Shift Reduce CCG Semantic Parser for AMR Parsing
-Contains implementation of Neural Shift Reduce Parser for CCG Semantic Parser of Misra and Artzi EMNLP 2016.
+Contains implementation of Neural Shift Reduce Parser for CCG Semantic Parser of [http://www.cs.cornell.edu/~dkm/papers/ma-emnlp.2016.pdf](Misra and Artzi EMNLP 2016).
 
 ## Author
 Developed and maintained by Dipendra Misra (dkm@cs.cornell.edu)
@@ -21,10 +21,10 @@ You don't have to install 1-5 above.
  
 ## Section 1: Using Amazon AMI to do AMR Parsing
 
-In this section, we will talk on how to use publically available Amazon AMI to perform parsing on devset.
-Later sections describe how to do customized training and testing. First, login to [https://aws.amazon.com/](https://aws.amazon.com/) and use the following AMI:
+In this section, we will talk on how to use publically available Amazon AMI to perform parsing on test set.
+Later sections describe how to do customized training and testing. First, login to [https://aws.amazon.com/](https://aws.amazon.com/) and find the NCCG public AMI(ID: ami-ce5387d8). You can find the AMI by clicking on launch an ec2 instance and then going to community AMIs and searching for the above AMI ID.
 
-We will launch a master instance and several worker instance to do test time parsing on the devset. 
+We will launch a master instance and several worker instance to do test time parsing on the test set. 
 
  - **Run the master instance**
  
@@ -35,7 +35,7 @@ We will launch a master instance and several worker instance to do test time par
    java -Xmx110g -jar NeuralAmrParser_Test.jar ./experiment_ff/dev.proxy/dev.proxy.dist.exp
    ```
    
-   You can find the log file in ```/home/ubuntu/nccg/nn-amr-dev/experiment_ff/dev.proxy/logs4/global.log```
+   You can find the log file in ```/home/ubuntu/nccg/nn-amr-dev/experiment_ff/dev.proxy/logs/global.log```
    It may take some time for the master to start the distributed job when running the code for the first time.
 
  - **Run the worker instances**
@@ -52,7 +52,7 @@ We will launch a master instance and several worker instance to do test time par
    
    Supply the public IP address of master in place of ip-address. Above code runs with 110GB RAM which can be changed to any other number within the RAM limit.
   
-  The results will be printed in the `dev.proxy/logs/test.log`. The final number should match the numbers reported in the paper.
+  The results will be printed in the `dev.proxy/logs/test.log`. The final number should match the numbers reported in the paper (~66.1 SMATCH). When running the code for the first time the master node may take a long time to get ready.
 
 ## Section 2: Using the source code with Eclipse
 
